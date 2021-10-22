@@ -62,9 +62,9 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202110210510105_InitialDB.cs" />
-    <Compile Include="Migrations\202110210510105_InitialDB.designer.cs">
-      <DependentUpon>202110210510105_InitialDB.cs</DependentUpon>
+    <Compile Include="Migrations\202110220924115_InitialDB.cs" />
+    <Compile Include="Migrations\202110220924115_InitialDB.designer.cs">
+      <DependentUpon>202110220924115_InitialDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ChiPhi.cs" />
@@ -82,8 +82,8 @@
     <Compile Include="Persistences\Context.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Migrations\202110210510105_InitialDB.resx">
-      <DependentUpon>202110210510105_InitialDB.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202110220924115_InitialDB.resx">
+      <DependentUpon>202110220924115_InitialDB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

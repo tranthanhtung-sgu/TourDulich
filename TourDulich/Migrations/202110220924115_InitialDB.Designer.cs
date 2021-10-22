@@ -13,7 +13,7 @@ namespace TourDulich.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202110210510105_InitialDB"; }
+            get { return "202110220924115_InitialDB"; }
         }
         
         string IMigrationMetadata.Source
