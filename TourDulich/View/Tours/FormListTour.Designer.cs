@@ -29,62 +29,62 @@ namespace TourDulich.View.Tours
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Button button1;
-            System.Windows.Forms.Button button2;
-            System.Windows.Forms.Button button4;
+            System.Windows.Forms.Button addTourBtn;
+            System.Windows.Forms.Button updateTourBtn;
+            System.Windows.Forms.Button delTourBtn;
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.listViewTour = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            button1 = new System.Windows.Forms.Button();
-            button2 = new System.Windows.Forms.Button();
-            button4 = new System.Windows.Forms.Button();
+            this.refreshTourBtn = new System.Windows.Forms.Button();
+            this.findTourBtn = new System.Windows.Forms.Button();
+            this.searchTourTxt = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            addTourBtn = new System.Windows.Forms.Button();
+            updateTourBtn = new System.Windows.Forms.Button();
+            delTourBtn = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // addTourBtn
             // 
-            button1.Location = new System.Drawing.Point(157, 37);
-            button1.Name = "button1";
-            button1.Size = new System.Drawing.Size(96, 30);
-            button1.TabIndex = 0;
-            button1.Text = "Thêm";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += new System.EventHandler(this.button1_Click);
+            addTourBtn.Location = new System.Drawing.Point(157, 37);
+            addTourBtn.Name = "addTourBtn";
+            addTourBtn.Size = new System.Drawing.Size(96, 30);
+            addTourBtn.TabIndex = 0;
+            addTourBtn.Text = "Thêm";
+            addTourBtn.UseVisualStyleBackColor = true;
+            addTourBtn.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // updateTourBtn
             // 
-            button2.Location = new System.Drawing.Point(370, 37);
-            button2.Name = "button2";
-            button2.Size = new System.Drawing.Size(96, 30);
-            button2.TabIndex = 1;
-            button2.Text = "Sửa";
-            button2.UseVisualStyleBackColor = true;
+            updateTourBtn.Location = new System.Drawing.Point(370, 37);
+            updateTourBtn.Name = "updateTourBtn";
+            updateTourBtn.Size = new System.Drawing.Size(96, 30);
+            updateTourBtn.TabIndex = 1;
+            updateTourBtn.Text = "Sửa";
+            updateTourBtn.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // delTourBtn
             // 
-            button4.Location = new System.Drawing.Point(594, 37);
-            button4.Name = "button4";
-            button4.Size = new System.Drawing.Size(96, 30);
-            button4.TabIndex = 2;
-            button4.Text = "Xóa";
-            button4.UseVisualStyleBackColor = true;
-            button4.AutoSizeChanged += new System.EventHandler(this.FormListTour_Load);
+            delTourBtn.Location = new System.Drawing.Point(594, 37);
+            delTourBtn.Name = "delTourBtn";
+            delTourBtn.Size = new System.Drawing.Size(96, 30);
+            delTourBtn.TabIndex = 2;
+            delTourBtn.Text = "Xóa";
+            delTourBtn.UseVisualStyleBackColor = true;
+            delTourBtn.AutoSizeChanged += new System.EventHandler(this.FormListTour_Load);
             // 
             // groupBox3
             // 
             this.groupBox3.AutoSize = true;
-            this.groupBox3.Controls.Add(this.listView1);
-            this.groupBox3.Controls.Add(this.button5);
-            this.groupBox3.Controls.Add(this.button3);
-            this.groupBox3.Controls.Add(this.textBox1);
+            this.groupBox3.Controls.Add(this.listViewTour);
+            this.groupBox3.Controls.Add(this.refreshTourBtn);
+            this.groupBox3.Controls.Add(this.findTourBtn);
+            this.groupBox3.Controls.Add(this.searchTourTxt);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox3.Location = new System.Drawing.Point(0, 100);
             this.groupBox3.Name = "groupBox3";
@@ -93,63 +93,23 @@ namespace TourDulich.View.Tours
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Danh sách Tour ";
             // 
-            // button5
+            // listViewTour
             // 
-            this.button5.Location = new System.Drawing.Point(571, 20);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 2;
-            this.button5.Text = "Clear";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(425, 20);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Find";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(49, 19);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(318, 25);
-            this.textBox1.TabIndex = 0;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(button4);
-            this.groupBox2.Controls.Add(button2);
-            this.groupBox2.Controls.Add(button1);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox2.Location = new System.Drawing.Point(0, 0);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(879, 100);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Hoạt động";
-            // 
-            // listView1
-            // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listViewTour.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4});
-            this.listView1.FullRowSelect = true;
-            this.listView1.GridLines = true;
-            this.listView1.HideSelection = false;
-            this.listView1.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.listView1.Location = new System.Drawing.Point(12, 54);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(855, 392);
-            this.listView1.TabIndex = 3;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.listViewTour.FullRowSelect = true;
+            this.listViewTour.GridLines = true;
+            this.listViewTour.HideSelection = false;
+            this.listViewTour.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.listViewTour.Location = new System.Drawing.Point(12, 54);
+            this.listViewTour.Name = "listViewTour";
+            this.listViewTour.Size = new System.Drawing.Size(855, 392);
+            this.listViewTour.TabIndex = 3;
+            this.listViewTour.UseCompatibleStateImageBehavior = false;
+            this.listViewTour.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader1
             // 
@@ -171,6 +131,46 @@ namespace TourDulich.View.Tours
             this.columnHeader4.Text = "Loại hình du lịch";
             this.columnHeader4.Width = 150;
             // 
+            // refreshTourBtn
+            // 
+            this.refreshTourBtn.Location = new System.Drawing.Point(571, 20);
+            this.refreshTourBtn.Name = "refreshTourBtn";
+            this.refreshTourBtn.Size = new System.Drawing.Size(75, 23);
+            this.refreshTourBtn.TabIndex = 2;
+            this.refreshTourBtn.Text = "Làm mới";
+            this.refreshTourBtn.UseVisualStyleBackColor = true;
+            // 
+            // findTourBtn
+            // 
+            this.findTourBtn.Location = new System.Drawing.Point(425, 20);
+            this.findTourBtn.Name = "findTourBtn";
+            this.findTourBtn.Size = new System.Drawing.Size(75, 23);
+            this.findTourBtn.TabIndex = 1;
+            this.findTourBtn.Text = "Tìm kiếm";
+            this.findTourBtn.UseVisualStyleBackColor = true;
+            this.findTourBtn.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // searchTourTxt
+            // 
+            this.searchTourTxt.Location = new System.Drawing.Point(49, 19);
+            this.searchTourTxt.Multiline = true;
+            this.searchTourTxt.Name = "searchTourTxt";
+            this.searchTourTxt.Size = new System.Drawing.Size(318, 25);
+            this.searchTourTxt.TabIndex = 0;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(delTourBtn);
+            this.groupBox2.Controls.Add(updateTourBtn);
+            this.groupBox2.Controls.Add(addTourBtn);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox2.Location = new System.Drawing.Point(0, 0);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(879, 100);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Hoạt động";
+            // 
             // FormListTour
             // 
             this.ClientSize = new System.Drawing.Size(879, 558);
@@ -191,10 +191,10 @@ namespace TourDulich.View.Tours
 
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.Button findTourBtn;
+        private System.Windows.Forms.TextBox searchTourTxt;
+        private System.Windows.Forms.Button refreshTourBtn;
+        private System.Windows.Forms.ListView listViewTour;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
