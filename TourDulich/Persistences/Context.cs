@@ -11,7 +11,7 @@ namespace TourDulich.Persistences
     class Context : DbContext
     {
         public Context() : base("name=con") { }
-        public DbSet<Tour> Tours { get; set; }
+        public DbSet<Models.Tour> Tours { get; set; }
         public DbSet<DoanDulich> DoanDuLich { get; set; }
         public DbSet<GiaTour> GiaTour { get; set; }
         public DbSet<LoaiHinhDuLich> LoaiHinhDuLich { get; set; }
