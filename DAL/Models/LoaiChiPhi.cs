@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TourDulich.Models
+namespace DAL.Models
 {
-    class LoaiChiPhi
+    public class LoaiChiPhi
     {
         [Key]
         public int MaLoaiChiPhi { get; set; }

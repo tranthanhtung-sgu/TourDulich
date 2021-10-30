@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TourDulich.Models
+namespace DAL.Models
 {
-    class Tour
+    public class Tour
     {
         [Key]
         public int MaTour { get; set; }

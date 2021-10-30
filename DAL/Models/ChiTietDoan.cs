@@ -5,16 +5,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TourDulich.Models
+namespace DAL.Models
 {
-    class ChiPhi
+    public class ChiTietDoan
     {
         [Key]
-        public int MaChiPhi { get; set; }
+        public int Id { get; set; }
         public int MaDoan { get; set; }
         public DoanDulich DoanDulich { get; set; }
-        public float SoTien { get; set; }
-        public int MaLoaiChiPhi { get; set; }
-        public LoaiChiPhi LoaiChiPhi { get; set; }
+        public int MaKhachHang { get; set; }
+        public Khach Khach { get; set; }
     }
 }

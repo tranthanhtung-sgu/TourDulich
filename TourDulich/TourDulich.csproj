@@ -62,29 +62,8 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202110220924115_InitialDB.cs" />
-    <Compile Include="Migrations\202110220924115_InitialDB.designer.cs">
-      <DependentUpon>202110220924115_InitialDB.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\ChiPhi.cs" />
-    <Compile Include="Models\ChiTietDoan.cs" />
-    <Compile Include="Models\ChiTietTour.cs" />
-    <Compile Include="Models\DiaDiem.cs" />
-    <Compile Include="Models\DoanDulich.cs" />
-    <Compile Include="Models\GiaTour.cs" />
-    <Compile Include="Models\Khach.cs" />
-    <Compile Include="Models\LoaiHinhDuLich.cs" />
-    <Compile Include="Models\LoaiChiPhi.cs" />
-    <Compile Include="Models\NhanVien.cs" />
-    <Compile Include="Models\PhanBo_NhanVien_Doan.cs" />
-    <Compile Include="Models\Tour.cs" />
-    <Compile Include="Persistences\Context.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Migrations\202110220924115_InitialDB.resx">
-      <DependentUpon>202110220924115_InitialDB.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -108,7 +87,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\BUS\BUS.csproj">
+      <Project>{13202d28-3d38-4f65-a4e2-530b65103ca3}</Project>
+      <Name>BUS</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
