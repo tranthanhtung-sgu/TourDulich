@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BUS;
+using BUS.Dtos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,8 @@ namespace GUI
 {
     public partial class FormListTour : Form
     {
+        private static IEnumerable<DTO_Tour> tours = new List<DTO_Tour>();
+        BUS_Tour tour = new BUS_Tour();
         public FormListTour()
         {
             InitializeComponent();
@@ -24,7 +28,12 @@ namespace GUI
 
         private void FormListTour_Load(object sender, EventArgs e)
         {
-
+            tours = tour.GetAll();
+            dtgvListTour.DataSource = tours;
+            dtgvListTour.Columns[0].Width = 220;
+            dtgvListTour.Columns[1].Width = 200;
+            dtgvListTour.Columns[2].Width = 200;
+            dtgvListTour.Columns[3].Width = 200;
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -44,7 +53,8 @@ namespace GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            FrmAddTour frmAddTour = new FrmAddTour();
+            frmAddTour.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)

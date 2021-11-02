@@ -29,59 +29,53 @@ namespace GUI
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Button addTourBtn;
-            System.Windows.Forms.Button updateTourBtn;
-            System.Windows.Forms.Button delTourBtn;
+            this.addTourBtn = new System.Windows.Forms.Button();
+            this.updateTourBtn = new System.Windows.Forms.Button();
+            this.delTourBtn = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.listViewTour = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.dtgvListTour = new System.Windows.Forms.DataGridView();
             this.refreshTourBtn = new System.Windows.Forms.Button();
             this.findTourBtn = new System.Windows.Forms.Button();
             this.searchTourTxt = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            addTourBtn = new System.Windows.Forms.Button();
-            updateTourBtn = new System.Windows.Forms.Button();
-            delTourBtn = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvListTour)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // addTourBtn
             // 
-            addTourBtn.Location = new System.Drawing.Point(157, 37);
-            addTourBtn.Name = "addTourBtn";
-            addTourBtn.Size = new System.Drawing.Size(96, 30);
-            addTourBtn.TabIndex = 0;
-            addTourBtn.Text = "Thêm";
-            addTourBtn.UseVisualStyleBackColor = true;
-            addTourBtn.Click += new System.EventHandler(this.button1_Click);
+            this.addTourBtn.Location = new System.Drawing.Point(157, 37);
+            this.addTourBtn.Name = "addTourBtn";
+            this.addTourBtn.Size = new System.Drawing.Size(96, 30);
+            this.addTourBtn.TabIndex = 0;
+            this.addTourBtn.Text = "Thêm";
+            this.addTourBtn.UseVisualStyleBackColor = true;
+            this.addTourBtn.Click += new System.EventHandler(this.button1_Click);
             // 
             // updateTourBtn
             // 
-            updateTourBtn.Location = new System.Drawing.Point(370, 37);
-            updateTourBtn.Name = "updateTourBtn";
-            updateTourBtn.Size = new System.Drawing.Size(96, 30);
-            updateTourBtn.TabIndex = 1;
-            updateTourBtn.Text = "Sửa";
-            updateTourBtn.UseVisualStyleBackColor = true;
+            this.updateTourBtn.Location = new System.Drawing.Point(370, 37);
+            this.updateTourBtn.Name = "updateTourBtn";
+            this.updateTourBtn.Size = new System.Drawing.Size(96, 30);
+            this.updateTourBtn.TabIndex = 1;
+            this.updateTourBtn.Text = "Sửa";
+            this.updateTourBtn.UseVisualStyleBackColor = true;
             // 
             // delTourBtn
             // 
-            delTourBtn.Location = new System.Drawing.Point(594, 37);
-            delTourBtn.Name = "delTourBtn";
-            delTourBtn.Size = new System.Drawing.Size(96, 30);
-            delTourBtn.TabIndex = 2;
-            delTourBtn.Text = "Xóa";
-            delTourBtn.UseVisualStyleBackColor = true;
-            delTourBtn.AutoSizeChanged += new System.EventHandler(this.FormListTour_Load);
+            this.delTourBtn.Location = new System.Drawing.Point(594, 37);
+            this.delTourBtn.Name = "delTourBtn";
+            this.delTourBtn.Size = new System.Drawing.Size(96, 30);
+            this.delTourBtn.TabIndex = 2;
+            this.delTourBtn.Text = "Xóa";
+            this.delTourBtn.UseVisualStyleBackColor = true;
+            this.delTourBtn.AutoSizeChanged += new System.EventHandler(this.FormListTour_Load);
             // 
             // groupBox3
             // 
             this.groupBox3.AutoSize = true;
-            this.groupBox3.Controls.Add(this.listViewTour);
+            this.groupBox3.Controls.Add(this.dtgvListTour);
             this.groupBox3.Controls.Add(this.refreshTourBtn);
             this.groupBox3.Controls.Add(this.findTourBtn);
             this.groupBox3.Controls.Add(this.searchTourTxt);
@@ -93,43 +87,14 @@ namespace GUI
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Danh sách Tour ";
             // 
-            // listViewTour
+            // dtgvListTour
             // 
-            this.listViewTour.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4});
-            this.listViewTour.FullRowSelect = true;
-            this.listViewTour.GridLines = true;
-            this.listViewTour.HideSelection = false;
-            this.listViewTour.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.listViewTour.Location = new System.Drawing.Point(12, 54);
-            this.listViewTour.Name = "listViewTour";
-            this.listViewTour.Size = new System.Drawing.Size(855, 392);
-            this.listViewTour.TabIndex = 3;
-            this.listViewTour.UseCompatibleStateImageBehavior = false;
-            this.listViewTour.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Mã Tour";
-            this.columnHeader1.Width = 150;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Tên Gói";
-            this.columnHeader2.Width = 150;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Mô tả";
-            this.columnHeader3.Width = 200;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Loại hình du lịch";
-            this.columnHeader4.Width = 150;
+            this.dtgvListTour.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvListTour.Location = new System.Drawing.Point(12, 59);
+            this.dtgvListTour.Name = "dtgvListTour";
+            this.dtgvListTour.RowTemplate.Height = 25;
+            this.dtgvListTour.Size = new System.Drawing.Size(855, 387);
+            this.dtgvListTour.TabIndex = 3;
             // 
             // refreshTourBtn
             // 
@@ -160,9 +125,9 @@ namespace GUI
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(delTourBtn);
-            this.groupBox2.Controls.Add(updateTourBtn);
-            this.groupBox2.Controls.Add(addTourBtn);
+            this.groupBox2.Controls.Add(this.delTourBtn);
+            this.groupBox2.Controls.Add(this.updateTourBtn);
+            this.groupBox2.Controls.Add(this.addTourBtn);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
             this.groupBox2.Name = "groupBox2";
@@ -181,6 +146,7 @@ namespace GUI
             this.Load += new System.EventHandler(this.FormListTour_Load);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvListTour)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -194,11 +160,10 @@ namespace GUI
         private System.Windows.Forms.Button findTourBtn;
         private System.Windows.Forms.TextBox searchTourTxt;
         private System.Windows.Forms.Button refreshTourBtn;
-        private System.Windows.Forms.ListView listViewTour;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.Button addTourBtn;
+        private System.Windows.Forms.Button updateTourBtn;
+        private System.Windows.Forms.Button delTourBtn;
+        private System.Windows.Forms.DataGridView dtgvListTour;
     }
 }
 
