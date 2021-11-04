@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BUS.Dtos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,14 +13,18 @@ namespace GUI
 {
     public partial class FormTourDetails : Form
     {
-        public FormTourDetails()
+        private readonly FormListTour _formListTour;
+        private DTO_Tour currentTour;
+        public FormTourDetails(FormListTour formListTour, DTO_Tour currentSelectedTour)
         {
             InitializeComponent();
+            _formListTour = formListTour;
+            currentTour = currentSelectedTour;
         }
 
         private void FormTourDetails_Load(object sender, EventArgs e)
         {
-
+            tourNameTxt.Text = currentTour.TenGoi;
         }
 
         private void FormTourDetails_FormClosing(object sender, FormClosingEventArgs e)

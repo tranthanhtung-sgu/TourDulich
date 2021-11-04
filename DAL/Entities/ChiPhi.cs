@@ -11,7 +11,6 @@ namespace DAL.Entities
     public class ChiPhi
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int MaChiPhi { get; set; }
         public int MaDoan { get; set; }
         public DoanDulich DoanDulich { get; set; }

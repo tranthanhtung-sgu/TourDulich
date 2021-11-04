@@ -89,12 +89,17 @@ namespace GUI
             // 
             // dtgvListTour
             // 
+            this.dtgvListTour.AllowUserToAddRows = false;
+            this.dtgvListTour.AllowUserToDeleteRows = false;
             this.dtgvListTour.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvListTour.Location = new System.Drawing.Point(12, 59);
             this.dtgvListTour.Name = "dtgvListTour";
+            this.dtgvListTour.ReadOnly = true;
             this.dtgvListTour.RowTemplate.Height = 25;
+            this.dtgvListTour.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvListTour.Size = new System.Drawing.Size(855, 387);
             this.dtgvListTour.TabIndex = 3;
+            this.dtgvListTour.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvListTour_CellContentClick);
             // 
             // refreshTourBtn
             // 
@@ -163,7 +168,7 @@ namespace GUI
         private System.Windows.Forms.Button addTourBtn;
         private System.Windows.Forms.Button updateTourBtn;
         private System.Windows.Forms.Button delTourBtn;
-        private System.Windows.Forms.DataGridView dtgvListTour;
+        public System.Windows.Forms.DataGridView dtgvListTour;
     }
 }
 

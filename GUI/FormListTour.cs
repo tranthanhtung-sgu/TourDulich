@@ -1,5 +1,6 @@
 ﻿using BUS;
 using BUS.Dtos;
+using DAL.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,8 +15,9 @@ namespace GUI
 {
     public partial class FormListTour : Form
     {
-        private static IEnumerable<DTO_Tour> tours = new List<DTO_Tour>();
-        BUS_Tour tour = new BUS_Tour();
+        private static List<DTO_Tour> tours = new List<DTO_Tour>();
+        BUS_Tour bus_Tour = new BUS_Tour();
+        private static DTO_Tour currentSelectedTour = new DTO_Tour();
         public FormListTour()
         {
             InitializeComponent();
@@ -23,12 +25,12 @@ namespace GUI
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            currentSelectedTour = (DTO_Tour)dtgvListTour.CurrentRow.DataBoundItem;
         }
 
         private void FormListTour_Load(object sender, EventArgs e)
         {
-            tours = tour.GetAll();
+            tours = bus_Tour.GetAll();
             dtgvListTour.DataSource = tours;
             dtgvListTour.Columns[0].Width = 220;
             dtgvListTour.Columns[1].Width = 200;
@@ -53,8 +55,15 @@ namespace GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FrmAddTour frmAddTour = new FrmAddTour();
+            FrmAddTour frmAddTour = new FrmAddTour(this);
             frmAddTour.Show();
+        }
+
+        public void UpdateGridView(Tour tour)
+        {
+            var newTour = bus_Tour.mapper.Map<Tour, DTO_Tour>(tour);
+            tours.Add(newTour);
+            dtgvListTour.DataSource = tours.ToList();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -84,6 +93,13 @@ namespace GUI
         private void listView1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void dtgvListTour_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            currentSelectedTour = (DTO_Tour)dtgvListTour.CurrentRow.DataBoundItem;
+            FormTourDetails formTourDetails = new FormTourDetails(this, currentSelectedTour);
+            formTourDetails.Show();
         }
     }
 }

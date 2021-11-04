@@ -1,32 +1,28 @@
 ﻿using AutoMapper;
 using BUS.Maps;
+using DAL;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAL
+namespace BUS
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
-        public readonly Context _context = null;
-        public readonly DbSet<T> table = null;
+        public static Context _context;
+        public DbSet<T> table;
         static MapperConfiguration config = new MapperConfiguration(cfg => {
             cfg.AddProfile(new MappingProfiles());
         });
-        public IMapper mapper = null;
+        public IMapper mapper;
         public GenericRepository()
         {
-            this._context = new Context();
-            table = _context.Set<T>();
+            _context = new Context();
+            this.table = _context.Set<T>();
             mapper = new Mapper(config);
-        }
-        public GenericRepository(Context _context)
-        {
-            this._context = _context;
-            table = _context.Set<T>();
         }
         public IEnumerable<T> GetAll()
         {
@@ -36,11 +32,11 @@ namespace DAL
         {
             return table.Find(id);
         }
-        public bool Insert(T obj)
+        public T Insert(T obj)
         {
             table.Add(obj);
-            var result = _context.SaveChanges() > 0;
-            return result;
+            _context.SaveChanges();
+            return obj;
         }
         public bool Update(T obj)
         {

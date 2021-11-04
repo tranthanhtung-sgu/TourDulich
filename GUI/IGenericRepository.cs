@@ -10,7 +10,7 @@ namespace DAL
     {
         IEnumerable<T> GetAll();
         T GetById(int id);
-        T Insert(T obj);
+        bool Insert(T obj);
         bool Update(T obj);
         bool Delete(int id);
         void Save();

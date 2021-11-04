@@ -11,26 +11,15 @@ namespace DAL.Entities
 {
     public class Tour
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int MaTour { get; set; }
-
-        [DisplayName("Tên tour du lịch")]
+        public int TourId { get; set; }
         public string TenGoi { get; set; }
-
-        [DisplayName("Mô tả chuyến đi")]
         public string MoTa { get; set; }
-
-        [DisplayName("Loại hình du lịch")]
-        public int MaLoaiHinh { get; set; }
-
-        public LoaiHinhDuLich loaiHinhDuLich { get; set; }
-
+        public int LoaiHinhDuLichId { get; set; }
+        [ForeignKey("LoaiHinhDuLichId")]
+        [Required]
+        public LoaiHinhDuLich LoaiHinhDuLich { get; set; }
         public ICollection<DoanDulich> DSDoanDulich { get; set; }
-
-        [DisplayName("Giá tour hiện hành")]
         public ICollection<GiaTour> DSGiaTour { get; set; }
-
         public ICollection<ChiTietTour> DSChiTietTour { get; set; }
     }
 }

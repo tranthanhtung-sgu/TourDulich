@@ -1,5 +1,8 @@
 ﻿using BUS;
+using BUS.Dtos;
+using DAL;
 using DAL.Entities;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,9 +19,11 @@ namespace GUI
     {
         BUS_Category _Category = new BUS_Category();
         BUS_Tour _Tour = new BUS_Tour();
-        public FrmAddTour()
+        private readonly FormListTour _formListTour;
+        public FrmAddTour(FormListTour formListTour)
         {
             InitializeComponent();
+            _formListTour = formListTour;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -39,13 +44,17 @@ namespace GUI
 
         private void btnAddTour_Click(object sender, EventArgs e)
         {
+            var loaihinh = _Category.GetById(cbb_TourType.SelectedIndex);
             Tour tour = new Tour
             {
                 TenGoi = txt_TourName.Text,
                 MoTa = txt_TourDescription.Text,
-                loaiHinhDuLich = new LoaiHinhDuLich { MaLoaiHinh = 3 }
+                LoaiHinhDuLichId = loaihinh.LoaiHinhDuLichId,
             };
             _Tour.Insert(tour);
+            tour.LoaiHinhDuLich = loaihinh;
+            _formListTour.UpdateGridView(tour);
+           
         }
     }
 }

@@ -1,10 +1,11 @@
 ﻿using DAL.Entities;
 using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Configuration;
+using Microsoft.EntityFrameworkCore;
 
 namespace DAL
 {
@@ -12,7 +13,30 @@ namespace DAL
     {
         public static string DataSource = "Tungpc\\DATABASETUNG";
         public static string con = "Data Source="+ DataSource + ";Initial Catalog=tourdulich;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;";
-        public Context() : base(con) { }
+
+        public Context()
+        {
+
+        }
+        
+        public Context(DbContextOptions<Context> options) 
+            : base() 
+        {
+        }
+
+        protected override void OnConfiguring (DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseSqlServer(con);
+            }   
+            optionsBuilder.EnableSensitiveDataLogging();
+        }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Seed();
+        }
+
         public DbSet<Tour> Tours { get; set; }
         public DbSet<DoanDulich> DoanDuLich { get; set; }
         public DbSet<GiaTour> GiaTour { get; set; }
@@ -25,6 +49,7 @@ namespace DAL
         public DbSet<LoaiChiPhi> LoaiChiPhi { get; set; }
         public DbSet<NhanVien> NhanVien { get; set; }
         public DbSet<PhanBo_NhanVien_Doan> PhanBo_NhanVien_Doan { get; set; }
+
 
     }
 }

@@ -11,12 +11,12 @@ namespace DAL.Entities
     public class ChiTietTour
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public int MaTour { get; set; }
         public Tour Tour { get; set; }
         public int MaDiaDiem { get; set; }
         public DiaDiem DiaDiem { get; set; }
-        public ICollection<string> ThuTu { get; set; }
+        [NotMapped]
+        public List<string> ThuTu { get; set; }
     }
 }

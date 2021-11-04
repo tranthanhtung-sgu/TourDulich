@@ -10,10 +10,8 @@ namespace DAL.Entities
 {
     public class LoaiHinhDuLich
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int MaLoaiHinh { get; set; }
+        public int LoaiHinhDuLichId { get; set; }
         public string TenLoaiHinh { get; set; }
-        public ICollection<Tour> Tours { get; set; }
+        public ICollection<Tour> Tours { get; set; } = new List<Tour>();
     }
 }

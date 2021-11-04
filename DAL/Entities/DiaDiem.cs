@@ -11,7 +11,6 @@ namespace DAL.Entities
     public class DiaDiem
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int MaDiaDiem { get; set; }
         public string TenDiaDiem { get; set; }
         public ICollection<ChiTietTour> DSChiTietTour { get; set; }

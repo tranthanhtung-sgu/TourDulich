@@ -11,7 +11,6 @@ namespace DAL.Entities
     public class ChiTietDoan
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public int MaDoan { get; set; }
         public DoanDulich DoanDulich { get; set; }
