@@ -1,15 +1,15 @@
 ﻿
 namespace GUI
 {
-    partial class FormListTour
+    partial class FrmListTour
     {
         /// <summary>
-        ///  Required designer variable.
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        ///  Clean up any resources being used.
+        /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
@@ -24,151 +24,123 @@ namespace GUI
         #region Windows Form Designer generated code
 
         /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            this.addTourBtn = new System.Windows.Forms.Button();
-            this.updateTourBtn = new System.Windows.Forms.Button();
-            this.delTourBtn = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dtgvListTour = new System.Windows.Forms.DataGridView();
-            this.refreshTourBtn = new System.Windows.Forms.Button();
-            this.findTourBtn = new System.Windows.Forms.Button();
-            this.searchTourTxt = new System.Windows.Forms.TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvListTour)).BeginInit();
-            this.groupBox2.SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.iconButton4 = new FontAwesome.Sharp.IconButton();
+            this.btnDeleteTour = new FontAwesome.Sharp.IconButton();
+            this.btnAddTour = new FontAwesome.Sharp.IconButton();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // addTourBtn
+            // panel1
             // 
-            this.addTourBtn.Location = new System.Drawing.Point(157, 37);
-            this.addTourBtn.Name = "addTourBtn";
-            this.addTourBtn.Size = new System.Drawing.Size(96, 30);
-            this.addTourBtn.TabIndex = 0;
-            this.addTourBtn.Text = "Thêm";
-            this.addTourBtn.UseVisualStyleBackColor = true;
-            this.addTourBtn.Click += new System.EventHandler(this.button1_Click);
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.iconButton4);
+            this.panel1.Controls.Add(this.btnDeleteTour);
+            this.panel1.Controls.Add(this.btnAddTour);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(811, 81);
+            this.panel1.TabIndex = 3;
             // 
-            // updateTourBtn
+            // iconButton4
             // 
-            this.updateTourBtn.Location = new System.Drawing.Point(370, 37);
-            this.updateTourBtn.Name = "updateTourBtn";
-            this.updateTourBtn.Size = new System.Drawing.Size(96, 30);
-            this.updateTourBtn.TabIndex = 1;
-            this.updateTourBtn.Text = "Sửa";
-            this.updateTourBtn.UseVisualStyleBackColor = true;
+            this.iconButton4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.iconButton4.FlatAppearance.BorderSize = 0;
+            this.iconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            this.iconButton4.IconColor = System.Drawing.Color.Black;
+            this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton4.IconSize = 30;
+            this.iconButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton4.Location = new System.Drawing.Point(565, 18);
+            this.iconButton4.Name = "iconButton4";
+            this.iconButton4.Size = new System.Drawing.Size(110, 40);
+            this.iconButton4.TabIndex = 5;
+            this.iconButton4.Text = "Sửa Tour";
+            this.iconButton4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton4.UseVisualStyleBackColor = true;
             // 
-            // delTourBtn
+            // btnDeleteTour
             // 
-            this.delTourBtn.Location = new System.Drawing.Point(594, 37);
-            this.delTourBtn.Name = "delTourBtn";
-            this.delTourBtn.Size = new System.Drawing.Size(96, 30);
-            this.delTourBtn.TabIndex = 2;
-            this.delTourBtn.Text = "Xóa";
-            this.delTourBtn.UseVisualStyleBackColor = true;
-            this.delTourBtn.AutoSizeChanged += new System.EventHandler(this.FormListTour_Load);
+            this.btnDeleteTour.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnDeleteTour.FlatAppearance.BorderSize = 0;
+            this.btnDeleteTour.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteTour.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnDeleteTour.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            this.btnDeleteTour.IconColor = System.Drawing.Color.Black;
+            this.btnDeleteTour.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnDeleteTour.IconSize = 30;
+            this.btnDeleteTour.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDeleteTour.Location = new System.Drawing.Point(346, 18);
+            this.btnDeleteTour.Name = "btnDeleteTour";
+            this.btnDeleteTour.Size = new System.Drawing.Size(110, 40);
+            this.btnDeleteTour.TabIndex = 5;
+            this.btnDeleteTour.Text = "Xóa Tour";
+            this.btnDeleteTour.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDeleteTour.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDeleteTour.UseVisualStyleBackColor = true;
             // 
-            // groupBox3
+            // btnAddTour
             // 
-            this.groupBox3.AutoSize = true;
-            this.groupBox3.Controls.Add(this.dtgvListTour);
-            this.groupBox3.Controls.Add(this.refreshTourBtn);
-            this.groupBox3.Controls.Add(this.findTourBtn);
-            this.groupBox3.Controls.Add(this.searchTourTxt);
-            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox3.Location = new System.Drawing.Point(0, 100);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(879, 458);
-            this.groupBox3.TabIndex = 0;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Danh sách Tour ";
+            this.btnAddTour.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAddTour.FlatAppearance.BorderSize = 0;
+            this.btnAddTour.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddTour.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnAddTour.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.btnAddTour.IconColor = System.Drawing.Color.Black;
+            this.btnAddTour.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAddTour.IconSize = 30;
+            this.btnAddTour.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddTour.Location = new System.Drawing.Point(115, 18);
+            this.btnAddTour.Name = "btnAddTour";
+            this.btnAddTour.Size = new System.Drawing.Size(110, 40);
+            this.btnAddTour.TabIndex = 0;
+            this.btnAddTour.Text = "Thêm Tour";
+            this.btnAddTour.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddTour.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAddTour.UseVisualStyleBackColor = true;
             // 
-            // dtgvListTour
+            // dataGridView1
             // 
-            this.dtgvListTour.AllowUserToAddRows = false;
-            this.dtgvListTour.AllowUserToDeleteRows = false;
-            this.dtgvListTour.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvListTour.Location = new System.Drawing.Point(12, 59);
-            this.dtgvListTour.Name = "dtgvListTour";
-            this.dtgvListTour.ReadOnly = true;
-            this.dtgvListTour.RowTemplate.Height = 25;
-            this.dtgvListTour.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvListTour.Size = new System.Drawing.Size(855, 387);
-            this.dtgvListTour.TabIndex = 3;
-            this.dtgvListTour.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvListTour_CellContentClick);
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 81);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.Size = new System.Drawing.Size(811, 414);
+            this.dataGridView1.TabIndex = 4;
             // 
-            // refreshTourBtn
+            // FrmListTour
             // 
-            this.refreshTourBtn.Location = new System.Drawing.Point(571, 20);
-            this.refreshTourBtn.Name = "refreshTourBtn";
-            this.refreshTourBtn.Size = new System.Drawing.Size(75, 23);
-            this.refreshTourBtn.TabIndex = 2;
-            this.refreshTourBtn.Text = "Làm mới";
-            this.refreshTourBtn.UseVisualStyleBackColor = true;
-            // 
-            // findTourBtn
-            // 
-            this.findTourBtn.Location = new System.Drawing.Point(425, 20);
-            this.findTourBtn.Name = "findTourBtn";
-            this.findTourBtn.Size = new System.Drawing.Size(75, 23);
-            this.findTourBtn.TabIndex = 1;
-            this.findTourBtn.Text = "Tìm kiếm";
-            this.findTourBtn.UseVisualStyleBackColor = true;
-            this.findTourBtn.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // searchTourTxt
-            // 
-            this.searchTourTxt.Location = new System.Drawing.Point(49, 19);
-            this.searchTourTxt.Multiline = true;
-            this.searchTourTxt.Name = "searchTourTxt";
-            this.searchTourTxt.Size = new System.Drawing.Size(318, 25);
-            this.searchTourTxt.TabIndex = 0;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.delTourBtn);
-            this.groupBox2.Controls.Add(this.updateTourBtn);
-            this.groupBox2.Controls.Add(this.addTourBtn);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox2.Location = new System.Drawing.Point(0, 0);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(879, 100);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Hoạt động";
-            // 
-            // FormListTour
-            // 
-            this.ClientSize = new System.Drawing.Size(879, 558);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
-            this.Name = "FormListTour";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormListTour_FormClosing);
-            this.Load += new System.EventHandler(this.FormListTour_Load);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvListTour)).EndInit();
-            this.groupBox2.ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.ClientSize = new System.Drawing.Size(811, 495);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.panel1);
+            this.Name = "FrmListTour";
+            this.Text = "Danh sách tour";
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button findTourBtn;
-        private System.Windows.Forms.TextBox searchTourTxt;
-        private System.Windows.Forms.Button refreshTourBtn;
-        private System.Windows.Forms.Button addTourBtn;
-        private System.Windows.Forms.Button updateTourBtn;
-        private System.Windows.Forms.Button delTourBtn;
-        public System.Windows.Forms.DataGridView dtgvListTour;
+        private System.Windows.Forms.Panel panel1;
+        private FontAwesome.Sharp.IconButton iconButton4;
+        private FontAwesome.Sharp.IconButton btnDeleteTour;
+        private FontAwesome.Sharp.IconButton btnAddTour;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
-

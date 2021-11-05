@@ -13,18 +13,18 @@ namespace GUI
 {
     public partial class FormTourDetails : Form
     {
-        private readonly FormListTour _formListTour;
+        //private readonly FormListTour _formListTour;
         private DTO_Tour currentTour;
-        public FormTourDetails(FormListTour formListTour, DTO_Tour currentSelectedTour)
+        public FormTourDetails(DTO_Tour currentSelectedTour)
         {
             InitializeComponent();
-            _formListTour = formListTour;
+            //_formListTour = formListTour;
             currentTour = currentSelectedTour;
         }
 
         private void FormTourDetails_Load(object sender, EventArgs e)
         {
-            tourNameTxt.Text = currentTour.TenGoi;
+            txtTenTour.Text = currentTour.TenGoi;
         }
 
         private void FormTourDetails_FormClosing(object sender, FormClosingEventArgs e)

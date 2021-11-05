@@ -19,11 +19,11 @@ namespace GUI
     {
         BUS_Category _Category = new BUS_Category();
         BUS_Tour _Tour = new BUS_Tour();
-        private readonly FormListTour _formListTour;
-        public FrmAddTour(FormListTour formListTour)
+        //private readonly FormListTour _formListTour;
+        public FrmAddTour()
         {
             InitializeComponent();
-            _formListTour = formListTour;
+            //_formListTour = formListTour;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -53,7 +53,7 @@ namespace GUI
             };
             _Tour.Insert(tour);
             tour.LoaiHinhDuLich = loaihinh;
-            _formListTour.UpdateGridView(tour);
+            //_formListTour.UpdateGridView(tour);
            
         }
     }
