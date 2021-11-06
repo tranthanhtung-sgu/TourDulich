@@ -15,12 +15,12 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class FrmAddTour : Form
+    public partial class FormAddTour : Form
     {
         BUS_Category _Category = new BUS_Category();
         BUS_Tour _Tour = new BUS_Tour();
         //private readonly FormListTour _formListTour;
-        public FrmAddTour()
+        public FormAddTour()
         {
             InitializeComponent();
             //_formListTour = formListTour;

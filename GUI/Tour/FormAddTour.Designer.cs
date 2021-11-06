@@ -1,7 +1,7 @@
 ﻿
 namespace GUI
 {
-    partial class FrmAddTour
+    partial class FormAddTour
     {
         /// <summary>
         /// Required designer variable.

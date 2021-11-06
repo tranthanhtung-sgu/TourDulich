@@ -30,6 +30,7 @@ namespace GUI
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnDetails = new FontAwesome.Sharp.IconButton();
             this.iconButton4 = new FontAwesome.Sharp.IconButton();
             this.btnDeleteTour = new FontAwesome.Sharp.IconButton();
             this.btnAddTour = new FontAwesome.Sharp.IconButton();
@@ -41,6 +42,7 @@ namespace GUI
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.btnDetails);
             this.panel1.Controls.Add(this.iconButton4);
             this.panel1.Controls.Add(this.btnDeleteTour);
             this.panel1.Controls.Add(this.btnAddTour);
@@ -49,6 +51,26 @@ namespace GUI
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(811, 81);
             this.panel1.TabIndex = 3;
+            // 
+            // btnDetails
+            // 
+            this.btnDetails.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnDetails.FlatAppearance.BorderSize = 0;
+            this.btnDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDetails.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnDetails.IconChar = FontAwesome.Sharp.IconChar.Info;
+            this.btnDetails.IconColor = System.Drawing.Color.Black;
+            this.btnDetails.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnDetails.IconSize = 25;
+            this.btnDetails.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDetails.Location = new System.Drawing.Point(649, 18);
+            this.btnDetails.Name = "btnDetails";
+            this.btnDetails.Size = new System.Drawing.Size(110, 40);
+            this.btnDetails.TabIndex = 5;
+            this.btnDetails.Text = "Xem Chi Tiết";
+            this.btnDetails.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDetails.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDetails.UseVisualStyleBackColor = true;
             // 
             // iconButton4
             // 
@@ -61,7 +83,7 @@ namespace GUI
             this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton4.IconSize = 30;
             this.iconButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton4.Location = new System.Drawing.Point(565, 18);
+            this.iconButton4.Location = new System.Drawing.Point(447, 18);
             this.iconButton4.Name = "iconButton4";
             this.iconButton4.Size = new System.Drawing.Size(110, 40);
             this.iconButton4.TabIndex = 5;
@@ -81,7 +103,7 @@ namespace GUI
             this.btnDeleteTour.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDeleteTour.IconSize = 30;
             this.btnDeleteTour.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDeleteTour.Location = new System.Drawing.Point(346, 18);
+            this.btnDeleteTour.Location = new System.Drawing.Point(242, 18);
             this.btnDeleteTour.Name = "btnDeleteTour";
             this.btnDeleteTour.Size = new System.Drawing.Size(110, 40);
             this.btnDeleteTour.TabIndex = 5;
@@ -101,7 +123,7 @@ namespace GUI
             this.btnAddTour.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAddTour.IconSize = 30;
             this.btnAddTour.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddTour.Location = new System.Drawing.Point(115, 18);
+            this.btnAddTour.Location = new System.Drawing.Point(46, 18);
             this.btnAddTour.Name = "btnAddTour";
             this.btnAddTour.Size = new System.Drawing.Size(110, 40);
             this.btnAddTour.TabIndex = 0;
@@ -142,5 +164,6 @@ namespace GUI
         private FontAwesome.Sharp.IconButton btnDeleteTour;
         private FontAwesome.Sharp.IconButton btnAddTour;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private FontAwesome.Sharp.IconButton btnDetails;
     }
 }
