@@ -16,5 +16,23 @@ namespace GUI.Doan
         {
             InitializeComponent();
         }
+
+        private void btnAddTour_Click(object sender, EventArgs e)
+        {
+            FormAddDoan addDoan = new FormAddDoan();
+            addDoan.Show();
+        }
+
+        private void btnEditTour_Click(object sender, EventArgs e)
+        {
+            FormEditDoan editDoan = new FormEditDoan();
+            editDoan.Show();
+        }
+
+        private void btnDetails_Click(object sender, EventArgs e)
+        {
+            FormDoanDetail detailDoan = new FormDoanDetail();
+            detailDoan.Show();
+        }
     }
 }

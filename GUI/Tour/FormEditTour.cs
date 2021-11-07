@@ -8,14 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GUI.Doan
+namespace GUI.Tour
 {
-    public partial class FormDoanDetail : Form
+    public partial class FormEditTour : Form
     {
-        public FormDoanDetail()
+        public FormEditTour()
         {
             InitializeComponent();
         }
-
     }
 }

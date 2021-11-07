@@ -11,47 +11,21 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class FormTourDetails : Form
+    public partial class FrmTourDetails : Form
     {
         //private readonly FormListTour _formListTour;
         private DTO_Tour currentTour;
-        public FormTourDetails(DTO_Tour currentSelectedTour)
+
+        public FrmTourDetails()
+        {
+        }
+
+        public FrmTourDetails(DTO_Tour currentSelectedTour)
         {
             InitializeComponent();
             //_formListTour = formListTour;
             currentTour = currentSelectedTour;
         }
 
-        private void FormTourDetails_Load(object sender, EventArgs e)
-        {
-            txtTenTour.Text = currentTour.TenGoi;
-        }
-
-        private void FormTourDetails_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            DialogResult confirm = MessageBox.Show(
-                "Bạn có chắc chắn muốn thoát",
-                "Warning",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question);
-            if (confirm == DialogResult.Yes)
-            {
-                e.Cancel = false;
-            }
-            else
-            {
-                e.Cancel = true;
-            }
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -30,6 +30,7 @@ namespace GUI
         private void InitializeComponent()
         {
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btnDiaDiem = new FontAwesome.Sharp.IconButton();
             this.btnReport = new FontAwesome.Sharp.IconButton();
             this.btnNhanVien = new FontAwesome.Sharp.IconButton();
             this.btnDoan = new FontAwesome.Sharp.IconButton();
@@ -60,6 +61,7 @@ namespace GUI
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.panelMenu.Controls.Add(this.btnDiaDiem);
             this.panelMenu.Controls.Add(this.btnReport);
             this.panelMenu.Controls.Add(this.btnNhanVien);
             this.panelMenu.Controls.Add(this.btnDoan);
@@ -69,8 +71,29 @@ namespace GUI
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(220, 523);
+            this.panelMenu.Size = new System.Drawing.Size(220, 611);
             this.panelMenu.TabIndex = 0;
+            // 
+            // btnDiaDiem
+            // 
+            this.btnDiaDiem.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDiaDiem.FlatAppearance.BorderSize = 0;
+            this.btnDiaDiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDiaDiem.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnDiaDiem.IconChar = FontAwesome.Sharp.IconChar.MapPin;
+            this.btnDiaDiem.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnDiaDiem.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnDiaDiem.IconSize = 32;
+            this.btnDiaDiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDiaDiem.Location = new System.Drawing.Point(0, 440);
+            this.btnDiaDiem.Name = "btnDiaDiem";
+            this.btnDiaDiem.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnDiaDiem.Size = new System.Drawing.Size(220, 60);
+            this.btnDiaDiem.TabIndex = 7;
+            this.btnDiaDiem.Text = "Địa điểm";
+            this.btnDiaDiem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDiaDiem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDiaDiem.UseVisualStyleBackColor = true;
             // 
             // btnReport
             // 
@@ -211,7 +234,7 @@ namespace GUI
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleBar.Location = new System.Drawing.Point(220, 0);
             this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(682, 80);
+            this.panelTitleBar.Size = new System.Drawing.Size(844, 80);
             this.panelTitleBar.TabIndex = 1;
             this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
             // 
@@ -221,7 +244,7 @@ namespace GUI
             this.panel1.Controls.Add(this.btnClose);
             this.panel1.Controls.Add(this.btnmax);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(562, 0);
+            this.panel1.Location = new System.Drawing.Point(724, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(120, 80);
             this.panel1.TabIndex = 2;
@@ -300,7 +323,7 @@ namespace GUI
             this.panelShadow.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelShadow.Location = new System.Drawing.Point(220, 80);
             this.panelShadow.Name = "panelShadow";
-            this.panelShadow.Size = new System.Drawing.Size(682, 9);
+            this.panelShadow.Size = new System.Drawing.Size(844, 9);
             this.panelShadow.TabIndex = 2;
             // 
             // panelDesktop
@@ -310,14 +333,14 @@ namespace GUI
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktop.Location = new System.Drawing.Point(220, 89);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(682, 434);
+            this.panelDesktop.Size = new System.Drawing.Size(844, 522);
             this.panelDesktop.TabIndex = 3;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::GUI.Properties.Resources.logo2;
-            this.pictureBox1.Location = new System.Drawing.Point(252, 141);
+            this.pictureBox1.Location = new System.Drawing.Point(333, 185);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(183, 112);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -328,7 +351,7 @@ namespace GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(902, 523);
+            this.ClientSize = new System.Drawing.Size(1064, 611);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelShadow);
             this.Controls.Add(this.panelTitleBar);
@@ -369,5 +392,6 @@ namespace GUI
         private FontAwesome.Sharp.IconButton btnMini;
         private FontAwesome.Sharp.IconButton btnClose;
         private FontAwesome.Sharp.IconButton btnmax;
+        private FontAwesome.Sharp.IconButton btnDiaDiem;
     }
 }

@@ -1,4 +1,8 @@
 ﻿using FontAwesome.Sharp;
+using GUI.Doan;
+using GUI.KhachHoang;
+using GUI.NhanVien;
+using GUI.ThongKe;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -110,21 +114,25 @@ namespace GUI
         private void iconButton3_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color3);
+            OpenChildForm(new FormListKH());
         }
 
         private void iconButton4_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color4);
+            OpenChildForm(new FormListDoan());
         }
 
         private void iconButton5_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color5);
+            OpenChildForm(new FormListNV());
         }
 
         private void iconButton6_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color6);
+            OpenChildForm(new FormReport());
         }
 
         private void FrmMainMenu_FormClosing(object sender, FormClosingEventArgs e)
@@ -146,7 +154,10 @@ namespace GUI
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            currentChildForm.Close();
+            if (currentChildForm != null)
+            {
+                currentChildForm.Close();
+            }
             Reset();   
         }
 

@@ -1,7 +1,7 @@
 ﻿
-namespace GUI.ThongKe
+namespace GUI.KhachHang
 {
-    partial class FormReport
+    partial class FormEditKH
     {
         /// <summary>
         /// Required designer variable.
@@ -31,13 +31,14 @@ namespace GUI.ThongKe
         {
             this.SuspendLayout();
             // 
-            // FormReport
+            // FormEditKH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "FormReport";
-            this.Text = "Thống kê";
+            this.Name = "FormEditKH";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Sửa thông tin khách hàng";
             this.ResumeLayout(false);
 
         }

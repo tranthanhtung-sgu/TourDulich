@@ -12,9 +12,10 @@ namespace GUI.Doan
 {
     public partial class FormAddDoan : Form
     {
-        public FormAddDoan()
+
+        private void label19_Click(object sender, EventArgs e)
         {
-            InitializeComponent();
+
         }
     }
 }

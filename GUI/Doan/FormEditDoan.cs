@@ -10,12 +10,11 @@ using System.Windows.Forms;
 
 namespace GUI.Doan
 {
-    public partial class FormDoanDetail : Form
+    public partial class FormEditDoan : Form
     {
-        public FormDoanDetail()
+        public FormEditDoan()
         {
             InitializeComponent();
         }
-
     }
 }

@@ -8,14 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GUI.Doan
+namespace GUI.KhachHang
 {
-    public partial class FormDoanDetail : Form
+    public partial class FormEditKH : Form
     {
-        public FormDoanDetail()
+        public FormEditKH()
         {
             InitializeComponent();
         }
-
     }
 }

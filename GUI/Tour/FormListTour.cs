@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GUI.Tour;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,5 +17,23 @@ namespace GUI
         {
             InitializeComponent();
         }
-    }
+
+        private void btnDetails_Click(object sender, EventArgs e)
+        {
+            FrmTourDetails detailstour = new FrmTourDetails();
+            detailstour.Show();
+        }
+
+        private void btnAddTour_Click(object sender, EventArgs e)
+        {
+            FrmAddTour addtour = new FrmAddTour();
+            addtour.Show();
+        }
+
+        private void btnEditTour_Click(object sender, EventArgs e)
+        {
+            FormEditTour editTour = new FormEditTour();
+            editTour.Show();
+        }
+    }    
 }

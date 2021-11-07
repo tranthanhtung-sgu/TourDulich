@@ -8,14 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GUI.Doan
+namespace GUI.NhanVien
 {
-    public partial class FormDoanDetail : Form
+    public partial class FormAddNV : Form
     {
-        public FormDoanDetail()
+        public FormAddNV()
         {
             InitializeComponent();
         }
-
     }
 }
