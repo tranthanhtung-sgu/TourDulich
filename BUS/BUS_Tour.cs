@@ -19,18 +19,37 @@ namespace BUS
             
         }
 
-        public new List<DTO_Tour> GetAll()
+        public new List<Tour> GetAll()
         {
-            List<Tour> tours = _context.Tours.Include(x=>x.LoaiHinhDuLich).ToList();
-            List<DTO_Tour> result = mapper.Map<List<Tour>, List<DTO_Tour>>(tours);
-            return result;
+            List<Tour> tours = _context.Tours.Include(x=>x.Category)
+                                                .Include(y=>y.Prices)
+                                                .Include(t=>t.TourDetails).ThenInclude(l=>l.Location)
+                                                .ToList();
+            return tours;
+        }
+        public Tour GetTourById (int tourId)
+        {
+            var tour = GetById(tourId);
+            return tour;
         }
         
-        public bool Update (DTO_Tour tourDto)
+        public Tour AddTour (Tour tour)
         {
-            var newTourUpdate = mapper.Map<DTO_Tour, Tour>(tourDto);
-            var result = Update(newTourUpdate);
+            var result = Insert(tour);
             return result;
         }
+
+        public Tour UpdateTour (Tour tour)
+        {
+            var result = Update(tour);
+            return result;
+        }
+
+        public bool DeleteTour (int tourId)
+        {
+            var result = Delete(tourId);
+            return result;
+        }
+
     }
 }

@@ -8,15 +8,14 @@ using System.Threading.Tasks;
 
 namespace DAL.Entities
 {
-    public class ChiTietTour
+    public class TourDetail
     {
         [Key]
         public int Id { get; set; }
-        public int MaTour { get; set; }
+        public int TourId { get; set; }
         public Tour Tour { get; set; }
-        public int MaDiaDiem { get; set; }
-        public DiaDiem DiaDiem { get; set; }
-        [NotMapped]
-        public List<string> ThuTu { get; set; }
+        public int LocationId { get; set; }
+        public Location Location { get; set; }
+        public int Serial { get; set; }
     }
 }

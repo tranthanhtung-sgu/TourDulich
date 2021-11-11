@@ -11,6 +11,9 @@ namespace BUS.Dtos
 {
     public class DTO_Tour
     {
+        [DisplayName("Mã Tour")]
+        public int TourId { get; set; }
+
         [DisplayName("Tên tour du lịch")]
         public string TenGoi { get; set; }
 
@@ -21,7 +24,6 @@ namespace BUS.Dtos
         public string LoaiHinhDuLich { get; set; }
 
         [DisplayName("Giá tour hiện hành")]
-        [DisplayFormat(DataFormatString = "{0:C0}")]
         public float GiaTour { get; set; }
     }
 }

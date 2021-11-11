@@ -34,9 +34,9 @@ namespace GUI
             this.btnEditTour = new FontAwesome.Sharp.IconButton();
             this.btnDeleteTour = new FontAwesome.Sharp.IconButton();
             this.btnAddTour = new FontAwesome.Sharp.IconButton();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtgvTour = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvTour)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -135,15 +135,21 @@ namespace GUI
             this.btnAddTour.UseVisualStyleBackColor = true;
             this.btnAddTour.Click += new System.EventHandler(this.btnAddTour_Click);
             // 
-            // dataGridView1
+            // dtgvTour
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 81);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(811, 414);
-            this.dataGridView1.TabIndex = 4;
+            this.dtgvTour.AllowUserToAddRows = false;
+            this.dtgvTour.AllowUserToDeleteRows = false;
+            this.dtgvTour.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvTour.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgvTour.Location = new System.Drawing.Point(0, 81);
+            this.dtgvTour.Name = "dtgvTour";
+            this.dtgvTour.ReadOnly = true;
+            this.dtgvTour.RowHeadersVisible = false;
+            this.dtgvTour.RowTemplate.Height = 25;
+            this.dtgvTour.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgvTour.Size = new System.Drawing.Size(811, 414);
+            this.dtgvTour.TabIndex = 4;
+            this.dtgvTour.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvTour_CellContentClick);
             // 
             // FrmListTour
             // 
@@ -151,12 +157,13 @@ namespace GUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
             this.ClientSize = new System.Drawing.Size(811, 495);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dtgvTour);
             this.Controls.Add(this.panel1);
             this.Name = "FrmListTour";
             this.Text = "Danh sách tour";
+            this.Load += new System.EventHandler(this.frmListTour_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvTour)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -166,7 +173,7 @@ namespace GUI
         private FontAwesome.Sharp.IconButton btnEditTour;
         private FontAwesome.Sharp.IconButton btnDeleteTour;
         private FontAwesome.Sharp.IconButton btnAddTour;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dtgvTour;
         private FontAwesome.Sharp.IconButton btnDetails;
     }
 }

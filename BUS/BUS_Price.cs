@@ -1,4 +1,4 @@
-﻿using DAL;
+using DAL;
 using DAL.Entities;
 using System;
 using System.Collections.Generic;
@@ -8,11 +8,10 @@ using System.Threading.Tasks;
 
 namespace BUS
 {
-    public class BUS_Category : GenericRepository<Category>
+    public class BUS_Price : GenericRepository<Price>
     {
-        public BUS_Category()
+        public BUS_Price() 
         {
-
         }
     }
 }

@@ -14,7 +14,12 @@ namespace BUS.Maps
         public MappingProfiles()
         {
             CreateMap<Tour, DTO_Tour>()
-                .ForMember(d => d.LoaiHinhDuLich, o => o.MapFrom(s => s.LoaiHinhDuLich.TenLoaiHinh));
+                .ForMember(d => d.LoaiHinhDuLich, o => o.MapFrom(s => s.Category.CategoryName))
+                // mapping 
+                .ForMember(d => d.GiaTour, o => o.MapFrom(s => s.Prices.Select(x => x.Money).FirstOrDefault()));
+            CreateMap<Price, DTO_Price>();
+            CreateMap<TourDetail, DTO_ChiTietTour>()
+                .ForMember(d => d.LocationName, o => o.MapFrom(s => s.Location.LocationName));
         }
     }
 }

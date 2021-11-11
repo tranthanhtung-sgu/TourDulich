@@ -3,21 +3,21 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DAL.Migrations
 {
-    public partial class InitialDb : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "DiaDiem",
+                name: "Cateogries",
                 columns: table => new
                 {
-                    MaDiaDiem = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    TenDiaDiem = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    CategoryName = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_DiaDiem", x => x.MaDiaDiem);
+                    table.PrimaryKey("PK_Cateogries", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -52,16 +52,16 @@ namespace DAL.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "LoaiHinhDuLich",
+                name: "Locations",
                 columns: table => new
                 {
-                    LoaiHinhDuLichId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    TenLoaiHinh = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    LocationName = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_LoaiHinhDuLich", x => x.LoaiHinhDuLichId);
+                    table.PrimaryKey("PK_Locations", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -85,16 +85,17 @@ namespace DAL.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     TenGoi = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     MoTa = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    LoaiHinhDuLichId = table.Column<int>(type: "int", nullable: true)
+                    CategoryId = table.Column<int>(type: "int", nullable: false),
+                    CateogryId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Tours", x => x.TourId);
                     table.ForeignKey(
-                        name: "FK_Tours_LoaiHinhDuLich_LoaiHinhDuLichId",
-                        column: x => x.LoaiHinhDuLichId,
-                        principalTable: "LoaiHinhDuLich",
-                        principalColumn: "LoaiHinhDuLichId",
+                        name: "FK_Tours_Cateogries_CateogryId",
+                        column: x => x.CateogryId,
+                        principalTable: "Cateogries",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
@@ -104,26 +105,25 @@ namespace DAL.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    MaTour = table.Column<int>(type: "int", nullable: false),
-                    TourId = table.Column<int>(type: "int", nullable: true),
-                    MaDiaDiem = table.Column<int>(type: "int", nullable: false),
-                    DiaDiemMaDiaDiem = table.Column<int>(type: "int", nullable: true)
+                    TourId = table.Column<int>(type: "int", nullable: false),
+                    LocationId = table.Column<int>(type: "int", nullable: false),
+                    Serial = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ChiTietTour", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_ChiTietTour_DiaDiem_DiaDiemMaDiaDiem",
-                        column: x => x.DiaDiemMaDiaDiem,
-                        principalTable: "DiaDiem",
-                        principalColumn: "MaDiaDiem",
-                        onDelete: ReferentialAction.Restrict);
+                        name: "FK_ChiTietTour_Locations_LocationId",
+                        column: x => x.LocationId,
+                        principalTable: "Locations",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_ChiTietTour_Tours_TourId",
                         column: x => x.TourId,
                         principalTable: "Tours",
                         principalColumn: "TourId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -153,23 +153,22 @@ namespace DAL.Migrations
                 name: "GiaTour",
                 columns: table => new
                 {
-                    MaGia = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    TourId = table.Column<int>(type: "int", nullable: true),
-                    MaTour = table.Column<int>(type: "int", nullable: false),
-                    ThanhTien = table.Column<float>(type: "real", nullable: false),
-                    ThoiGianBatDau = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ThoiGianKetThuc = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    TourId = table.Column<int>(type: "int", nullable: false),
+                    Money = table.Column<float>(type: "real", nullable: false),
+                    StartDay = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    EndDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_GiaTour", x => x.MaGia);
+                    table.PrimaryKey("PK_GiaTour", x => x.Id);
                     table.ForeignKey(
                         name: "FK_GiaTour_Tours_TourId",
                         column: x => x.TourId,
                         principalTable: "Tours",
                         principalColumn: "TourId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -259,8 +258,8 @@ namespace DAL.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "LoaiHinhDuLich",
-                columns: new[] { "LoaiHinhDuLichId", "TenLoaiHinh" },
+                table: "Cateogries",
+                columns: new[] { "Id", "CategoryName" },
                 values: new object[,]
                 {
                     { 1, "Du lịch biển" },
@@ -271,8 +270,8 @@ namespace DAL.Migrations
 
             migrationBuilder.InsertData(
                 table: "Tours",
-                columns: new[] { "TourId", "LoaiHinhDuLichId", "MoTa", "TenGoi" },
-                values: new object[] { 1, null, "Du lịch Đà Lạt- Thiền Viện Trúc Lâm Quê Garden - Kim Ngân Hills Resort từ Sài Gòn 2021. Khi tham gia tour cùng Du Lịch Việtngoài việc thưởng lãm vẻ đẹp đặc sắc của các loài hoa, khung cảnh thơ mộng với khí trời se lạnh của vùng đất phố núi, Quý khách sẽ được cảm nhận Đà Lạt chính là địa điểm du lịch đi hoài không chán bởi những “tọa độ sống ảo đẹp không góc chết” mang những phong cách hoàn toàn riêng biệt. Nếu như Đà Lạt View Coffee nổi danh với hình ảnh “Cổng trời thứ 2” phá cách và độc đáo, thì Quê Garden cũng đang làm mưa làm gió trên các trang mạng xã hội, là một khu vườn với lối kiến trúc Nhật Bản nằm giữa cao nguyên Lâm Viên. Cuối cùng là ngôi làng cổ kính Châu Âu - Kim Ngân Hills với cả bầu trời thú cưng hiền lành cùng khu ẩm thực đặc biệt mang dấu.", "Du lịch Đà Lạt - QUÊ Garden - Đà Lạt View Coffee - Kim Ngân Hills Resort từ Sài Gòn 2021" });
+                columns: new[] { "TourId", "CategoryId", "CateogryId", "MoTa", "TenGoi" },
+                values: new object[] { 1, 1, null, "Du lịch Đà Lạt- Thiền Viện Trúc Lâm Quê Garden - Kim Ngân Hills Resort từ Sài Gòn 2021. Khi tham gia tour cùng Du Lịch Việtngoài việc thưởng lãm vẻ đẹp đặc sắc của các loài hoa, khung cảnh thơ mộng với khí trời se lạnh của vùng đất phố núi, Quý khách sẽ được cảm nhận Đà Lạt chính là địa điểm du lịch đi hoài không chán bởi những “tọa độ sống ảo đẹp không góc chết” mang những phong cách hoàn toàn riêng biệt. Nếu như Đà Lạt View Coffee nổi danh với hình ảnh “Cổng trời thứ 2” phá cách và độc đáo, thì Quê Garden cũng đang làm mưa làm gió trên các trang mạng xã hội, là một khu vườn với lối kiến trúc Nhật Bản nằm giữa cao nguyên Lâm Viên. Cuối cùng là ngôi làng cổ kính Châu Âu - Kim Ngân Hills với cả bầu trời thú cưng hiền lành cùng khu ẩm thực đặc biệt mang dấu.", "Du lịch Đà Lạt - QUÊ Garden - Đà Lạt View Coffee - Kim Ngân Hills Resort từ Sài Gòn 2021" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Chiphi_DoanDulichMaDoan",
@@ -295,9 +294,9 @@ namespace DAL.Migrations
                 column: "KhachMaKhachHang");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ChiTietTour_DiaDiemMaDiaDiem",
+                name: "IX_ChiTietTour_LocationId",
                 table: "ChiTietTour",
-                column: "DiaDiemMaDiaDiem");
+                column: "LocationId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ChiTietTour_TourId",
@@ -325,9 +324,9 @@ namespace DAL.Migrations
                 column: "NhanVienMaNhanVien");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Tours_LoaiHinhDuLichId",
+                name: "IX_Tours_CateogryId",
                 table: "Tours",
-                column: "LoaiHinhDuLichId");
+                column: "CateogryId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -354,7 +353,7 @@ namespace DAL.Migrations
                 name: "Khach");
 
             migrationBuilder.DropTable(
-                name: "DiaDiem");
+                name: "Locations");
 
             migrationBuilder.DropTable(
                 name: "DoanDuLich");
@@ -366,7 +365,7 @@ namespace DAL.Migrations
                 name: "Tours");
 
             migrationBuilder.DropTable(
-                name: "LoaiHinhDuLich");
+                name: "Cateogries");
         }
     }
 }

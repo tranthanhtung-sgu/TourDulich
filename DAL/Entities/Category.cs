@@ -8,11 +8,10 @@ using System.Threading.Tasks;
 
 namespace DAL.Entities
 {
-    public class DiaDiem
+    public class Category
     {
-        [Key]
-        public int MaDiaDiem { get; set; }
-        public string TenDiaDiem { get; set; }
-        public ICollection<ChiTietTour> DSChiTietTour { get; set; }
+        public int Id { get; set; }
+        public string CategoryName { get; set; }
+        public ICollection<Tour> Tours { get; set; } = new List<Tour>();
     }
 }

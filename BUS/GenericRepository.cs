@@ -2,11 +2,8 @@
 using BUS.Maps;
 using DAL;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BUS
 {
@@ -38,12 +35,12 @@ namespace BUS
             _context.SaveChanges();
             return obj;
         }
-        public bool Update(T obj)
+        public T Update(T obj)
         {
             table.Attach(obj);
             _context.Entry(obj).State = EntityState.Modified;
-            var result = _context.SaveChanges() > 0;
-            return result;
+            _context.SaveChanges();
+            return obj;
         }
         public bool Delete(int id)
         {

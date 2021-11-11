@@ -9,24 +9,24 @@ using System.Threading.Tasks;
 
 namespace DAL.Entities
 {
-    public class GiaTour
+    public class Price
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int MaGia { get; set; }
+        public int Id { get; set; }
 
         public Tour Tour { get; set; }
 
         [DisplayName("Tên tour du lịch")]
-        public int MaTour { get; set; }
+        public int TourId { get; set; }
 
         [DisplayName("Giá tour")]
-        public float ThanhTien { get; set; }
+        public float Money { get; set; }
 
         [DisplayName("Ngày bắt đầu")]
-        public DateTime ThoiGianBatDau { get; set; }
+        public DateTime StartDate { get; set; }
 
         [DisplayName("Ngày kết thúc")]
-        public DateTime ThoiGianKetThuc { get; set; }
+        public DateTime EndDate { get; set; }
     }
 }

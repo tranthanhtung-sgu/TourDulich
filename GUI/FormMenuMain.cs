@@ -32,6 +32,7 @@ namespace GUI
             this.ControlBox = false;
             this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+            this.Size = new Size(1280, 650);
         }
 
         //Structs
@@ -83,7 +84,7 @@ namespace GUI
             }
         }
 
-        private void OpenChildForm(Form childForm)
+        public void OpenChildForm(Form childForm)
         {
             if(currentChildForm != null)
             {
@@ -103,7 +104,7 @@ namespace GUI
         private void btnListTour_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
-            OpenChildForm(new FrmListTour());
+            OpenChildForm(new FrmListTour(this));
         }
 
         private void iconButton2_Click(object sender, EventArgs e)

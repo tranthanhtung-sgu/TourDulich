@@ -29,25 +29,26 @@ namespace GUI.Doan
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtgvTour = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnDetails = new FontAwesome.Sharp.IconButton();
             this.btnEditTour = new FontAwesome.Sharp.IconButton();
             this.btnDeleteTour = new FontAwesome.Sharp.IconButton();
             this.btnAddTour = new FontAwesome.Sharp.IconButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvTour)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dtgvTour
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 81);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(800, 369);
-            this.dataGridView1.TabIndex = 8;
+            this.dtgvTour.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvTour.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgvTour.Location = new System.Drawing.Point(0, 81);
+            this.dtgvTour.Name = "dtgvTour";
+            this.dtgvTour.RowTemplate.Height = 25;
+            this.dtgvTour.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgvTour.Size = new System.Drawing.Size(800, 369);
+            this.dtgvTour.TabIndex = 8;
             // 
             // panel1
             // 
@@ -150,11 +151,11 @@ namespace GUI.Doan
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dtgvTour);
             this.Controls.Add(this.panel1);
             this.Name = "FormListDoan";
             this.Text = "Danh sách Đoàn du lịch";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvTour)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -162,7 +163,7 @@ namespace GUI.Doan
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dtgvTour;
         private System.Windows.Forms.Panel panel1;
         private FontAwesome.Sharp.IconButton btnDetails;
         private FontAwesome.Sharp.IconButton btnEditTour;

@@ -39,12 +39,12 @@ namespace DAL
 
         public DbSet<Tour> Tours { get; set; }
         public DbSet<DoanDulich> DoanDuLich { get; set; }
-        public DbSet<GiaTour> GiaTour { get; set; }
-        public DbSet<LoaiHinhDuLich> LoaiHinhDuLich { get; set; }
-        public DbSet<DiaDiem> DiaDiem { get; set; }
+        public DbSet<Price> GiaTour { get; set; }
+        public DbSet<Category> Cateogries { get; set; }
+        public DbSet<Location> Locations { get; set; }
         public DbSet<ChiPhi> Chiphi { get; set; }
         public DbSet<ChiTietDoan> ChiTietDoan { get; set; }
-        public DbSet<ChiTietTour> ChiTietTour { get; set; }
+        public DbSet<TourDetail> ChiTietTour { get; set; }
         public DbSet<Khach> Khach { get; set; }
         public DbSet<LoaiChiPhi> LoaiChiPhi { get; set; }
         public DbSet<NhanVien> NhanVien { get; set; }

@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DAL.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20211102160848_InitialDb2")]
-    partial class InitialDb2
+    [Migration("20211111152202_sdsdsdsdsdsd")]
+    partial class sdsdsdsdsdsd
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,6 +20,43 @@ namespace DAL.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.11")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("DAL.Entities.Category", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("CategoryName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Cateogries");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CategoryName = "Du lịch biển"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CategoryName = "Du lịch quê"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CategoryName = "Du lịch dã ngoại"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CategoryName = "Du lịch ẩm thực"
+                        });
+                });
 
             modelBuilder.Entity("DAL.Entities.ChiPhi", b =>
                 {
@@ -80,49 +117,6 @@ namespace DAL.Migrations
                     b.ToTable("ChiTietDoan");
                 });
 
-            modelBuilder.Entity("DAL.Entities.ChiTietTour", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int?>("DiaDiemMaDiaDiem")
-                        .HasColumnType("int");
-
-                    b.Property<int>("MaDiaDiem")
-                        .HasColumnType("int");
-
-                    b.Property<int>("MaTour")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("TourId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("DiaDiemMaDiaDiem");
-
-                    b.HasIndex("TourId");
-
-                    b.ToTable("ChiTietTour");
-                });
-
-            modelBuilder.Entity("DAL.Entities.DiaDiem", b =>
-                {
-                    b.Property<int>("MaDiaDiem")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("TenDiaDiem")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("MaDiaDiem");
-
-                    b.ToTable("DiaDiem");
-                });
-
             modelBuilder.Entity("DAL.Entities.DoanDulich", b =>
                 {
                     b.Property<int>("MaDoan")
@@ -150,35 +144,6 @@ namespace DAL.Migrations
                     b.HasIndex("TourId");
 
                     b.ToTable("DoanDuLich");
-                });
-
-            modelBuilder.Entity("DAL.Entities.GiaTour", b =>
-                {
-                    b.Property<int>("MaGia")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("MaTour")
-                        .HasColumnType("int");
-
-                    b.Property<float>("ThanhTien")
-                        .HasColumnType("real");
-
-                    b.Property<DateTime>("ThoiGianBatDau")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("ThoiGianKetThuc")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int?>("TourId")
-                        .HasColumnType("int");
-
-                    b.HasKey("MaGia");
-
-                    b.HasIndex("TourId");
-
-                    b.ToTable("GiaTour");
                 });
 
             modelBuilder.Entity("DAL.Entities.Khach", b =>
@@ -226,40 +191,40 @@ namespace DAL.Migrations
                     b.ToTable("LoaiChiPhi");
                 });
 
-            modelBuilder.Entity("DAL.Entities.LoaiHinhDuLich", b =>
+            modelBuilder.Entity("DAL.Entities.Location", b =>
                 {
-                    b.Property<int>("LoaiHinhDuLichId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("TenLoaiHinh")
+                    b.Property<string>("LocationName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("LoaiHinhDuLichId");
+                    b.HasKey("Id");
 
-                    b.ToTable("LoaiHinhDuLich");
+                    b.ToTable("Locations");
 
                     b.HasData(
                         new
                         {
-                            LoaiHinhDuLichId = 1,
-                            TenLoaiHinh = "Du lịch biển"
+                            Id = 1,
+                            LocationName = "Đà Lạt"
                         },
                         new
                         {
-                            LoaiHinhDuLichId = 2,
-                            TenLoaiHinh = "Du lịch quê"
+                            Id = 2,
+                            LocationName = "Hà Nội"
                         },
                         new
                         {
-                            LoaiHinhDuLichId = 3,
-                            TenLoaiHinh = "Du lịch dã ngoại"
+                            Id = 3,
+                            LocationName = "Hồ Chí Minh"
                         },
                         new
                         {
-                            LoaiHinhDuLichId = 4,
-                            TenLoaiHinh = "Du lịch ẩm thực"
+                            Id = 4,
+                            LocationName = "Phú Quốc"
                         });
                 });
 
@@ -309,6 +274,32 @@ namespace DAL.Migrations
                     b.ToTable("PhanBo_NhanVien_Doan");
                 });
 
+            modelBuilder.Entity("DAL.Entities.Price", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("EndDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<float>("Money")
+                        .HasColumnType("real");
+
+                    b.Property<DateTime>("StartDay")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("TourId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TourId");
+
+                    b.ToTable("GiaTour");
+                });
+
             modelBuilder.Entity("DAL.Entities.Tour", b =>
                 {
                     b.Property<int>("TourId")
@@ -316,7 +307,7 @@ namespace DAL.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("LoaiHinhDuLichId")
+                    b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
                     b.Property<string>("MoTa")
@@ -327,9 +318,43 @@ namespace DAL.Migrations
 
                     b.HasKey("TourId");
 
-                    b.HasIndex("LoaiHinhDuLichId");
+                    b.HasIndex("CategoryId");
 
                     b.ToTable("Tours");
+
+                    b.HasData(
+                        new
+                        {
+                            TourId = 1,
+                            CategoryId = 1,
+                            MoTa = "Du lịch Đà Lạt- Thiền Viện Trúc Lâm Quê Garden - Kim Ngân Hills Resort từ Sài Gòn 2021. Khi tham gia tour cùng Du Lịch Việtngoài việc thưởng lãm vẻ đẹp đặc sắc của các loài hoa, khung cảnh thơ mộng với khí trời se lạnh của vùng đất phố núi, Quý khách sẽ được cảm nhận Đà Lạt chính là địa điểm du lịch đi hoài không chán bởi những “tọa độ sống ảo đẹp không góc chết” mang những phong cách hoàn toàn riêng biệt. Nếu như Đà Lạt View Coffee nổi danh với hình ảnh “Cổng trời thứ 2” phá cách và độc đáo, thì Quê Garden cũng đang làm mưa làm gió trên các trang mạng xã hội, là một khu vườn với lối kiến trúc Nhật Bản nằm giữa cao nguyên Lâm Viên. Cuối cùng là ngôi làng cổ kính Châu Âu - Kim Ngân Hills với cả bầu trời thú cưng hiền lành cùng khu ẩm thực đặc biệt mang dấu.",
+                            TenGoi = "Du lịch Đà Lạt - QUÊ Garden - Đà Lạt View Coffee - Kim Ngân Hills Resort từ Sài Gòn 2021"
+                        });
+                });
+
+            modelBuilder.Entity("DAL.Entities.TourDetail", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("LocationId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Serial")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TourId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("LocationId");
+
+                    b.HasIndex("TourId");
+
+                    b.ToTable("ChiTietTour");
                 });
 
             modelBuilder.Entity("DAL.Entities.ChiPhi", b =>
@@ -362,34 +387,10 @@ namespace DAL.Migrations
                     b.Navigation("Khach");
                 });
 
-            modelBuilder.Entity("DAL.Entities.ChiTietTour", b =>
-                {
-                    b.HasOne("DAL.Entities.DiaDiem", "DiaDiem")
-                        .WithMany("DSChiTietTour")
-                        .HasForeignKey("DiaDiemMaDiaDiem");
-
-                    b.HasOne("DAL.Entities.Tour", "Tour")
-                        .WithMany("DSChiTietTour")
-                        .HasForeignKey("TourId");
-
-                    b.Navigation("DiaDiem");
-
-                    b.Navigation("Tour");
-                });
-
             modelBuilder.Entity("DAL.Entities.DoanDulich", b =>
                 {
                     b.HasOne("DAL.Entities.Tour", "Tour")
                         .WithMany("DSDoanDulich")
-                        .HasForeignKey("TourId");
-
-                    b.Navigation("Tour");
-                });
-
-            modelBuilder.Entity("DAL.Entities.GiaTour", b =>
-                {
-                    b.HasOne("DAL.Entities.Tour", "Tour")
-                        .WithMany("DSGiaTour")
                         .HasForeignKey("TourId");
 
                     b.Navigation("Tour");
@@ -410,20 +411,50 @@ namespace DAL.Migrations
                     b.Navigation("NhanVien");
                 });
 
-            modelBuilder.Entity("DAL.Entities.Tour", b =>
+            modelBuilder.Entity("DAL.Entities.Price", b =>
                 {
-                    b.HasOne("DAL.Entities.LoaiHinhDuLich", "LoaiHinhDuLich")
-                        .WithMany("Tours")
-                        .HasForeignKey("LoaiHinhDuLichId")
+                    b.HasOne("DAL.Entities.Tour", "Tour")
+                        .WithMany("Prices")
+                        .HasForeignKey("TourId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("LoaiHinhDuLich");
+                    b.Navigation("Tour");
                 });
 
-            modelBuilder.Entity("DAL.Entities.DiaDiem", b =>
+            modelBuilder.Entity("DAL.Entities.Tour", b =>
                 {
-                    b.Navigation("DSChiTietTour");
+                    b.HasOne("DAL.Entities.Category", "Category")
+                        .WithMany("Tours")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("DAL.Entities.TourDetail", b =>
+                {
+                    b.HasOne("DAL.Entities.Location", "Location")
+                        .WithMany("TourDetails")
+                        .HasForeignKey("LocationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DAL.Entities.Tour", "Tour")
+                        .WithMany("TourDetails")
+                        .HasForeignKey("TourId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Location");
+
+                    b.Navigation("Tour");
+                });
+
+            modelBuilder.Entity("DAL.Entities.Category", b =>
+                {
+                    b.Navigation("Tours");
                 });
 
             modelBuilder.Entity("DAL.Entities.DoanDulich", b =>
@@ -445,9 +476,9 @@ namespace DAL.Migrations
                     b.Navigation("DSChiPhi");
                 });
 
-            modelBuilder.Entity("DAL.Entities.LoaiHinhDuLich", b =>
+            modelBuilder.Entity("DAL.Entities.Location", b =>
                 {
-                    b.Navigation("Tours");
+                    b.Navigation("TourDetails");
                 });
 
             modelBuilder.Entity("DAL.Entities.NhanVien", b =>
@@ -457,11 +488,11 @@ namespace DAL.Migrations
 
             modelBuilder.Entity("DAL.Entities.Tour", b =>
                 {
-                    b.Navigation("DSChiTietTour");
-
                     b.Navigation("DSDoanDulich");
 
-                    b.Navigation("DSGiaTour");
+                    b.Navigation("Prices");
+
+                    b.Navigation("TourDetails");
                 });
 #pragma warning restore 612, 618
         }

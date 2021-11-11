@@ -14,12 +14,10 @@ namespace DAL.Entities
         public int TourId { get; set; }
         public string TenGoi { get; set; }
         public string MoTa { get; set; }
-        public int LoaiHinhDuLichId { get; set; }
-        [ForeignKey("LoaiHinhDuLichId")]
-        [Required]
-        public LoaiHinhDuLich LoaiHinhDuLich { get; set; }
+        public int CategoryId { get; set; }
+        public Category Category { get; set; }
         public ICollection<DoanDulich> DSDoanDulich { get; set; }
-        public ICollection<GiaTour> DSGiaTour { get; set; }
-        public ICollection<ChiTietTour> DSChiTietTour { get; set; }
+        public ICollection<Price> Prices { get; set; }
+        public ICollection<TourDetail> TourDetails { get; set; }
     }
 }
