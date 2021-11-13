@@ -59,6 +59,7 @@ namespace BUS
                 _context.ChiTietTour.Add(tourDetail);
             }        
             var result = Update(tourUpdate);
+            Save();
             return result;    
         }
 
@@ -70,14 +71,12 @@ namespace BUS
 
         public Tour InsertTour(Tour currentTour)
         {
-            // remove all tour details of this tour
-            var tourDetails = _context.ChiTietTour.Where(x => x.TourId == currentTour.TourId).ToList();
-            _context.ChiTietTour.RemoveRange(tourDetails);
-
+            var currentDetails = currentTour.TourDetails;
             // add new tour details
             var tourUpdate = new Tour();
             tourUpdate = currentTour;
             tourUpdate.TourDetails = new List<TourDetail>();
+            var result = Insert(tourUpdate);
             foreach (var item in currentTour.TourDetails)
             {
                 var tourDetail = new TourDetail() {
@@ -87,7 +86,7 @@ namespace BUS
                 };
                 tourUpdate.TourDetails.Add(tourDetail);
             }        
-            var result = Update(tourUpdate);
+            Save();
             return result;  
         }
     }

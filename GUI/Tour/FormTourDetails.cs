@@ -94,7 +94,13 @@ namespace GUI
             {
                 MessageBox.Show("Please input price");
                 return;
-            } 
+            }
+            // check if price is numberic
+            if (!CheckNumberic(txtPrice.Text))
+            {
+                MessageBox.Show("Price must be numberic");
+                return;
+            }
             Price giaTour = new Price();
             giaTour.Money = ConvertStringToFloat(txtPrice.Text);
             giaTour.TourId = _currentTour.TourId;
@@ -120,23 +126,34 @@ namespace GUI
 
         private void btnAddLocation_Click_1(object sender, EventArgs e)
         {
-            if (CheckNumberic(txtSerial.Text))
+            // check is txtSerial is filled
+            if (txtSerial.Text == "")
             {
-                TourDetail chiTiet = new TourDetail()
-                {
-                    LocationId = Int32.Parse(cbbLocation.SelectedValue.ToString()),
-                    TourId   = _currentTour.TourId,
-                    Serial = Convert.ToInt32(txtSerial.Text)
-                };
-                //bLocationDetail.Insert(chiTiet);
-                chiTiet.Location = new Location() { LocationName = cbbLocation.Text };
-                _currentTour.TourDetails.Add(chiTiet);
+                MessageBox.Show("Please input serial");
+                return;
             }
-            else
+            // check if serial is numberic
+            if (!CheckNumberic(txtSerial.Text))
             {
-                // Call message box
                 MessageBox.Show("Serial must be numberic");
+                return;
             }
+            // check is serial exit in _currentTour.TourDetails
+            if (_currentTour.TourDetails.Where(x => x.Serial == Convert.ToInt32(txtSerial.Text)).Count() > 0)
+            {
+                MessageBox.Show("Serial is exit");
+                return;
+            }
+            TourDetail chiTiet = new TourDetail()
+            {
+                LocationId = Int32.Parse(cbbLocation.SelectedValue.ToString()),
+                TourId   = _currentTour.TourId,
+                Serial = Convert.ToInt32(txtSerial.Text)
+            };
+            //bLocationDetail.Insert(chiTiet);
+            chiTiet.Location = new Location() { LocationName = cbbLocation.Text };
+            _currentTour.TourDetails.Add(chiTiet);
+        
             var locationDto = bLoation.mapper.Map<List<TourDetail>, List<DTO_ChiTietTour>>(_currentTour.TourDetails.ToList());
             dtgvLocation.DataSource = locationDto;
             //message suscess
@@ -192,6 +209,18 @@ namespace GUI
 
         private void btnUpdatePrice_Click(object sender, EventArgs e)
         {
+            // check if all fields are filled
+            if (txtPrice.Text == "")
+            {
+                MessageBox.Show("Please input price");
+                return;
+            }
+            // check if price is numberic
+            if (!CheckNumberic(txtPrice.Text))
+            {
+                MessageBox.Show("Price must be numberic");
+                return;
+            }
             int index = dtgvPrice.CurrentCell.RowIndex;
             Price price = _currentTour.Prices.ElementAt(index);
             price.Money = ConvertStringToFloat(txtPrice.Text);
@@ -243,6 +272,24 @@ namespace GUI
         //update location
         private void btnUpdateLocation_Click(object sender, EventArgs e)
         {
+            // check is txtSerial is filled
+            if (txtSerial.Text == "")
+            {
+                MessageBox.Show("Please input serial");
+                return;
+            }
+            // check if serial is numberic
+            if (!CheckNumberic(txtSerial.Text))
+            {
+                MessageBox.Show("Serial must be numberic");
+                return;
+            }
+            // check is serial exit in _currentTour.TourDetails
+            if (_currentTour.TourDetails.Where(x => x.Serial == Convert.ToInt32(txtSerial.Text)).Count() > 0)
+            {
+                MessageBox.Show("Serial is exit");
+                return;
+            }
             int index = dtgvLocation.CurrentCell.RowIndex;
             TourDetail chiTiet = _currentTour.TourDetails.ElementAt(index);
             
