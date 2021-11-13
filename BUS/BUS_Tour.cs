@@ -39,10 +39,27 @@ namespace BUS
             return result;
         }
 
-        public Tour UpdateTour (Tour tour)
+        public Tour UpdateTour (Tour currentTour)
         {
-            var result = Update(tour);
-            return result;
+            var currentDetails = currentTour.TourDetails;
+            //remove all tour details of current tour
+            var tourDetails = _context.ChiTietTour.Where(x => x.TourId == currentTour.TourId).ToList();
+            _context.ChiTietTour.RemoveRange(tourDetails);
+            // add new tour details
+            var tourUpdate = new Tour();
+            tourUpdate = currentTour;
+            tourUpdate.TourDetails = new List<TourDetail>();
+            foreach (var item in currentDetails)
+            {
+                var tourDetail = new TourDetail() {
+                    LocationId = item.LocationId,
+                    TourId = currentTour.TourId,
+                    Serial = item.Serial
+                };
+                _context.ChiTietTour.Add(tourDetail);
+            }        
+            var result = Update(tourUpdate);
+            return result;    
         }
 
         public bool DeleteTour (int tourId)
@@ -51,5 +68,27 @@ namespace BUS
             return result;
         }
 
+        public Tour InsertTour(Tour currentTour)
+        {
+            // remove all tour details of this tour
+            var tourDetails = _context.ChiTietTour.Where(x => x.TourId == currentTour.TourId).ToList();
+            _context.ChiTietTour.RemoveRange(tourDetails);
+
+            // add new tour details
+            var tourUpdate = new Tour();
+            tourUpdate = currentTour;
+            tourUpdate.TourDetails = new List<TourDetail>();
+            foreach (var item in currentTour.TourDetails)
+            {
+                var tourDetail = new TourDetail() {
+                    LocationId = item.LocationId,
+                    TourId = currentTour.TourId,
+                    Serial = item.Serial
+                };
+                tourUpdate.TourDetails.Add(tourDetail);
+            }        
+            var result = Update(tourUpdate);
+            return result;  
+        }
     }
 }

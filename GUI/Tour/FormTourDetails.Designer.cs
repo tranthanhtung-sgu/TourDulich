@@ -30,11 +30,20 @@ namespace GUI
         private void InitializeComponent()
         {
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtSerial = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbbLocation = new System.Windows.Forms.ComboBox();
+            this.btnDeleteLocation = new FontAwesome.Sharp.IconButton();
+            this.btnUpdateLocation = new FontAwesome.Sharp.IconButton();
             this.dtgvLocation = new System.Windows.Forms.DataGridView();
+            this.btnAddLocation = new FontAwesome.Sharp.IconButton();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnDelelePrice = new FontAwesome.Sharp.IconButton();
+            this.btnUpdatePrice = new FontAwesome.Sharp.IconButton();
             this.dtpickerEnd = new System.Windows.Forms.DateTimePicker();
             this.dtpickerStart = new System.Windows.Forms.DateTimePicker();
+            this.btnAddPrice = new FontAwesome.Sharp.IconButton();
             this.dtgvPrice = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -42,20 +51,13 @@ namespace GUI
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbbCategory = new System.Windows.Forms.ComboBox();
+            this.btnSaveNV = new FontAwesome.Sharp.IconButton();
             this.label5 = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtTourName = new System.Windows.Forms.TextBox();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.btnSaveNV = new FontAwesome.Sharp.IconButton();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
-            this.iconButton3 = new FontAwesome.Sharp.IconButton();
-            this.iconButton4 = new FontAwesome.Sharp.IconButton();
-            this.iconButton5 = new FontAwesome.Sharp.IconButton();
-            this.iconButton6 = new FontAwesome.Sharp.IconButton();
-            this.iconButton7 = new FontAwesome.Sharp.IconButton();
+            this.btnBackTourList = new FontAwesome.Sharp.IconButton();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvLocation)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -65,11 +67,13 @@ namespace GUI
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.iconButton5);
-            this.groupBox3.Controls.Add(this.listView1);
-            this.groupBox3.Controls.Add(this.iconButton6);
+            this.groupBox3.Controls.Add(this.txtSerial);
+            this.groupBox3.Controls.Add(this.label1);
+            this.groupBox3.Controls.Add(this.cbbLocation);
+            this.groupBox3.Controls.Add(this.btnDeleteLocation);
+            this.groupBox3.Controls.Add(this.btnUpdateLocation);
             this.groupBox3.Controls.Add(this.dtgvLocation);
-            this.groupBox3.Controls.Add(this.iconButton7);
+            this.groupBox3.Controls.Add(this.btnAddLocation);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox3.Location = new System.Drawing.Point(12, 239);
@@ -78,6 +82,73 @@ namespace GUI
             this.groupBox3.TabIndex = 29;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Quản lý địa điểm";
+            // 
+            // txtSerial
+            // 
+            this.txtSerial.Location = new System.Drawing.Point(126, 81);
+            this.txtSerial.Name = "txtSerial";
+            this.txtSerial.Size = new System.Drawing.Size(122, 25);
+            this.txtSerial.TabIndex = 54;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(6, 86);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 15);
+            this.label1.TabIndex = 53;
+            this.label1.Text = "Thứ tự";
+            // 
+            // cbbLocation
+            // 
+            this.cbbLocation.FormattingEnabled = true;
+            this.cbbLocation.Location = new System.Drawing.Point(126, 39);
+            this.cbbLocation.Name = "cbbLocation";
+            this.cbbLocation.Size = new System.Drawing.Size(121, 25);
+            this.cbbLocation.TabIndex = 52;
+            // 
+            // btnDeleteLocation
+            // 
+            this.btnDeleteLocation.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnDeleteLocation.FlatAppearance.BorderSize = 0;
+            this.btnDeleteLocation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteLocation.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnDeleteLocation.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            this.btnDeleteLocation.IconColor = System.Drawing.Color.Black;
+            this.btnDeleteLocation.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnDeleteLocation.IconSize = 19;
+            this.btnDeleteLocation.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDeleteLocation.Location = new System.Drawing.Point(92, 185);
+            this.btnDeleteLocation.Name = "btnDeleteLocation";
+            this.btnDeleteLocation.Size = new System.Drawing.Size(80, 29);
+            this.btnDeleteLocation.TabIndex = 50;
+            this.btnDeleteLocation.Text = "Xóa";
+            this.btnDeleteLocation.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDeleteLocation.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDeleteLocation.UseVisualStyleBackColor = true;
+            this.btnDeleteLocation.Click += new System.EventHandler(this.btnDeleteLocation_Click);
+            // 
+            // btnUpdateLocation
+            // 
+            this.btnUpdateLocation.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnUpdateLocation.FlatAppearance.BorderSize = 0;
+            this.btnUpdateLocation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdateLocation.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnUpdateLocation.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            this.btnUpdateLocation.IconColor = System.Drawing.Color.Black;
+            this.btnUpdateLocation.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnUpdateLocation.IconSize = 19;
+            this.btnUpdateLocation.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpdateLocation.Location = new System.Drawing.Point(172, 185);
+            this.btnUpdateLocation.Name = "btnUpdateLocation";
+            this.btnUpdateLocation.Size = new System.Drawing.Size(80, 29);
+            this.btnUpdateLocation.TabIndex = 51;
+            this.btnUpdateLocation.Text = "Sửa ";
+            this.btnUpdateLocation.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpdateLocation.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnUpdateLocation.UseVisualStyleBackColor = true;
+            this.btnUpdateLocation.Click += new System.EventHandler(this.btnUpdateLocation_Click);
             // 
             // dtgvLocation
             // 
@@ -92,24 +163,46 @@ namespace GUI
             this.dtgvLocation.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvLocation.Size = new System.Drawing.Size(340, 175);
             this.dtgvLocation.TabIndex = 25;
+            this.dtgvLocation.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvLocation_CellClick);
+            // 
+            // btnAddLocation
+            // 
+            this.btnAddLocation.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAddLocation.FlatAppearance.BorderSize = 0;
+            this.btnAddLocation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddLocation.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnAddLocation.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.btnAddLocation.IconColor = System.Drawing.Color.Black;
+            this.btnAddLocation.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAddLocation.IconSize = 19;
+            this.btnAddLocation.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddLocation.Location = new System.Drawing.Point(11, 185);
+            this.btnAddLocation.Name = "btnAddLocation";
+            this.btnAddLocation.Size = new System.Drawing.Size(80, 29);
+            this.btnAddLocation.TabIndex = 49;
+            this.btnAddLocation.Text = "Thêm ";
+            this.btnAddLocation.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddLocation.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAddLocation.UseVisualStyleBackColor = true;
+            this.btnAddLocation.Click += new System.EventHandler(this.btnAddLocation_Click_1);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(8, 27);
+            this.label10.Location = new System.Drawing.Point(8, 44);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(111, 15);
             this.label10.TabIndex = 19;
-            this.label10.Text = "Danh sách địa điểm";
+            this.label10.Text = "Danh sách địa điểm";
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.iconButton3);
-            this.groupBox2.Controls.Add(this.iconButton2);
+            this.groupBox2.Controls.Add(this.btnDelelePrice);
+            this.groupBox2.Controls.Add(this.btnUpdatePrice);
             this.groupBox2.Controls.Add(this.dtpickerEnd);
             this.groupBox2.Controls.Add(this.dtpickerStart);
-            this.groupBox2.Controls.Add(this.iconButton4);
+            this.groupBox2.Controls.Add(this.btnAddPrice);
             this.groupBox2.Controls.Add(this.dtgvPrice);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label6);
@@ -122,6 +215,48 @@ namespace GUI
             this.groupBox2.TabIndex = 28;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Quản lý giá";
+            // 
+            // btnDelelePrice
+            // 
+            this.btnDelelePrice.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnDelelePrice.FlatAppearance.BorderSize = 0;
+            this.btnDelelePrice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelelePrice.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnDelelePrice.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            this.btnDelelePrice.IconColor = System.Drawing.Color.Black;
+            this.btnDelelePrice.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnDelelePrice.IconSize = 19;
+            this.btnDelelePrice.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDelelePrice.Location = new System.Drawing.Point(87, 154);
+            this.btnDelelePrice.Name = "btnDelelePrice";
+            this.btnDelelePrice.Size = new System.Drawing.Size(80, 29);
+            this.btnDelelePrice.TabIndex = 47;
+            this.btnDelelePrice.Text = "Xóa";
+            this.btnDelelePrice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDelelePrice.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDelelePrice.UseVisualStyleBackColor = true;
+            this.btnDelelePrice.Click += new System.EventHandler(this.btnDelelePrice_Click);
+            // 
+            // btnUpdatePrice
+            // 
+            this.btnUpdatePrice.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnUpdatePrice.FlatAppearance.BorderSize = 0;
+            this.btnUpdatePrice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdatePrice.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnUpdatePrice.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            this.btnUpdatePrice.IconColor = System.Drawing.Color.Black;
+            this.btnUpdatePrice.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnUpdatePrice.IconSize = 19;
+            this.btnUpdatePrice.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpdatePrice.Location = new System.Drawing.Point(167, 154);
+            this.btnUpdatePrice.Name = "btnUpdatePrice";
+            this.btnUpdatePrice.Size = new System.Drawing.Size(80, 29);
+            this.btnUpdatePrice.TabIndex = 48;
+            this.btnUpdatePrice.Text = "Sửa ";
+            this.btnUpdatePrice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpdatePrice.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnUpdatePrice.UseVisualStyleBackColor = true;
+            this.btnUpdatePrice.Click += new System.EventHandler(this.btnUpdatePrice_Click);
             // 
             // dtpickerEnd
             // 
@@ -140,6 +275,28 @@ namespace GUI
             this.dtpickerStart.Name = "dtpickerStart";
             this.dtpickerStart.Size = new System.Drawing.Size(122, 25);
             this.dtpickerStart.TabIndex = 37;
+            this.dtpickerStart.ValueChanged += new System.EventHandler(this.dtpickerStart_ValueChanged);
+            // 
+            // btnAddPrice
+            // 
+            this.btnAddPrice.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAddPrice.FlatAppearance.BorderSize = 0;
+            this.btnAddPrice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddPrice.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnAddPrice.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.btnAddPrice.IconColor = System.Drawing.Color.Black;
+            this.btnAddPrice.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAddPrice.IconSize = 19;
+            this.btnAddPrice.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddPrice.Location = new System.Drawing.Point(6, 154);
+            this.btnAddPrice.Name = "btnAddPrice";
+            this.btnAddPrice.Size = new System.Drawing.Size(80, 29);
+            this.btnAddPrice.TabIndex = 46;
+            this.btnAddPrice.Text = "Thêm ";
+            this.btnAddPrice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddPrice.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAddPrice.UseVisualStyleBackColor = true;
+            this.btnAddPrice.Click += new System.EventHandler(this.btnAddPrice_Click_1);
             // 
             // dtgvPrice
             // 
@@ -154,6 +311,7 @@ namespace GUI
             this.dtgvPrice.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvPrice.Size = new System.Drawing.Size(340, 182);
             this.dtgvPrice.TabIndex = 24;
+            this.dtgvPrice.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvPrice_CellClick);
             // 
             // label7
             // 
@@ -204,7 +362,7 @@ namespace GUI
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox1.Location = new System.Drawing.Point(634, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(420, 460);
+            this.groupBox1.Size = new System.Drawing.Size(398, 460);
             this.groupBox1.TabIndex = 36;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin chính";
@@ -216,6 +374,27 @@ namespace GUI
             this.cbbCategory.Name = "cbbCategory";
             this.cbbCategory.Size = new System.Drawing.Size(293, 25);
             this.cbbCategory.TabIndex = 36;
+            // 
+            // btnSaveNV
+            // 
+            this.btnSaveNV.FlatAppearance.BorderSize = 0;
+            this.btnSaveNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveNV.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSaveNV.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnSaveNV.IconChar = FontAwesome.Sharp.IconChar.Save;
+            this.btnSaveNV.IconColor = System.Drawing.Color.Black;
+            this.btnSaveNV.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSaveNV.IconSize = 19;
+            this.btnSaveNV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSaveNV.Location = new System.Drawing.Point(965, 478);
+            this.btnSaveNV.Name = "btnSaveNV";
+            this.btnSaveNV.Size = new System.Drawing.Size(67, 34);
+            this.btnSaveNV.TabIndex = 44;
+            this.btnSaveNV.Text = "Lưu";
+            this.btnSaveNV.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSaveNV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSaveNV.UseVisualStyleBackColor = true;
+            this.btnSaveNV.Click += new System.EventHandler(this.btnSaveNV_Click);
             // 
             // label5
             // 
@@ -264,182 +443,34 @@ namespace GUI
             this.txtTourName.Size = new System.Drawing.Size(293, 23);
             this.txtTourName.TabIndex = 29;
             // 
-            // listView1
+            // btnBackTourList
             // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(11, 49);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(236, 120);
-            this.listView1.TabIndex = 40;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            // 
-            // btnSaveNV
-            // 
-            this.btnSaveNV.FlatAppearance.BorderSize = 0;
-            this.btnSaveNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaveNV.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnSaveNV.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnSaveNV.IconChar = FontAwesome.Sharp.IconChar.Save;
-            this.btnSaveNV.IconColor = System.Drawing.Color.Black;
-            this.btnSaveNV.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSaveNV.IconSize = 19;
-            this.btnSaveNV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSaveNV.Location = new System.Drawing.Point(947, 478);
-            this.btnSaveNV.Name = "btnSaveNV";
-            this.btnSaveNV.Size = new System.Drawing.Size(67, 34);
-            this.btnSaveNV.TabIndex = 44;
-            this.btnSaveNV.Text = "Lưu";
-            this.btnSaveNV.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSaveNV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSaveNV.UseVisualStyleBackColor = true;
-            // 
-            // iconButton1
-            // 
-            this.iconButton1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.iconButton1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Backspace;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 19;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(18, 478);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(83, 34);
-            this.iconButton1.TabIndex = 45;
-            this.iconButton1.Text = "Quay lại";
-            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton1.UseVisualStyleBackColor = true;
-            // 
-            // iconButton2
-            // 
-            this.iconButton2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.iconButton2.FlatAppearance.BorderSize = 0;
-            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Edit;
-            this.iconButton2.IconColor = System.Drawing.Color.Black;
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.IconSize = 19;
-            this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.Location = new System.Drawing.Point(167, 154);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(80, 29);
-            this.iconButton2.TabIndex = 48;
-            this.iconButton2.Text = "Sửa ";
-            this.iconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton2.UseVisualStyleBackColor = true;
-            // 
-            // iconButton3
-            // 
-            this.iconButton3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.iconButton3.FlatAppearance.BorderSize = 0;
-            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
-            this.iconButton3.IconColor = System.Drawing.Color.Black;
-            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton3.IconSize = 19;
-            this.iconButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton3.Location = new System.Drawing.Point(87, 154);
-            this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Size = new System.Drawing.Size(80, 29);
-            this.iconButton3.TabIndex = 47;
-            this.iconButton3.Text = "Xóa";
-            this.iconButton3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton3.UseVisualStyleBackColor = true;
-            // 
-            // iconButton4
-            // 
-            this.iconButton4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.iconButton4.FlatAppearance.BorderSize = 0;
-            this.iconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.Plus;
-            this.iconButton4.IconColor = System.Drawing.Color.Black;
-            this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton4.IconSize = 19;
-            this.iconButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton4.Location = new System.Drawing.Point(6, 154);
-            this.iconButton4.Name = "iconButton4";
-            this.iconButton4.Size = new System.Drawing.Size(80, 29);
-            this.iconButton4.TabIndex = 46;
-            this.iconButton4.Text = "Thêm ";
-            this.iconButton4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton4.UseVisualStyleBackColor = true;
-            // 
-            // iconButton5
-            // 
-            this.iconButton5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.iconButton5.FlatAppearance.BorderSize = 0;
-            this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
-            this.iconButton5.IconColor = System.Drawing.Color.Black;
-            this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton5.IconSize = 19;
-            this.iconButton5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton5.Location = new System.Drawing.Point(92, 185);
-            this.iconButton5.Name = "iconButton5";
-            this.iconButton5.Size = new System.Drawing.Size(80, 29);
-            this.iconButton5.TabIndex = 50;
-            this.iconButton5.Text = "Xóa";
-            this.iconButton5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton5.UseVisualStyleBackColor = true;
-            // 
-            // iconButton6
-            // 
-            this.iconButton6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.iconButton6.FlatAppearance.BorderSize = 0;
-            this.iconButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.iconButton6.IconChar = FontAwesome.Sharp.IconChar.Edit;
-            this.iconButton6.IconColor = System.Drawing.Color.Black;
-            this.iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton6.IconSize = 19;
-            this.iconButton6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton6.Location = new System.Drawing.Point(172, 185);
-            this.iconButton6.Name = "iconButton6";
-            this.iconButton6.Size = new System.Drawing.Size(80, 29);
-            this.iconButton6.TabIndex = 51;
-            this.iconButton6.Text = "Sửa ";
-            this.iconButton6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton6.UseVisualStyleBackColor = true;
-            // 
-            // iconButton7
-            // 
-            this.iconButton7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.iconButton7.FlatAppearance.BorderSize = 0;
-            this.iconButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.iconButton7.IconChar = FontAwesome.Sharp.IconChar.Plus;
-            this.iconButton7.IconColor = System.Drawing.Color.Black;
-            this.iconButton7.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton7.IconSize = 19;
-            this.iconButton7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton7.Location = new System.Drawing.Point(11, 185);
-            this.iconButton7.Name = "iconButton7";
-            this.iconButton7.Size = new System.Drawing.Size(80, 29);
-            this.iconButton7.TabIndex = 49;
-            this.iconButton7.Text = "Thêm ";
-            this.iconButton7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton7.UseVisualStyleBackColor = true;
+            this.btnBackTourList.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnBackTourList.FlatAppearance.BorderSize = 0;
+            this.btnBackTourList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBackTourList.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnBackTourList.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnBackTourList.IconChar = FontAwesome.Sharp.IconChar.Backspace;
+            this.btnBackTourList.IconColor = System.Drawing.Color.Black;
+            this.btnBackTourList.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBackTourList.IconSize = 19;
+            this.btnBackTourList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBackTourList.Location = new System.Drawing.Point(18, 478);
+            this.btnBackTourList.Name = "btnBackTourList";
+            this.btnBackTourList.Size = new System.Drawing.Size(83, 34);
+            this.btnBackTourList.TabIndex = 45;
+            this.btnBackTourList.Text = "Quay lại";
+            this.btnBackTourList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBackTourList.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBackTourList.UseVisualStyleBackColor = true;
+            this.btnBackTourList.Click += new System.EventHandler(this.btnBackTourList_Click);
             // 
             // FrmTourDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1044, 524);
-            this.Controls.Add(this.iconButton1);
+            this.Controls.Add(this.btnBackTourList);
             this.Controls.Add(this.btnSaveNV);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox3);
@@ -480,14 +511,16 @@ namespace GUI
         private System.Windows.Forms.TextBox txtTourName;
         private System.Windows.Forms.DateTimePicker dtpickerEnd;
         private System.Windows.Forms.DateTimePicker dtpickerStart;
-        private System.Windows.Forms.ListView listView1;
         private FontAwesome.Sharp.IconButton btnSaveNV;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private FontAwesome.Sharp.IconButton iconButton5;
-        private FontAwesome.Sharp.IconButton iconButton6;
-        private FontAwesome.Sharp.IconButton iconButton7;
-        private FontAwesome.Sharp.IconButton iconButton3;
-        private FontAwesome.Sharp.IconButton iconButton2;
-        private FontAwesome.Sharp.IconButton iconButton4;
+        private FontAwesome.Sharp.IconButton btnBackTourList;
+        private FontAwesome.Sharp.IconButton btnDeleteLocation;
+        private FontAwesome.Sharp.IconButton btnUpdateLocation;
+        private FontAwesome.Sharp.IconButton btnAddLocation;
+        private FontAwesome.Sharp.IconButton btnDelelePrice;
+        private FontAwesome.Sharp.IconButton btnUpdatePrice;
+        private FontAwesome.Sharp.IconButton btnAddPrice;
+        private System.Windows.Forms.TextBox txtSerial;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cbbLocation;
     }
 }

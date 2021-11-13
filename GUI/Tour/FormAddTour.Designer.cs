@@ -29,319 +29,117 @@ namespace GUI
         /// </summary>
         private void InitializeComponent()
         {
+            this.btnBackTourList = new FontAwesome.Sharp.IconButton();
+            this.cbbCategory = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtDescription = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.txtTourName = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtTourId = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.btnSaveNV = new FontAwesome.Sharp.IconButton();
-            this.iconButton3 = new FontAwesome.Sharp.IconButton();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
-            this.iconButton4 = new FontAwesome.Sharp.IconButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnDelelePrice = new FontAwesome.Sharp.IconButton();
+            this.btnUpdatePrice = new FontAwesome.Sharp.IconButton();
+            this.dtpickerEnd = new System.Windows.Forms.DateTimePicker();
+            this.dtpickerStart = new System.Windows.Forms.DateTimePicker();
+            this.btnAddPrice = new FontAwesome.Sharp.IconButton();
+            this.label10 = new System.Windows.Forms.Label();
+            this.dtgvPrice = new System.Windows.Forms.DataGridView();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtPrice = new System.Windows.Forms.TextBox();
+            this.txtSerial = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbbLocation = new System.Windows.Forms.ComboBox();
+            this.btnDeleteLocation = new FontAwesome.Sharp.IconButton();
+            this.btnUpdateLocation = new FontAwesome.Sharp.IconButton();
+            this.dtgvLocation = new System.Windows.Forms.DataGridView();
+            this.btnAddLocation = new FontAwesome.Sharp.IconButton();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvPrice)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvLocation)).BeginInit();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // btnBackTourList
+            // 
+            this.btnBackTourList.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnBackTourList.FlatAppearance.BorderSize = 0;
+            this.btnBackTourList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBackTourList.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnBackTourList.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnBackTourList.IconChar = FontAwesome.Sharp.IconChar.Backspace;
+            this.btnBackTourList.IconColor = System.Drawing.Color.Black;
+            this.btnBackTourList.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBackTourList.IconSize = 19;
+            this.btnBackTourList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBackTourList.Location = new System.Drawing.Point(7, 478);
+            this.btnBackTourList.Name = "btnBackTourList";
+            this.btnBackTourList.Size = new System.Drawing.Size(83, 34);
+            this.btnBackTourList.TabIndex = 50;
+            this.btnBackTourList.Text = "Quay lại";
+            this.btnBackTourList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBackTourList.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBackTourList.UseVisualStyleBackColor = true;
+            // 
+            // cbbCategory
+            // 
+            this.cbbCategory.FormattingEnabled = true;
+            this.cbbCategory.Location = new System.Drawing.Point(91, 62);
+            this.cbbCategory.Name = "cbbCategory";
+            this.cbbCategory.Size = new System.Drawing.Size(293, 25);
+            this.cbbCategory.TabIndex = 36;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(5, 182);
+            this.label5.Location = new System.Drawing.Point(10, 111);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(38, 15);
             this.label5.TabIndex = 35;
             this.label5.Text = "Mô tả";
             // 
-            // textBox3
+            // txtDescription
             // 
-            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox3.Location = new System.Drawing.Point(86, 182);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(293, 274);
-            this.textBox3.TabIndex = 34;
+            this.txtDescription.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtDescription.Location = new System.Drawing.Point(91, 111);
+            this.txtDescription.Multiline = true;
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(293, 306);
+            this.txtDescription.TabIndex = 34;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(5, 138);
+            this.label3.Location = new System.Drawing.Point(10, 67);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(56, 15);
             this.label3.TabIndex = 33;
             this.label3.Text = "Loại hình";
             // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(86, 138);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(293, 23);
-            this.textBox1.TabIndex = 32;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(5, 95);
+            this.label2.Location = new System.Drawing.Point(10, 24);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(50, 15);
             this.label2.TabIndex = 31;
             this.label2.Text = "Tên tour";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(5, 53);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 15);
-            this.label1.TabIndex = 30;
-            this.label1.Text = "Mã tour";
-            // 
             // txtTourName
             // 
             this.txtTourName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtTourName.Location = new System.Drawing.Point(86, 95);
+            this.txtTourName.Location = new System.Drawing.Point(91, 24);
             this.txtTourName.Name = "txtTourName";
             this.txtTourName.Size = new System.Drawing.Size(293, 23);
             this.txtTourName.TabIndex = 29;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txtTourId);
-            this.groupBox1.Controls.Add(this.txtTourName);
-            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox1.Location = new System.Drawing.Point(9, 25);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(420, 476);
-            this.groupBox1.TabIndex = 33;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Thông tin chính";
-            // 
-            // txtTourId
-            // 
-            this.txtTourId.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtTourId.Location = new System.Drawing.Point(86, 53);
-            this.txtTourId.Name = "txtTourId";
-            this.txtTourId.Size = new System.Drawing.Size(293, 23);
-            this.txtTourId.TabIndex = 28;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(292, 15);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(318, 213);
-            this.dataGridView1.TabIndex = 24;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(8, 33);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(43, 15);
-            this.label8.TabIndex = 23;
-            this.label8.Text = "Mã giá";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox6.Location = new System.Drawing.Point(126, 33);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(122, 23);
-            this.textBox6.TabIndex = 22;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.iconButton2);
-            this.groupBox3.Controls.Add(this.iconButton1);
-            this.groupBox3.Controls.Add(this.dataGridView2);
-            this.groupBox3.Controls.Add(this.textBox9);
-            this.groupBox3.Controls.Add(this.label11);
-            this.groupBox3.Controls.Add(this.textBox8);
-            this.groupBox3.Controls.Add(this.label10);
-            this.groupBox3.Controls.Add(this.textBox7);
-            this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox3.Location = new System.Drawing.Point(435, 278);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(616, 223);
-            this.groupBox3.TabIndex = 32;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Quản lý địa điểm";
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(292, 15);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 25;
-            this.dataGridView2.Size = new System.Drawing.Size(318, 188);
-            this.dataGridView2.TabIndex = 25;
-            // 
-            // textBox9
-            // 
-            this.textBox9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox9.Location = new System.Drawing.Point(126, 127);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(122, 23);
-            this.textBox9.TabIndex = 20;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label11.Location = new System.Drawing.Point(8, 130);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(41, 15);
-            this.label11.TabIndex = 21;
-            this.label11.Text = "Thứ tự";
-            // 
-            // textBox8
-            // 
-            this.textBox8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox8.Location = new System.Drawing.Point(126, 78);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(122, 23);
-            this.textBox8.TabIndex = 18;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(8, 81);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(74, 15);
-            this.label10.TabIndex = 19;
-            this.label10.Text = "Tên địa điểm";
-            // 
-            // textBox7
-            // 
-            this.textBox7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox7.Location = new System.Drawing.Point(126, 33);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(122, 23);
-            this.textBox7.TabIndex = 16;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(8, 36);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(73, 15);
-            this.label9.TabIndex = 17;
-            this.label9.Text = "Mã địa điểm";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.iconButton4);
-            this.groupBox2.Controls.Add(this.iconButton3);
-            this.groupBox2.Controls.Add(this.dataGridView1);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.textBox6);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.textBox5);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.textBox4);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox2.Location = new System.Drawing.Point(435, 25);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(616, 247);
-            this.groupBox2.TabIndex = 31;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Quản lý giá";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(8, 163);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(102, 15);
-            this.label7.TabIndex = 21;
-            this.label7.Text = "Thời gian kết thúc";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox5.Location = new System.Drawing.Point(126, 160);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(122, 23);
-            this.textBox5.TabIndex = 20;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(8, 117);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(99, 15);
-            this.label6.TabIndex = 19;
-            this.label6.Text = "Thời gian bắt đầu";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox4.Location = new System.Drawing.Point(126, 117);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(122, 23);
-            this.textBox4.TabIndex = 18;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(8, 75);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 15);
-            this.label4.TabIndex = 17;
-            this.label4.Text = "Giá tour";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.Location = new System.Drawing.Point(126, 75);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(122, 23);
-            this.textBox2.TabIndex = 16;
             // 
             // btnSaveNV
             // 
@@ -354,100 +152,314 @@ namespace GUI
             this.btnSaveNV.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSaveNV.IconSize = 19;
             this.btnSaveNV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSaveNV.Location = new System.Drawing.Point(978, 507);
+            this.btnSaveNV.Location = new System.Drawing.Point(944, 487);
             this.btnSaveNV.Name = "btnSaveNV";
             this.btnSaveNV.Size = new System.Drawing.Size(67, 34);
-            this.btnSaveNV.TabIndex = 45;
+            this.btnSaveNV.TabIndex = 49;
             this.btnSaveNV.Text = "Lưu";
             this.btnSaveNV.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSaveNV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSaveNV.UseVisualStyleBackColor = true;
             // 
-            // iconButton3
+            // groupBox1
             // 
-            this.iconButton3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.iconButton3.FlatAppearance.BorderSize = 0;
-            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
-            this.iconButton3.IconColor = System.Drawing.Color.Black;
-            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton3.IconSize = 19;
-            this.iconButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton3.Location = new System.Drawing.Point(30, 205);
-            this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Size = new System.Drawing.Size(80, 29);
-            this.iconButton3.TabIndex = 48;
-            this.iconButton3.Text = "Xóa";
-            this.iconButton3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton3.UseVisualStyleBackColor = true;
+            this.groupBox1.Controls.Add(this.cbbCategory);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.txtDescription);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.txtTourName);
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBox1.Location = new System.Drawing.Point(631, 21);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(420, 460);
+            this.groupBox1.TabIndex = 48;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Thông tin chính";
             // 
-            // iconButton1
+            // btnDelelePrice
             // 
-            this.iconButton1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 19;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(27, 178);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(80, 29);
-            this.iconButton1.TabIndex = 48;
-            this.iconButton1.Text = "Xóa";
-            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton1.UseVisualStyleBackColor = true;
+            this.btnDelelePrice.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnDelelePrice.FlatAppearance.BorderSize = 0;
+            this.btnDelelePrice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelelePrice.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnDelelePrice.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            this.btnDelelePrice.IconColor = System.Drawing.Color.Black;
+            this.btnDelelePrice.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnDelelePrice.IconSize = 19;
+            this.btnDelelePrice.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDelelePrice.Location = new System.Drawing.Point(295, 214);
+            this.btnDelelePrice.Name = "btnDelelePrice";
+            this.btnDelelePrice.Size = new System.Drawing.Size(80, 29);
+            this.btnDelelePrice.TabIndex = 47;
+            this.btnDelelePrice.Text = "Xóa";
+            this.btnDelelePrice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDelelePrice.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDelelePrice.UseVisualStyleBackColor = true;
             // 
-            // iconButton2
+            // btnUpdatePrice
             // 
-            this.iconButton2.FlatAppearance.BorderSize = 0;
-            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton2.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.iconButton2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Save;
-            this.iconButton2.IconColor = System.Drawing.Color.Black;
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.IconSize = 19;
-            this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.Location = new System.Drawing.Point(173, 173);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(67, 34);
-            this.iconButton2.TabIndex = 49;
-            this.iconButton2.Text = "Lưu";
-            this.iconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton2.UseVisualStyleBackColor = true;
+            this.btnUpdatePrice.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnUpdatePrice.FlatAppearance.BorderSize = 0;
+            this.btnUpdatePrice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdatePrice.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnUpdatePrice.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            this.btnUpdatePrice.IconColor = System.Drawing.Color.Black;
+            this.btnUpdatePrice.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnUpdatePrice.IconSize = 19;
+            this.btnUpdatePrice.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpdatePrice.Location = new System.Drawing.Point(375, 214);
+            this.btnUpdatePrice.Name = "btnUpdatePrice";
+            this.btnUpdatePrice.Size = new System.Drawing.Size(80, 29);
+            this.btnUpdatePrice.TabIndex = 48;
+            this.btnUpdatePrice.Text = "Sửa ";
+            this.btnUpdatePrice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpdatePrice.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnUpdatePrice.UseVisualStyleBackColor = true;
             // 
-            // iconButton4
+            // dtpickerEnd
             // 
-            this.iconButton4.FlatAppearance.BorderSize = 0;
-            this.iconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton4.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.iconButton4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.Save;
-            this.iconButton4.IconColor = System.Drawing.Color.Black;
-            this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton4.IconSize = 19;
-            this.iconButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton4.Location = new System.Drawing.Point(173, 203);
-            this.iconButton4.Name = "iconButton4";
-            this.iconButton4.Size = new System.Drawing.Size(67, 34);
-            this.iconButton4.TabIndex = 49;
-            this.iconButton4.Text = "Lưu";
-            this.iconButton4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton4.UseVisualStyleBackColor = true;
+            this.dtpickerEnd.CustomFormat = "dd/MM";
+            this.dtpickerEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpickerEnd.Location = new System.Drawing.Point(126, 104);
+            this.dtpickerEnd.Name = "dtpickerEnd";
+            this.dtpickerEnd.Size = new System.Drawing.Size(122, 25);
+            this.dtpickerEnd.TabIndex = 38;
+            // 
+            // dtpickerStart
+            // 
+            this.dtpickerStart.CustomFormat = "dd/MM";
+            this.dtpickerStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpickerStart.Location = new System.Drawing.Point(126, 62);
+            this.dtpickerStart.Name = "dtpickerStart";
+            this.dtpickerStart.Size = new System.Drawing.Size(122, 25);
+            this.dtpickerStart.TabIndex = 37;
+            // 
+            // btnAddPrice
+            // 
+            this.btnAddPrice.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAddPrice.FlatAppearance.BorderSize = 0;
+            this.btnAddPrice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddPrice.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnAddPrice.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.btnAddPrice.IconColor = System.Drawing.Color.Black;
+            this.btnAddPrice.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAddPrice.IconSize = 19;
+            this.btnAddPrice.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddPrice.Location = new System.Drawing.Point(214, 214);
+            this.btnAddPrice.Name = "btnAddPrice";
+            this.btnAddPrice.Size = new System.Drawing.Size(80, 29);
+            this.btnAddPrice.TabIndex = 46;
+            this.btnAddPrice.Text = "Thêm ";
+            this.btnAddPrice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddPrice.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAddPrice.UseVisualStyleBackColor = true;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label10.Location = new System.Drawing.Point(8, 44);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(111, 15);
+            this.label10.TabIndex = 19;
+            this.label10.Text = "Danh sách địa điểm";
+            // 
+            // dtgvPrice
+            // 
+            this.dtgvPrice.AllowUserToAddRows = false;
+            this.dtgvPrice.AllowUserToDeleteRows = false;
+            this.dtgvPrice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvPrice.Location = new System.Drawing.Point(270, 15);
+            this.dtgvPrice.Name = "dtgvPrice";
+            this.dtgvPrice.ReadOnly = true;
+            this.dtgvPrice.RowHeadersVisible = false;
+            this.dtgvPrice.RowTemplate.Height = 25;
+            this.dtgvPrice.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgvPrice.Size = new System.Drawing.Size(340, 182);
+            this.dtgvPrice.TabIndex = 24;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(8, 112);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(102, 15);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "Thời gian kết thúc";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(8, 66);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(99, 15);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "Thời gian bắt đầu";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(8, 24);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(49, 15);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "Giá tour";
+            // 
+            // txtPrice
+            // 
+            this.txtPrice.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtPrice.Location = new System.Drawing.Point(126, 24);
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.Size = new System.Drawing.Size(122, 23);
+            this.txtPrice.TabIndex = 16;
+            // 
+            // txtSerial
+            // 
+            this.txtSerial.Location = new System.Drawing.Point(126, 81);
+            this.txtSerial.Name = "txtSerial";
+            this.txtSerial.Size = new System.Drawing.Size(122, 25);
+            this.txtSerial.TabIndex = 54;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(6, 86);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 15);
+            this.label1.TabIndex = 53;
+            this.label1.Text = "Thứ tự";
+            // 
+            // cbbLocation
+            // 
+            this.cbbLocation.FormattingEnabled = true;
+            this.cbbLocation.Location = new System.Drawing.Point(126, 39);
+            this.cbbLocation.Name = "cbbLocation";
+            this.cbbLocation.Size = new System.Drawing.Size(121, 25);
+            this.cbbLocation.TabIndex = 52;
+            // 
+            // btnDeleteLocation
+            // 
+            this.btnDeleteLocation.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnDeleteLocation.FlatAppearance.BorderSize = 0;
+            this.btnDeleteLocation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteLocation.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnDeleteLocation.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            this.btnDeleteLocation.IconColor = System.Drawing.Color.Black;
+            this.btnDeleteLocation.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnDeleteLocation.IconSize = 19;
+            this.btnDeleteLocation.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDeleteLocation.Location = new System.Drawing.Point(300, 251);
+            this.btnDeleteLocation.Name = "btnDeleteLocation";
+            this.btnDeleteLocation.Size = new System.Drawing.Size(80, 29);
+            this.btnDeleteLocation.TabIndex = 50;
+            this.btnDeleteLocation.Text = "Xóa";
+            this.btnDeleteLocation.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDeleteLocation.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDeleteLocation.UseVisualStyleBackColor = true;
+            // 
+            // btnUpdateLocation
+            // 
+            this.btnUpdateLocation.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnUpdateLocation.FlatAppearance.BorderSize = 0;
+            this.btnUpdateLocation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdateLocation.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnUpdateLocation.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            this.btnUpdateLocation.IconColor = System.Drawing.Color.Black;
+            this.btnUpdateLocation.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnUpdateLocation.IconSize = 19;
+            this.btnUpdateLocation.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpdateLocation.Location = new System.Drawing.Point(380, 251);
+            this.btnUpdateLocation.Name = "btnUpdateLocation";
+            this.btnUpdateLocation.Size = new System.Drawing.Size(80, 29);
+            this.btnUpdateLocation.TabIndex = 51;
+            this.btnUpdateLocation.Text = "Sửa ";
+            this.btnUpdateLocation.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpdateLocation.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnUpdateLocation.UseVisualStyleBackColor = true;
+            // 
+            // dtgvLocation
+            // 
+            this.dtgvLocation.AllowUserToAddRows = false;
+            this.dtgvLocation.AllowUserToDeleteRows = false;
+            this.dtgvLocation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvLocation.Location = new System.Drawing.Point(270, 15);
+            this.dtgvLocation.Name = "dtgvLocation";
+            this.dtgvLocation.ReadOnly = true;
+            this.dtgvLocation.RowHeadersVisible = false;
+            this.dtgvLocation.RowTemplate.Height = 25;
+            this.dtgvLocation.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgvLocation.Size = new System.Drawing.Size(340, 175);
+            this.dtgvLocation.TabIndex = 25;
+            // 
+            // btnAddLocation
+            // 
+            this.btnAddLocation.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAddLocation.FlatAppearance.BorderSize = 0;
+            this.btnAddLocation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddLocation.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnAddLocation.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.btnAddLocation.IconColor = System.Drawing.Color.Black;
+            this.btnAddLocation.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAddLocation.IconSize = 19;
+            this.btnAddLocation.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddLocation.Location = new System.Drawing.Point(219, 251);
+            this.btnAddLocation.Name = "btnAddLocation";
+            this.btnAddLocation.Size = new System.Drawing.Size(80, 29);
+            this.btnAddLocation.TabIndex = 49;
+            this.btnAddLocation.Text = "Thêm ";
+            this.btnAddLocation.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddLocation.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAddLocation.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.txtSerial);
+            this.groupBox3.Controls.Add(this.label1);
+            this.groupBox3.Controls.Add(this.cbbLocation);
+            this.groupBox3.Controls.Add(this.btnDeleteLocation);
+            this.groupBox3.Controls.Add(this.btnUpdateLocation);
+            this.groupBox3.Controls.Add(this.dtgvLocation);
+            this.groupBox3.Controls.Add(this.btnAddLocation);
+            this.groupBox3.Controls.Add(this.label10);
+            this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBox3.Location = new System.Drawing.Point(9, 248);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(616, 233);
+            this.groupBox3.TabIndex = 47;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Quản lý địa điểm";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnDelelePrice);
+            this.groupBox2.Controls.Add(this.btnUpdatePrice);
+            this.groupBox2.Controls.Add(this.dtpickerEnd);
+            this.groupBox2.Controls.Add(this.dtpickerStart);
+            this.groupBox2.Controls.Add(this.btnAddPrice);
+            this.groupBox2.Controls.Add(this.dtgvPrice);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.txtPrice);
+            this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBox2.Location = new System.Drawing.Point(9, 21);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(616, 221);
+            this.groupBox2.TabIndex = 46;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Quản lý giá";
             // 
             // FrmAddTour
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1060, 543);
+            this.ClientSize = new System.Drawing.Size(1044, 524);
+            this.Controls.Add(this.btnBackTourList);
             this.Controls.Add(this.btnSaveNV);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox3);
@@ -457,10 +469,10 @@ namespace GUI
             this.Text = "Tạo Tour mới";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvPrice)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvLocation)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -469,37 +481,34 @@ namespace GUI
 
         #endregion
 
+        private FontAwesome.Sharp.IconButton btnBackTourList;
+        private System.Windows.Forms.ComboBox cbbCategory;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtTourName;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtTourId;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
         private FontAwesome.Sharp.IconButton btnSaveNV;
-        private FontAwesome.Sharp.IconButton iconButton2;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private FontAwesome.Sharp.IconButton iconButton4;
-        private FontAwesome.Sharp.IconButton iconButton3;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private FontAwesome.Sharp.IconButton btnDelelePrice;
+        private FontAwesome.Sharp.IconButton btnUpdatePrice;
+        private System.Windows.Forms.DateTimePicker dtpickerEnd;
+        private System.Windows.Forms.DateTimePicker dtpickerStart;
+        private FontAwesome.Sharp.IconButton btnAddPrice;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DataGridView dtgvPrice;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtPrice;
+        private System.Windows.Forms.TextBox txtSerial;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cbbLocation;
+        private FontAwesome.Sharp.IconButton btnDeleteLocation;
+        private FontAwesome.Sharp.IconButton btnUpdateLocation;
+        private System.Windows.Forms.DataGridView dtgvLocation;
+        private FontAwesome.Sharp.IconButton btnAddLocation;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

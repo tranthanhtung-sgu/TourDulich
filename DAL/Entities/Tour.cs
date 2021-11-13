@@ -16,8 +16,8 @@ namespace DAL.Entities
         public string MoTa { get; set; }
         public int CategoryId { get; set; }
         public Category Category { get; set; }
-        public ICollection<DoanDulich> DSDoanDulich { get; set; }
-        public ICollection<Price> Prices { get; set; }
-        public ICollection<TourDetail> TourDetails { get; set; }
+        public ICollection<DoanDulich> DSDoanDulich { get; set; } = new List<DoanDulich>();
+        public ICollection<Price> Prices { get; set; } = new List<Price>();
+        public IList<TourDetail> TourDetails { get; set; } = new List<TourDetail>();
     }
 }

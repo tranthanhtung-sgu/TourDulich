@@ -19,36 +19,12 @@ namespace GUI
     {
         BUS_Category _Category = new BUS_Category();
         BUS_Tour _Tour = new BUS_Tour();
-        //private readonly FormListTour _formListTour;
-        public FrmAddTour()
+        private FrmMainMenu FrmMainMenu;
+
+        public FrmAddTour(FrmMainMenu frmMain)
         {
             InitializeComponent();
-            //_formListTour = formListTour;
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox3_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
+            FrmMainMenu = frmMain;
         }
     }
 }

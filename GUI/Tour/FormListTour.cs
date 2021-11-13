@@ -45,7 +45,7 @@ namespace GUI
 
         private void btnAddTour_Click(object sender, EventArgs e)
         {
-            FrmAddTour addtour = new FrmAddTour();
+            FrmTourDetails addtour = new FrmTourDetails(null, FrmMainMenu);
             addtour.Show();
         }
 
