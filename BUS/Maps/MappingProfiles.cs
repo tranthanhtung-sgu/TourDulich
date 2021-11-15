@@ -20,6 +20,7 @@ namespace BUS.Maps
             CreateMap<Price, DTO_Price>();
             CreateMap<TourDetail, DTO_ChiTietTour>()
                 .ForMember(d => d.LocationName, o => o.MapFrom(s => s.Location.LocationName));
+            CreateMap<Location, DTO_Location>();
         }
     }
 }

@@ -94,6 +94,7 @@ namespace GUI
             this.btnDiaDiem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDiaDiem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDiaDiem.UseVisualStyleBackColor = true;
+            this.btnDiaDiem.Click += new System.EventHandler(this.btnDiaDiem_Click);
             // 
             // btnReport
             // 

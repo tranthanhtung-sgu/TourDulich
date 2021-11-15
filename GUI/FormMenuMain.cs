@@ -1,4 +1,5 @@
 ﻿using FontAwesome.Sharp;
+using GUI.DiaDiem;
 using GUI.Doan;
 using GUI.KhachHoang;
 using GUI.NhanVien;
@@ -21,6 +22,7 @@ namespace GUI
         private IconButton currentBtn;
         private Panel leftBorderBtn;
         private Form currentChildForm;
+      
         public FrmMainMenu()
         {
             InitializeComponent();
@@ -199,6 +201,12 @@ namespace GUI
         private void btnMini_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnDiaDiem_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color1);
+            OpenChildForm(new LocationForm());
         }
     }
 }
