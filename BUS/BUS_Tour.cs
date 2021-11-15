@@ -45,10 +45,14 @@ namespace BUS
             //remove all tour details of current tour
             var tourDetails = _context.ChiTietTour.Where(x => x.TourId == currentTour.TourId).ToList();
             _context.ChiTietTour.RemoveRange(tourDetails);
+            //remove all prices of current tour
+            var prices = _context.GiaTour.Where(x => x.TourId == currentTour.TourId).ToList();
+            _context.GiaTour.RemoveRange(prices);
+            Save();
+            
             // add new tour details
             var tourUpdate = new Tour();
             tourUpdate = currentTour;
-            tourUpdate.TourDetails = new List<TourDetail>();
             foreach (var item in currentDetails)
             {
                 var tourDetail = new TourDetail() {
@@ -57,7 +61,20 @@ namespace BUS
                     Serial = item.Serial
                 };
                 _context.ChiTietTour.Add(tourDetail);
-            }        
+            }   
+            tourUpdate.TourDetails = new List<TourDetail>();
+            foreach (var item in currentTour.Prices)
+            {
+                var price = new Price()
+                {
+                    TourId = currentTour.TourId,
+                    StartDate = item.StartDate,
+                    EndDate = item.EndDate,
+                    Money = item.Money
+                };
+                _context.GiaTour.Add(price);
+            }     
+            tourUpdate.Prices = new List<Price>();
             var result = Update(tourUpdate);
             Save();
             return result;    

@@ -15,8 +15,8 @@ namespace BUS.Maps
         {
             CreateMap<Tour, DTO_Tour>()
                 .ForMember(d => d.LoaiHinhDuLich, o => o.MapFrom(s => s.Category.CategoryName))
-                // mapping 
-                .ForMember(d => d.GiaTour, o => o.MapFrom(s => s.Prices.Select(x => x.Money).FirstOrDefault()));
+                // get price with date between startDate and endDate
+                .ForMember(d => d.GiaTour, o => o.MapFrom(s => s.Prices.FirstOrDefault(p => p.StartDate.Date <= DateTime.Now.Date && p.EndDate.Date >= DateTime.Now.Date).Money));
             CreateMap<Price, DTO_Price>();
             CreateMap<TourDetail, DTO_ChiTietTour>()
                 .ForMember(d => d.LocationName, o => o.MapFrom(s => s.Location.LocationName));

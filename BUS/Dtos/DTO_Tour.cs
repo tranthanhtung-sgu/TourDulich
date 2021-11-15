@@ -24,6 +24,6 @@ namespace BUS.Dtos
         public string LoaiHinhDuLich { get; set; }
 
         [DisplayName("Giá tour hiện hành")]
-        public float GiaTour { get; set; }
+        public string GiaTour { get; set; }
     }
 }

@@ -34,6 +34,16 @@ namespace GUI
             dtgvTour.Columns[2].Width = 300;
             dtgvTour.Columns[3].Width = 200;
             dtgvTour.Columns[4].Width = 200;
+
+            // if data in cell is 0, set it to empty
+            foreach (DataGridViewRow row in dtgvTour.Rows)
+            {
+                if (row.Cells[4].Value.ToString() == "0")
+                {
+                    row.Cells[4].Value = "Price not found";
+                }
+            }
+          
         }
         private void btnDetails_Click(object sender, EventArgs e)
         {
@@ -55,12 +65,15 @@ namespace GUI
             editTour.Show();
         }
 
-        private void dtgvTour_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        //delete tour
+        private void btnDeleteTour_Click(object sender, EventArgs e)
         {
             int currentTourIndex = dtgvTour.CurrentCell.RowIndex;
-
-            FrmTourDetails detailstour = new FrmTourDetails(listTour[currentTourIndex], FrmMainMenu);
-            FrmMainMenu.OpenChildForm(detailstour);
+            DAL.Entities.Tour tour = listTour[currentTourIndex];
+            bTour.Delete(tour.TourId);
+            listTour.Remove(tour);
+            var tours = bTour.mapper.Map<List<DAL.Entities.Tour>, List<DTO_Tour>>(listTour);
+            dtgvTour.DataSource = tours;
         }
     }    
 }

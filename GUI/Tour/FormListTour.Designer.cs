@@ -30,10 +30,10 @@ namespace GUI
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnDetails = new FontAwesome.Sharp.IconButton();
             this.btnDeleteTour = new FontAwesome.Sharp.IconButton();
             this.btnAddTour = new FontAwesome.Sharp.IconButton();
             this.dtgvTour = new System.Windows.Forms.DataGridView();
-            this.btnDetails = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTour)).BeginInit();
             this.SuspendLayout();
@@ -49,6 +49,27 @@ namespace GUI
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(811, 81);
             this.panel1.TabIndex = 3;
+            // 
+            // btnDetails
+            // 
+            this.btnDetails.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnDetails.FlatAppearance.BorderSize = 0;
+            this.btnDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDetails.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnDetails.IconChar = FontAwesome.Sharp.IconChar.Info;
+            this.btnDetails.IconColor = System.Drawing.Color.Black;
+            this.btnDetails.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnDetails.IconSize = 25;
+            this.btnDetails.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDetails.Location = new System.Drawing.Point(454, 21);
+            this.btnDetails.Name = "btnDetails";
+            this.btnDetails.Size = new System.Drawing.Size(110, 40);
+            this.btnDetails.TabIndex = 5;
+            this.btnDetails.Text = "Chi Tiết";
+            this.btnDetails.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDetails.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDetails.UseVisualStyleBackColor = true;
+            this.btnDetails.Click += new System.EventHandler(this.btnDetails_Click);
             // 
             // btnDeleteTour
             // 
@@ -69,6 +90,7 @@ namespace GUI
             this.btnDeleteTour.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDeleteTour.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDeleteTour.UseVisualStyleBackColor = true;
+            this.btnDeleteTour.Click += new System.EventHandler(this.btnDeleteTour_Click);
             // 
             // btnAddTour
             // 
@@ -105,28 +127,6 @@ namespace GUI
             this.dtgvTour.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvTour.Size = new System.Drawing.Size(811, 414);
             this.dtgvTour.TabIndex = 4;
-            this.dtgvTour.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvTour_CellContentClick);
-            // 
-            // btnDetails
-            // 
-            this.btnDetails.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnDetails.FlatAppearance.BorderSize = 0;
-            this.btnDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDetails.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnDetails.IconChar = FontAwesome.Sharp.IconChar.Info;
-            this.btnDetails.IconColor = System.Drawing.Color.Black;
-            this.btnDetails.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnDetails.IconSize = 25;
-            this.btnDetails.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDetails.Location = new System.Drawing.Point(454, 21);
-            this.btnDetails.Name = "btnDetails";
-            this.btnDetails.Size = new System.Drawing.Size(110, 40);
-            this.btnDetails.TabIndex = 5;
-            this.btnDetails.Text = "Chi Tiết";
-            this.btnDetails.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDetails.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnDetails.UseVisualStyleBackColor = true;
-            this.btnDetails.Click += new System.EventHandler(this.btnDetails_Click);
             // 
             // FrmListTour
             // 
