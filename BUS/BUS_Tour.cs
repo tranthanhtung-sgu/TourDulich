@@ -43,11 +43,11 @@ namespace BUS
         {
             var currentDetails = currentTour.TourDetails;
             //remove all tour details of current tour
-            var tourDetails = _context.ChiTietTour.Where(x => x.TourId == currentTour.TourId).ToList();
-            _context.ChiTietTour.RemoveRange(tourDetails);
+            var tourDetails = _context.TourDetails.Where(x => x.TourId == currentTour.TourId).ToList();
+            _context.TourDetails.RemoveRange(tourDetails);
             //remove all prices of current tour
-            var prices = _context.GiaTour.Where(x => x.TourId == currentTour.TourId).ToList();
-            _context.GiaTour.RemoveRange(prices);
+            var prices = _context.Prices.Where(x => x.TourId == currentTour.TourId).ToList();
+            _context.Prices.RemoveRange(prices);
             Save();
             
             // add new tour details
@@ -60,7 +60,7 @@ namespace BUS
                     TourId = currentTour.TourId,
                     Serial = item.Serial
                 };
-                _context.ChiTietTour.Add(tourDetail);
+                _context.TourDetails.Add(tourDetail);
             }   
             tourUpdate.TourDetails = new List<TourDetail>();
             foreach (var item in currentTour.Prices)
@@ -72,7 +72,7 @@ namespace BUS
                     EndDate = item.EndDate,
                     Money = item.Money
                 };
-                _context.GiaTour.Add(price);
+                _context.Prices.Add(price);
             }     
             tourUpdate.Prices = new List<Price>();
             var result = Update(tourUpdate);

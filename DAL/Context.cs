@@ -38,17 +38,17 @@ namespace DAL
         }
 
         public DbSet<Tour> Tours { get; set; }
-        public DbSet<DoanDulich> DoanDuLich { get; set; }
-        public DbSet<Price> GiaTour { get; set; }
+        public DbSet<TouristGroup> TouristGroups { get; set; }
+        public DbSet<Price> Prices { get; set; }
         public DbSet<Category> Cateogries { get; set; }
         public DbSet<Location> Locations { get; set; }
-        public DbSet<ChiPhi> Chiphi { get; set; }
-        public DbSet<ChiTietDoan> ChiTietDoan { get; set; }
-        public DbSet<TourDetail> ChiTietTour { get; set; }
-        public DbSet<Khach> Khach { get; set; }
-        public DbSet<LoaiChiPhi> LoaiChiPhi { get; set; }
-        public DbSet<NhanVien> NhanVien { get; set; }
-        public DbSet<PhanBo_NhanVien_Doan> PhanBo_NhanVien_Doan { get; set; }
+        public DbSet<Cost> Costs { get; set; }
+        public DbSet<TouristGroup_Customer> TouristGroup_Customers { get; set; }
+        public DbSet<TourDetail> TourDetails { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<CostCategory> CostCategories { get; set; }
+        public DbSet<Staff> Staffs { get; set; }
+        public DbSet<TouristGroup_Staff> TouristGroup_Staffs { get; set; }
 
 
     }
