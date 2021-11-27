@@ -4,14 +4,16 @@ using DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DAL.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20211120070121_addSeed")]
+    partial class addSeed
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -244,28 +246,6 @@ namespace DAL.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Staffs");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "Nguyễn Văn A"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "Nguyễn Văn B"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Name = "Nguyễn Văn C"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Name = "Nguyễn Thị D"
-                        });
                 });
 
             modelBuilder.Entity("DAL.Entities.Tour", b =>
@@ -332,14 +312,8 @@ namespace DAL.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("Hotel")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<float>("Revenue")
                         .HasColumnType("real");
@@ -360,41 +334,33 @@ namespace DAL.Migrations
                         new
                         {
                             Id = 1,
-                            Description = "Description",
-                            EndDate = new DateTime(2021, 11, 21, 23, 50, 45, 928, DateTimeKind.Local).AddTicks(1883),
-                            Hotel = "Khách sạn",
+                            EndDate = new DateTime(2021, 11, 20, 14, 1, 20, 642, DateTimeKind.Local).AddTicks(2925),
                             Revenue = 10000000f,
-                            StartDate = new DateTime(2021, 11, 21, 23, 50, 45, 926, DateTimeKind.Local).AddTicks(9683),
+                            StartDate = new DateTime(2021, 11, 20, 14, 1, 20, 640, DateTimeKind.Local).AddTicks(8634),
                             TourId = 1
                         },
                         new
                         {
                             Id = 2,
-                            Description = "Description",
-                            EndDate = new DateTime(2021, 11, 21, 23, 50, 45, 928, DateTimeKind.Local).AddTicks(3531),
-                            Hotel = "Khách sạn",
+                            EndDate = new DateTime(2021, 11, 20, 14, 1, 20, 642, DateTimeKind.Local).AddTicks(4004),
                             Revenue = 10000000f,
-                            StartDate = new DateTime(2021, 11, 21, 23, 50, 45, 928, DateTimeKind.Local).AddTicks(3522),
+                            StartDate = new DateTime(2021, 11, 20, 14, 1, 20, 642, DateTimeKind.Local).AddTicks(3996),
                             TourId = 1
                         },
                         new
                         {
                             Id = 3,
-                            Description = "Description",
-                            EndDate = new DateTime(2021, 11, 21, 23, 50, 45, 928, DateTimeKind.Local).AddTicks(3536),
-                            Hotel = "Khách sạn",
+                            EndDate = new DateTime(2021, 11, 20, 14, 1, 20, 642, DateTimeKind.Local).AddTicks(4009),
                             Revenue = 10000000f,
-                            StartDate = new DateTime(2021, 11, 21, 23, 50, 45, 928, DateTimeKind.Local).AddTicks(3534),
+                            StartDate = new DateTime(2021, 11, 20, 14, 1, 20, 642, DateTimeKind.Local).AddTicks(4008),
                             TourId = 1
                         },
                         new
                         {
                             Id = 4,
-                            Description = "Description",
-                            EndDate = new DateTime(2021, 11, 21, 23, 50, 45, 928, DateTimeKind.Local).AddTicks(3540),
-                            Hotel = "Khách sạn",
+                            EndDate = new DateTime(2021, 11, 20, 14, 1, 20, 642, DateTimeKind.Local).AddTicks(4014),
                             Revenue = 10000000f,
-                            StartDate = new DateTime(2021, 11, 21, 23, 50, 45, 928, DateTimeKind.Local).AddTicks(3539),
+                            StartDate = new DateTime(2021, 11, 20, 14, 1, 20, 642, DateTimeKind.Local).AddTicks(4012),
                             TourId = 1
                         });
                 });

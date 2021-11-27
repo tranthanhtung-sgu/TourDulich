@@ -24,7 +24,7 @@ namespace GUI
         private readonly BUS_TourDeltail bLocationDetail = new BUS_TourDeltail();
         private FrmMainMenu FrmMainMenu;
         private string status = "";
-        public FrmTourDetails(DAL.Entities.Tour? currentSelectedTour,FrmMainMenu frmMain)
+        public FrmTourDetails(DAL.Entities.Tour? currentSelectedTour, FrmMainMenu frmMain)
         {
             InitializeComponent();
             FrmMainMenu = frmMain;

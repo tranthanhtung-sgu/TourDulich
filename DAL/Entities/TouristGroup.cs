@@ -16,13 +16,15 @@ namespace DAL.Entities
 
         public int TourId { get; set; }
 
-        public DateTime StartDate { get; set; }
+        public DateTime StartDate { get; set; } = DateTime.Now;
 
-        public DateTime EndDate { get; set; }
+        public DateTime EndDate { get; set; } = DateTime.Now;
 
         public float Revenue { get; set; }
-        public ICollection<TouristGroup_Customer> TouristGroup_Customers { get; set; }
-        public ICollection<TouristGroup_Staff> TouristGroup_Staffs { get; set; }
-        public ICollection<Cost> Costs { get; set; }
+        public string Hotel { get; set; }
+        public string Description { get; set; }
+        public ICollection<TouristGroup_Customer> TouristGroup_Customers { get; set; } = new List<TouristGroup_Customer>();
+        public ICollection<TouristGroup_Staff> TouristGroup_Staffs { get; set; } = new List<TouristGroup_Staff>();
+        public ICollection<Cost> Costs { get; set; } = new List<Cost>();
     }
 }

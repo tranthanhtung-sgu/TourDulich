@@ -17,7 +17,7 @@ namespace DAL.Entities
         public int Gender { get; set; }
         public string PhoneNumber { get; set; }
         public string Nation { get; set; }
-        public ICollection<TouristGroup_Customer> TouristGroup_Customers { get; set; }
+        public ICollection<TouristGroup_Customer> TouristGroup_Customers { get; set; } = new List<TouristGroup_Customer>();
 
     }
 }

@@ -21,6 +21,12 @@ namespace BUS.Maps
             CreateMap<TourDetail, DTO_ChiTietTour>()
                 .ForMember(d => d.LocationName, o => o.MapFrom(s => s.Location.LocationName));
             CreateMap<Location, DTO_Location>();
+            CreateMap<TouristGroup, DTO_TouristGroup>()
+                .ForMember(d => d.Name, o => o.MapFrom(s => s.Tour.TenGoi))
+                .ForMember(d => d.StartDate, o => o.MapFrom(s => s.StartDate.Date))
+                .ForMember(d => d.EndDate, o => o.MapFrom(s => s.EndDate.Date))
+                .ForMember(d => d.TourGuide, o => o.MapFrom(s => s.TouristGroup_Staffs.FirstOrDefault(p => p.Duty == "TourGuide").Staff.Name))
+                .ForMember(d => d.NumberOfTourist, o => o.MapFrom(s => s.TouristGroup_Staffs.Count() + s.TouristGroup_Customers.Count()));
         }
     }
 }

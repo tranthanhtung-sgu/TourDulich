@@ -65,6 +65,112 @@ namespace DAL
                     LocationName = "Phú Quốc"
                 }
             );
+            modelBuilder.Entity<Customer>().HasData(
+                new Customer
+                {
+                    Id = 1,
+                    FullName = "Trần Thanh Tùng",
+                    Gender = 1,
+                    Address = "HCM",
+                    IdentityNumber = "0123456789",
+                    Nation = "Việt Nam",
+                    PhoneNumber = "0123456789",
+                },
+                new Customer
+                {
+                    Id = 2,
+                    FullName = "Lê Hải Đăng",
+                    Gender = 1,
+                    Address = "HCM",
+                    IdentityNumber = "0123456789",
+                    Nation = "Việt Nam",
+                    PhoneNumber = "0123456789",
+                },
+                new Customer
+                {
+                    Id = 3,
+                    FullName = "Tô Trần Khánh Hoà",
+                    Gender = 0,
+                    Address = "HCM",
+                    IdentityNumber = "0123456789",
+                    Nation = "Việt Nam",
+                    PhoneNumber = "0123456789",
+                },
+                new Customer
+                {
+                    Id = 4,
+                    FullName = "Âu Đình Uy",
+                    Gender = 1,
+                    Address = "HCM",
+                    IdentityNumber = "0123456789",
+                    Nation = "Việt Nam",
+                    PhoneNumber = "0123456789",
+                }
+            );
+            modelBuilder.Entity<TouristGroup>().HasData(
+                new TouristGroup
+                {
+                    Id = 1,
+                    TourId = 1,
+                    StartDate = DateTime.Now,
+                    EndDate = DateTime.Now,
+                    Revenue = 10000000,
+                    Hotel = "Khách sạn",
+                    Description = "Description"
+                },
+                new TouristGroup
+                {
+                    Id = 2,
+                    TourId = 1,
+                    StartDate = DateTime.Now,
+                    EndDate = DateTime.Now,
+                    Revenue = 10000000,
+                    Hotel = "Khách sạn",
+                    Description = "Description"
+
+                },
+                new TouristGroup
+                {
+                    Id = 3,
+                    TourId = 1,
+                    StartDate = DateTime.Now,
+                    EndDate = DateTime.Now,
+                    Revenue = 10000000,
+                    Hotel = "Khách sạn",
+                    Description = "Description"
+                },
+                new TouristGroup
+                {
+                    Id = 4,
+                    TourId = 1,
+                    StartDate = DateTime.Now,
+                    EndDate = DateTime.Now,
+                    Revenue = 10000000,
+                    Hotel = "Khách sạn",
+                    Description = "Description"
+                }
+            );
+            modelBuilder.Entity<Staff>().HasData( 
+                new Staff { 
+                    Id = 1,
+                    Name = "Nguyễn Văn A"
+                },
+                new Staff
+                {
+                    Id = 2,
+                    Name = "Nguyễn Văn B"
+                },
+                new Staff
+                {
+                    Id = 3,
+                    Name = "Nguyễn Văn C"
+                },
+                new Staff
+                {
+                    Id = 4,
+                    Name = "Nguyễn Thị D"
+                }
+            );
         }
     }
 }
