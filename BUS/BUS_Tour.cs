@@ -14,9 +14,10 @@ namespace BUS
 {
     public class BUS_Tour : GenericRepository<Tour>, IGenericRepository<Tour>
     {
+        public Context context = _context;
         public BUS_Tour()
         {
-            
+
         }
 
         public new List<Tour> GetAll()
@@ -29,7 +30,10 @@ namespace BUS
         }
         public Tour GetTourById (int tourId)
         {
-            var tour = GetById(tourId);
+            var tour = _context.Tours.Include(x => x.Category)
+                                                .Include(y => y.Prices)
+                                                .Include(t => t.TourDetails).ThenInclude(l => l.Location)
+                                                .FirstOrDefault(x => x.TourId == tourId);
             return tour;
         }
         
@@ -78,6 +82,15 @@ namespace BUS
             var result = Update(tourUpdate);
             Save();
             return result;    
+        }
+
+        public Task<Tour> FindAsync(int? id)
+        {
+            var tour = _context.Tours.Include(x => x.Category)
+                                                .Include(y => y.Prices)
+                                                .Include(t => t.TourDetails).ThenInclude(l => l.Location)
+                                                .FirstOrDefault(x => x.TourId == id);
+            return Task.FromResult(tour);
         }
 
         public bool DeleteTour (int tourId)

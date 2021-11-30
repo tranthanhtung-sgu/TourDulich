@@ -1,0 +1,57 @@
+﻿@model IEnumerable<DAL.Entities.Tour>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th class="text-nowrap">
+                @Html.DisplayNameFor(model => model.TenGoi)
+            </th>
+            <th class="text-nowrap">
+                @Html.DisplayNameFor(model => model.MoTa)
+            </th>
+            <th class="text-nowrap">
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th class="text-nowrap">
+                @Html.DisplayName("Giá tour")
+            </th>
+            <th class="text-nowrap">
+                Chức năng
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenGoi)
+            </td>
+            <td>
+                <span class="d-inline-block text-truncate" style="max-width: 400px;">
+                    @Html.DisplayFor(modelItem => item.MoTa)
+                </span>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category.CategoryName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prices.FirstOrDefault(x=>x.StartDate <= DateTime.Now && x.EndDate >= DateTime.Now).Money)
+            </td>
+            <td class="text-nowrap">
+                <a asp-action="Edit" asp-route-id="@item.TourId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.TourId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.TourId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
