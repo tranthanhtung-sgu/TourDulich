@@ -77,9 +77,10 @@ namespace GUI
             this.btnBackTourList.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBackTourList.IconSize = 19;
             this.btnBackTourList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBackTourList.Location = new System.Drawing.Point(7, 478);
+            this.btnBackTourList.Location = new System.Drawing.Point(10, 797);
+            this.btnBackTourList.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnBackTourList.Name = "btnBackTourList";
-            this.btnBackTourList.Size = new System.Drawing.Size(83, 34);
+            this.btnBackTourList.Size = new System.Drawing.Size(119, 57);
             this.btnBackTourList.TabIndex = 50;
             this.btnBackTourList.Text = "Quay lại";
             this.btnBackTourList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -89,37 +90,41 @@ namespace GUI
             // cbbCategory
             // 
             this.cbbCategory.FormattingEnabled = true;
-            this.cbbCategory.Location = new System.Drawing.Point(91, 62);
+            this.cbbCategory.Location = new System.Drawing.Point(130, 103);
+            this.cbbCategory.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbbCategory.Name = "cbbCategory";
-            this.cbbCategory.Size = new System.Drawing.Size(293, 25);
+            this.cbbCategory.Size = new System.Drawing.Size(417, 36);
             this.cbbCategory.TabIndex = 36;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(10, 111);
+            this.label5.Location = new System.Drawing.Point(14, 185);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(38, 15);
+            this.label5.Size = new System.Drawing.Size(59, 25);
             this.label5.TabIndex = 35;
             this.label5.Text = "Mô tả";
             // 
             // txtDescription
             // 
             this.txtDescription.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtDescription.Location = new System.Drawing.Point(91, 111);
+            this.txtDescription.Location = new System.Drawing.Point(130, 185);
+            this.txtDescription.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(293, 306);
+            this.txtDescription.Size = new System.Drawing.Size(417, 507);
             this.txtDescription.TabIndex = 34;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(10, 67);
+            this.label3.Location = new System.Drawing.Point(14, 112);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 15);
+            this.label3.Size = new System.Drawing.Size(83, 25);
             this.label3.TabIndex = 33;
             this.label3.Text = "Loại hình";
             // 
@@ -127,18 +132,20 @@ namespace GUI
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(10, 24);
+            this.label2.Location = new System.Drawing.Point(14, 40);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 15);
+            this.label2.Size = new System.Drawing.Size(76, 25);
             this.label2.TabIndex = 31;
             this.label2.Text = "Tên tour";
             // 
             // txtTourName
             // 
             this.txtTourName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtTourName.Location = new System.Drawing.Point(91, 24);
+            this.txtTourName.Location = new System.Drawing.Point(130, 40);
+            this.txtTourName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtTourName.Name = "txtTourName";
-            this.txtTourName.Size = new System.Drawing.Size(293, 23);
+            this.txtTourName.Size = new System.Drawing.Size(417, 31);
             this.txtTourName.TabIndex = 29;
             // 
             // btnSaveNV
@@ -152,9 +159,10 @@ namespace GUI
             this.btnSaveNV.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSaveNV.IconSize = 19;
             this.btnSaveNV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSaveNV.Location = new System.Drawing.Point(944, 487);
+            this.btnSaveNV.Location = new System.Drawing.Point(1349, 812);
+            this.btnSaveNV.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSaveNV.Name = "btnSaveNV";
-            this.btnSaveNV.Size = new System.Drawing.Size(67, 34);
+            this.btnSaveNV.Size = new System.Drawing.Size(96, 57);
             this.btnSaveNV.TabIndex = 49;
             this.btnSaveNV.Text = "Lưu";
             this.btnSaveNV.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -170,9 +178,11 @@ namespace GUI
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtTourName);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox1.Location = new System.Drawing.Point(631, 21);
+            this.groupBox1.Location = new System.Drawing.Point(901, 35);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(420, 460);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Size = new System.Drawing.Size(600, 767);
             this.groupBox1.TabIndex = 48;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin chính";
@@ -188,9 +198,10 @@ namespace GUI
             this.btnDelelePrice.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDelelePrice.IconSize = 19;
             this.btnDelelePrice.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelelePrice.Location = new System.Drawing.Point(295, 214);
+            this.btnDelelePrice.Location = new System.Drawing.Point(421, 357);
+            this.btnDelelePrice.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnDelelePrice.Name = "btnDelelePrice";
-            this.btnDelelePrice.Size = new System.Drawing.Size(80, 29);
+            this.btnDelelePrice.Size = new System.Drawing.Size(114, 48);
             this.btnDelelePrice.TabIndex = 47;
             this.btnDelelePrice.Text = "Xóa";
             this.btnDelelePrice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -208,9 +219,10 @@ namespace GUI
             this.btnUpdatePrice.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnUpdatePrice.IconSize = 19;
             this.btnUpdatePrice.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdatePrice.Location = new System.Drawing.Point(375, 214);
+            this.btnUpdatePrice.Location = new System.Drawing.Point(536, 357);
+            this.btnUpdatePrice.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnUpdatePrice.Name = "btnUpdatePrice";
-            this.btnUpdatePrice.Size = new System.Drawing.Size(80, 29);
+            this.btnUpdatePrice.Size = new System.Drawing.Size(114, 48);
             this.btnUpdatePrice.TabIndex = 48;
             this.btnUpdatePrice.Text = "Sửa ";
             this.btnUpdatePrice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -221,18 +233,20 @@ namespace GUI
             // 
             this.dtpickerEnd.CustomFormat = "dd/MM";
             this.dtpickerEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpickerEnd.Location = new System.Drawing.Point(126, 104);
+            this.dtpickerEnd.Location = new System.Drawing.Point(180, 173);
+            this.dtpickerEnd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dtpickerEnd.Name = "dtpickerEnd";
-            this.dtpickerEnd.Size = new System.Drawing.Size(122, 25);
+            this.dtpickerEnd.Size = new System.Drawing.Size(173, 33);
             this.dtpickerEnd.TabIndex = 38;
             // 
             // dtpickerStart
             // 
             this.dtpickerStart.CustomFormat = "dd/MM";
             this.dtpickerStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpickerStart.Location = new System.Drawing.Point(126, 62);
+            this.dtpickerStart.Location = new System.Drawing.Point(180, 103);
+            this.dtpickerStart.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dtpickerStart.Name = "dtpickerStart";
-            this.dtpickerStart.Size = new System.Drawing.Size(122, 25);
+            this.dtpickerStart.Size = new System.Drawing.Size(173, 33);
             this.dtpickerStart.TabIndex = 37;
             // 
             // btnAddPrice
@@ -246,9 +260,10 @@ namespace GUI
             this.btnAddPrice.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAddPrice.IconSize = 19;
             this.btnAddPrice.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddPrice.Location = new System.Drawing.Point(214, 214);
+            this.btnAddPrice.Location = new System.Drawing.Point(306, 357);
+            this.btnAddPrice.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAddPrice.Name = "btnAddPrice";
-            this.btnAddPrice.Size = new System.Drawing.Size(80, 29);
+            this.btnAddPrice.Size = new System.Drawing.Size(114, 48);
             this.btnAddPrice.TabIndex = 46;
             this.btnAddPrice.Text = "Thêm ";
             this.btnAddPrice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -259,9 +274,10 @@ namespace GUI
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(8, 44);
+            this.label10.Location = new System.Drawing.Point(11, 73);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(111, 15);
+            this.label10.Size = new System.Drawing.Size(168, 25);
             this.label10.TabIndex = 19;
             this.label10.Text = "Danh sách địa điểm";
             // 
@@ -270,22 +286,25 @@ namespace GUI
             this.dtgvPrice.AllowUserToAddRows = false;
             this.dtgvPrice.AllowUserToDeleteRows = false;
             this.dtgvPrice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvPrice.Location = new System.Drawing.Point(270, 15);
+            this.dtgvPrice.Location = new System.Drawing.Point(386, 25);
+            this.dtgvPrice.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dtgvPrice.Name = "dtgvPrice";
             this.dtgvPrice.ReadOnly = true;
             this.dtgvPrice.RowHeadersVisible = false;
+            this.dtgvPrice.RowHeadersWidth = 62;
             this.dtgvPrice.RowTemplate.Height = 25;
             this.dtgvPrice.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvPrice.Size = new System.Drawing.Size(340, 182);
+            this.dtgvPrice.Size = new System.Drawing.Size(486, 303);
             this.dtgvPrice.TabIndex = 24;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(8, 112);
+            this.label7.Location = new System.Drawing.Point(11, 187);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(102, 15);
+            this.label7.Size = new System.Drawing.Size(153, 25);
             this.label7.TabIndex = 21;
             this.label7.Text = "Thời gian kết thúc";
             // 
@@ -293,9 +312,10 @@ namespace GUI
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(8, 66);
+            this.label6.Location = new System.Drawing.Point(11, 110);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(99, 15);
+            this.label6.Size = new System.Drawing.Size(151, 25);
             this.label6.TabIndex = 19;
             this.label6.Text = "Thời gian bắt đầu";
             // 
@@ -303,43 +323,48 @@ namespace GUI
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(8, 24);
+            this.label4.Location = new System.Drawing.Point(11, 40);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 15);
+            this.label4.Size = new System.Drawing.Size(75, 25);
             this.label4.TabIndex = 17;
             this.label4.Text = "Giá tour";
             // 
             // txtPrice
             // 
             this.txtPrice.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtPrice.Location = new System.Drawing.Point(126, 24);
+            this.txtPrice.Location = new System.Drawing.Point(180, 40);
+            this.txtPrice.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(122, 23);
+            this.txtPrice.Size = new System.Drawing.Size(173, 31);
             this.txtPrice.TabIndex = 16;
             // 
             // txtSerial
             // 
-            this.txtSerial.Location = new System.Drawing.Point(126, 81);
+            this.txtSerial.Location = new System.Drawing.Point(180, 135);
+            this.txtSerial.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtSerial.Name = "txtSerial";
-            this.txtSerial.Size = new System.Drawing.Size(122, 25);
+            this.txtSerial.Size = new System.Drawing.Size(173, 33);
             this.txtSerial.TabIndex = 54;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(6, 86);
+            this.label1.Location = new System.Drawing.Point(9, 143);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 15);
+            this.label1.Size = new System.Drawing.Size(64, 25);
             this.label1.TabIndex = 53;
             this.label1.Text = "Thứ tự";
             // 
             // cbbLocation
             // 
             this.cbbLocation.FormattingEnabled = true;
-            this.cbbLocation.Location = new System.Drawing.Point(126, 39);
+            this.cbbLocation.Location = new System.Drawing.Point(180, 65);
+            this.cbbLocation.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbbLocation.Name = "cbbLocation";
-            this.cbbLocation.Size = new System.Drawing.Size(121, 25);
+            this.cbbLocation.Size = new System.Drawing.Size(171, 36);
             this.cbbLocation.TabIndex = 52;
             // 
             // btnDeleteLocation
@@ -353,9 +378,10 @@ namespace GUI
             this.btnDeleteLocation.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDeleteLocation.IconSize = 19;
             this.btnDeleteLocation.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDeleteLocation.Location = new System.Drawing.Point(300, 251);
+            this.btnDeleteLocation.Location = new System.Drawing.Point(429, 418);
+            this.btnDeleteLocation.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnDeleteLocation.Name = "btnDeleteLocation";
-            this.btnDeleteLocation.Size = new System.Drawing.Size(80, 29);
+            this.btnDeleteLocation.Size = new System.Drawing.Size(114, 48);
             this.btnDeleteLocation.TabIndex = 50;
             this.btnDeleteLocation.Text = "Xóa";
             this.btnDeleteLocation.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -373,9 +399,10 @@ namespace GUI
             this.btnUpdateLocation.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnUpdateLocation.IconSize = 19;
             this.btnUpdateLocation.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdateLocation.Location = new System.Drawing.Point(380, 251);
+            this.btnUpdateLocation.Location = new System.Drawing.Point(543, 418);
+            this.btnUpdateLocation.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnUpdateLocation.Name = "btnUpdateLocation";
-            this.btnUpdateLocation.Size = new System.Drawing.Size(80, 29);
+            this.btnUpdateLocation.Size = new System.Drawing.Size(114, 48);
             this.btnUpdateLocation.TabIndex = 51;
             this.btnUpdateLocation.Text = "Sửa ";
             this.btnUpdateLocation.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -387,14 +414,17 @@ namespace GUI
             this.dtgvLocation.AllowUserToAddRows = false;
             this.dtgvLocation.AllowUserToDeleteRows = false;
             this.dtgvLocation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvLocation.Location = new System.Drawing.Point(270, 15);
+            this.dtgvLocation.Location = new System.Drawing.Point(386, 25);
+            this.dtgvLocation.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dtgvLocation.Name = "dtgvLocation";
             this.dtgvLocation.ReadOnly = true;
             this.dtgvLocation.RowHeadersVisible = false;
+            this.dtgvLocation.RowHeadersWidth = 62;
             this.dtgvLocation.RowTemplate.Height = 25;
             this.dtgvLocation.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvLocation.Size = new System.Drawing.Size(340, 175);
+            this.dtgvLocation.Size = new System.Drawing.Size(486, 292);
             this.dtgvLocation.TabIndex = 25;
+            this.dtgvLocation.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvLocation_CellContentClick);
             // 
             // btnAddLocation
             // 
@@ -407,9 +437,10 @@ namespace GUI
             this.btnAddLocation.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAddLocation.IconSize = 19;
             this.btnAddLocation.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddLocation.Location = new System.Drawing.Point(219, 251);
+            this.btnAddLocation.Location = new System.Drawing.Point(313, 418);
+            this.btnAddLocation.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAddLocation.Name = "btnAddLocation";
-            this.btnAddLocation.Size = new System.Drawing.Size(80, 29);
+            this.btnAddLocation.Size = new System.Drawing.Size(114, 48);
             this.btnAddLocation.TabIndex = 49;
             this.btnAddLocation.Text = "Thêm ";
             this.btnAddLocation.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -427,9 +458,11 @@ namespace GUI
             this.groupBox3.Controls.Add(this.btnAddLocation);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox3.Location = new System.Drawing.Point(9, 248);
+            this.groupBox3.Location = new System.Drawing.Point(13, 413);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(616, 233);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox3.Size = new System.Drawing.Size(880, 388);
             this.groupBox3.TabIndex = 47;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Quản lý địa điểm";
@@ -447,23 +480,26 @@ namespace GUI
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.txtPrice);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox2.Location = new System.Drawing.Point(9, 21);
+            this.groupBox2.Location = new System.Drawing.Point(13, 35);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(616, 221);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox2.Size = new System.Drawing.Size(880, 368);
             this.groupBox2.TabIndex = 46;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Quản lý giá";
             // 
             // FrmAddTour
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1044, 524);
+            this.ClientSize = new System.Drawing.Size(1491, 873);
             this.Controls.Add(this.btnBackTourList);
             this.Controls.Add(this.btnSaveNV);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmAddTour";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tạo Tour mới";

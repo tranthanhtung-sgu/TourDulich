@@ -46,8 +46,9 @@ namespace GUI
             this.panel1.Controls.Add(this.btnAddTour);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(811, 81);
+            this.panel1.Size = new System.Drawing.Size(1159, 135);
             this.panel1.TabIndex = 3;
             // 
             // btnDetails
@@ -61,9 +62,10 @@ namespace GUI
             this.btnDetails.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDetails.IconSize = 25;
             this.btnDetails.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDetails.Location = new System.Drawing.Point(454, 21);
+            this.btnDetails.Location = new System.Drawing.Point(649, 35);
+            this.btnDetails.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnDetails.Name = "btnDetails";
-            this.btnDetails.Size = new System.Drawing.Size(110, 40);
+            this.btnDetails.Size = new System.Drawing.Size(157, 67);
             this.btnDetails.TabIndex = 5;
             this.btnDetails.Text = "Chi Tiết";
             this.btnDetails.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -82,9 +84,10 @@ namespace GUI
             this.btnDeleteTour.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDeleteTour.IconSize = 30;
             this.btnDeleteTour.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDeleteTour.Location = new System.Drawing.Point(338, 21);
+            this.btnDeleteTour.Location = new System.Drawing.Point(483, 35);
+            this.btnDeleteTour.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnDeleteTour.Name = "btnDeleteTour";
-            this.btnDeleteTour.Size = new System.Drawing.Size(110, 40);
+            this.btnDeleteTour.Size = new System.Drawing.Size(157, 67);
             this.btnDeleteTour.TabIndex = 5;
             this.btnDeleteTour.Text = "Xóa Tour";
             this.btnDeleteTour.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -103,9 +106,10 @@ namespace GUI
             this.btnAddTour.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAddTour.IconSize = 30;
             this.btnAddTour.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddTour.Location = new System.Drawing.Point(228, 21);
+            this.btnAddTour.Location = new System.Drawing.Point(326, 35);
+            this.btnAddTour.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAddTour.Name = "btnAddTour";
-            this.btnAddTour.Size = new System.Drawing.Size(110, 40);
+            this.btnAddTour.Size = new System.Drawing.Size(157, 67);
             this.btnAddTour.TabIndex = 0;
             this.btnAddTour.Text = "Thêm Tour";
             this.btnAddTour.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -119,23 +123,27 @@ namespace GUI
             this.dtgvTour.AllowUserToDeleteRows = false;
             this.dtgvTour.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvTour.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgvTour.Location = new System.Drawing.Point(0, 81);
+            this.dtgvTour.Location = new System.Drawing.Point(0, 135);
+            this.dtgvTour.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dtgvTour.Name = "dtgvTour";
             this.dtgvTour.ReadOnly = true;
             this.dtgvTour.RowHeadersVisible = false;
+            this.dtgvTour.RowHeadersWidth = 62;
             this.dtgvTour.RowTemplate.Height = 25;
             this.dtgvTour.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvTour.Size = new System.Drawing.Size(811, 414);
+            this.dtgvTour.Size = new System.Drawing.Size(1159, 690);
             this.dtgvTour.TabIndex = 4;
+            this.dtgvTour.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvTour_CellContentClick);
             // 
             // FrmListTour
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.ClientSize = new System.Drawing.Size(811, 495);
+            this.ClientSize = new System.Drawing.Size(1159, 825);
             this.Controls.Add(this.dtgvTour);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmListTour";
             this.Text = "Danh sách tour";
             this.Load += new System.EventHandler(this.frmListTour_Load);

@@ -82,5 +82,10 @@ namespace GUI.DiaDiem
             //message box success
             MessageBox.Show("Cập nhật thành công");
         }
+
+        private void dtgvLocation_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

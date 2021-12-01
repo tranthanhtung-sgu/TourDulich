@@ -26,5 +26,10 @@ namespace GUI
             InitializeComponent();
             FrmMainMenu = frmMain;
         }
+
+        private void dtgvLocation_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

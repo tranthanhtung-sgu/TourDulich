@@ -334,5 +334,10 @@ namespace GUI
                 FrmMainMenu.OpenChildForm(frmListTour);
             }
         }
+
+        private void dtgvLocation_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

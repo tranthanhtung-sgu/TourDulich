@@ -29,25 +29,28 @@ namespace GUI.KhachHoang
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtgvCustomer = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnDetails = new FontAwesome.Sharp.IconButton();
             this.btnEditTour = new FontAwesome.Sharp.IconButton();
             this.btnDeleteTour = new FontAwesome.Sharp.IconButton();
             this.btnAddTour = new FontAwesome.Sharp.IconButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvCustomer)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dtgvCustomer
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 81);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(800, 369);
-            this.dataGridView1.TabIndex = 6;
+            this.dtgvCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvCustomer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgvCustomer.Location = new System.Drawing.Point(0, 135);
+            this.dtgvCustomer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dtgvCustomer.Name = "dtgvCustomer";
+            this.dtgvCustomer.RowHeadersWidth = 62;
+            this.dtgvCustomer.RowTemplate.Height = 25;
+            this.dtgvCustomer.Size = new System.Drawing.Size(1143, 615);
+            this.dtgvCustomer.TabIndex = 6;
+            this.dtgvCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // panel1
             // 
@@ -58,8 +61,9 @@ namespace GUI.KhachHoang
             this.panel1.Controls.Add(this.btnAddTour);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 81);
+            this.panel1.Size = new System.Drawing.Size(1143, 135);
             this.panel1.TabIndex = 5;
             // 
             // btnDetails
@@ -73,15 +77,16 @@ namespace GUI.KhachHoang
             this.btnDetails.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDetails.IconSize = 25;
             this.btnDetails.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDetails.Location = new System.Drawing.Point(549, 22);
+            this.btnDetails.Location = new System.Drawing.Point(784, 37);
+            this.btnDetails.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnDetails.Name = "btnDetails";
-            this.btnDetails.Size = new System.Drawing.Size(147, 40);
+            this.btnDetails.Size = new System.Drawing.Size(210, 67);
             this.btnDetails.TabIndex = 7;
             this.btnDetails.Text = "Xem Chi Tiết";
             this.btnDetails.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDetails.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDetails.UseVisualStyleBackColor = true;
-            this.btnDetails.Click += new System.EventHandler(this.btnDetails_Click);
+            this.btnDetails.Click += new System.EventHandler(this.btnViewCustomerDetails_Click);
             // 
             // btnEditTour
             // 
@@ -94,15 +99,16 @@ namespace GUI.KhachHoang
             this.btnEditTour.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEditTour.IconSize = 30;
             this.btnEditTour.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditTour.Location = new System.Drawing.Point(402, 22);
+            this.btnEditTour.Location = new System.Drawing.Point(574, 37);
+            this.btnEditTour.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnEditTour.Name = "btnEditTour";
-            this.btnEditTour.Size = new System.Drawing.Size(147, 40);
+            this.btnEditTour.Size = new System.Drawing.Size(210, 67);
             this.btnEditTour.TabIndex = 5;
             this.btnEditTour.Text = "Sửa thông tin";
             this.btnEditTour.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEditTour.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEditTour.UseVisualStyleBackColor = true;
-            this.btnEditTour.Click += new System.EventHandler(this.btnEditTour_Click);
+            this.btnEditTour.Click += new System.EventHandler(this.btnEditCustomer_Click);
             // 
             // btnDeleteTour
             // 
@@ -115,15 +121,16 @@ namespace GUI.KhachHoang
             this.btnDeleteTour.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDeleteTour.IconSize = 30;
             this.btnDeleteTour.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDeleteTour.Location = new System.Drawing.Point(255, 22);
+            this.btnDeleteTour.Location = new System.Drawing.Point(364, 37);
+            this.btnDeleteTour.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnDeleteTour.Name = "btnDeleteTour";
-            this.btnDeleteTour.Size = new System.Drawing.Size(147, 40);
+            this.btnDeleteTour.Size = new System.Drawing.Size(210, 67);
             this.btnDeleteTour.TabIndex = 5;
             this.btnDeleteTour.Text = "Xóa khách hàng";
             this.btnDeleteTour.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDeleteTour.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDeleteTour.UseVisualStyleBackColor = true;
-            this.btnDeleteTour.Click += new System.EventHandler(this.btnDeleteTour_Click);
+            this.btnDeleteTour.Click += new System.EventHandler(this.btnDeleteCustomer_Click);
             // 
             // btnAddTour
             // 
@@ -136,26 +143,29 @@ namespace GUI.KhachHoang
             this.btnAddTour.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAddTour.IconSize = 30;
             this.btnAddTour.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddTour.Location = new System.Drawing.Point(108, 22);
+            this.btnAddTour.Location = new System.Drawing.Point(154, 37);
+            this.btnAddTour.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAddTour.Name = "btnAddTour";
-            this.btnAddTour.Size = new System.Drawing.Size(147, 40);
+            this.btnAddTour.Size = new System.Drawing.Size(210, 67);
             this.btnAddTour.TabIndex = 0;
             this.btnAddTour.Text = "Thêm Khách Hàng";
             this.btnAddTour.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAddTour.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAddTour.UseVisualStyleBackColor = true;
-            this.btnAddTour.Click += new System.EventHandler(this.btnAddTour_Click);
+            this.btnAddTour.Click += new System.EventHandler(this.btnAddCustomer_Click);
             // 
             // FormListKH
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(1143, 750);
+            this.Controls.Add(this.dtgvCustomer);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FormListKH";
             this.Text = "Danh sách khách hàng";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.FormListKH_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvCustomer)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -163,7 +173,7 @@ namespace GUI.KhachHoang
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dtgvCustomer;
         private System.Windows.Forms.Panel panel1;
         private FontAwesome.Sharp.IconButton btnDetails;
         private FontAwesome.Sharp.IconButton btnEditTour;

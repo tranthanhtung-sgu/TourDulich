@@ -45,45 +45,52 @@ namespace GUI.DiaDiem
             this.dtgvLocation.AllowUserToAddRows = false;
             this.dtgvLocation.AllowUserToDeleteRows = false;
             this.dtgvLocation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvLocation.Location = new System.Drawing.Point(12, 143);
+            this.dtgvLocation.Location = new System.Drawing.Point(17, 238);
+            this.dtgvLocation.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dtgvLocation.Name = "dtgvLocation";
             this.dtgvLocation.RowHeadersVisible = false;
+            this.dtgvLocation.RowHeadersWidth = 62;
             this.dtgvLocation.RowTemplate.Height = 25;
             this.dtgvLocation.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvLocation.Size = new System.Drawing.Size(435, 369);
+            this.dtgvLocation.Size = new System.Drawing.Size(621, 615);
             this.dtgvLocation.TabIndex = 0;
             this.dtgvLocation.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvLocation_CellContentClick);
+            this.dtgvLocation.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvLocation_CellContentClick_1);
             // 
             // txtLocation
             // 
-            this.txtLocation.Location = new System.Drawing.Point(72, 29);
+            this.txtLocation.Location = new System.Drawing.Point(103, 48);
+            this.txtLocation.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtLocation.Name = "txtLocation";
-            this.txtLocation.Size = new System.Drawing.Size(375, 23);
+            this.txtLocation.Size = new System.Drawing.Size(534, 31);
             this.txtLocation.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 32);
+            this.label1.Location = new System.Drawing.Point(17, 53);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 15);
+            this.label1.Size = new System.Drawing.Size(83, 25);
             this.label1.TabIndex = 2;
             this.label1.Text = "Địa điểm";
             // 
             // btnLocationDelete
             // 
-            this.btnLocationDelete.Location = new System.Drawing.Point(372, 114);
+            this.btnLocationDelete.Location = new System.Drawing.Point(531, 190);
+            this.btnLocationDelete.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnLocationDelete.Name = "btnLocationDelete";
-            this.btnLocationDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnLocationDelete.Size = new System.Drawing.Size(107, 38);
             this.btnLocationDelete.TabIndex = 3;
             this.btnLocationDelete.Text = "Xoá";
             this.btnLocationDelete.UseVisualStyleBackColor = true;
             // 
             // btnAddLocation
             // 
-            this.btnAddLocation.Location = new System.Drawing.Point(371, 57);
+            this.btnAddLocation.Location = new System.Drawing.Point(530, 95);
+            this.btnAddLocation.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAddLocation.Name = "btnAddLocation";
-            this.btnAddLocation.Size = new System.Drawing.Size(76, 23);
+            this.btnAddLocation.Size = new System.Drawing.Size(109, 38);
             this.btnAddLocation.TabIndex = 4;
             this.btnAddLocation.Text = "Thêm";
             this.btnAddLocation.UseVisualStyleBackColor = true;
@@ -92,17 +99,19 @@ namespace GUI.DiaDiem
             // pictureBox1
             // 
             this.pictureBox1.Image = global::GUI.Properties.Resources.unnamed;
-            this.pictureBox1.Location = new System.Drawing.Point(516, 57);
+            this.pictureBox1.Location = new System.Drawing.Point(737, 95);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(516, 455);
+            this.pictureBox1.Size = new System.Drawing.Size(737, 758);
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
             // btnUpdateLocation
             // 
-            this.btnUpdateLocation.Location = new System.Drawing.Point(289, 58);
+            this.btnUpdateLocation.Location = new System.Drawing.Point(413, 97);
+            this.btnUpdateLocation.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnUpdateLocation.Name = "btnUpdateLocation";
-            this.btnUpdateLocation.Size = new System.Drawing.Size(76, 23);
+            this.btnUpdateLocation.Size = new System.Drawing.Size(109, 38);
             this.btnUpdateLocation.TabIndex = 6;
             this.btnUpdateLocation.Text = "Cập nhật";
             this.btnUpdateLocation.UseVisualStyleBackColor = true;
@@ -110,9 +119,9 @@ namespace GUI.DiaDiem
             // 
             // LocationForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1044, 524);
+            this.ClientSize = new System.Drawing.Size(1491, 873);
             this.Controls.Add(this.btnUpdateLocation);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnAddLocation);
@@ -120,6 +129,7 @@ namespace GUI.DiaDiem
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtLocation);
             this.Controls.Add(this.dtgvLocation);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "LocationForm";
             this.Text = "LocationForm";
             ((System.ComponentModel.ISupportInitialize)(this.dtgvLocation)).EndInit();

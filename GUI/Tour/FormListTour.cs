@@ -75,5 +75,10 @@ namespace GUI
             var tours = bTour.mapper.Map<List<DAL.Entities.Tour>, List<DTO_Tour>>(listTour);
             dtgvTour.DataSource = tours;
         }
+
+        private void dtgvTour_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }    
 }

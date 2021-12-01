@@ -11,7 +11,7 @@ namespace DAL
 {
     public class Context : DbContext
     {
-        public static string DataSource = "Tungpc\\DATABASETUNG";
+        public static string DataSource = "WILSON-388";
         public static string con = "Data Source="+ DataSource + ";Initial Catalog=tourdulich;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;";
 
         public Context()
