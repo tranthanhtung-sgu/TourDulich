@@ -34,7 +34,7 @@
         <dd class="col-sm-10">
             <!-- button toggle for popup -->
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#prices">
-                @Html.DisplayFor(model => model.Prices.FirstOrDefault(x=>x.StartDate <= DateTime.Now && x.EndDate >= DateTime.Now).Money)
+                Hiển thị danh sách giá
             </button>
         </dd>
         <dt class="col-sm-2">
@@ -49,7 +49,7 @@
     </dl>
     <!--pop-up for prices showing -->
     <div class="modal fade" id="prices" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog" style="max-width: 750px !important;" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Giá tour</h5>
@@ -58,12 +58,19 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <table class="table table-striped">
+                    @{
+                        //add a new price
+                    }
+                    <a href="@Url.Action("Create", "Price", new { id = Model.TourId })">
+                        <button type="button" class="btn btn-primary">Thêm giá</button>
+                    </a>
+                    <table class="table table-striped nowrap">
                         <thead>
                             <tr>
                                 <th>Ngày bắt đầu</th>
                                 <th>Ngày kết thúc</th>
                                 <th>Giá</th>
+                                <th style="white-space: nowrap;">Chức năng</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -71,9 +78,17 @@
                             @foreach(var price in Model.Prices)
                             {
                                 <tr>
-                                    <td>@price.StartDate</td>
-                                    <td>@price.EndDate</td>
-                                    <td>@price.Money</td>
+                                    <td style="white-space: nowrap;">@price.StartDate</td>
+                                    <td style="white-space: nowrap;">@price.EndDate</td>
+                                    <td style="white-space: nowrap;">@price.Money</td>
+                                    <td style="white-space: nowrap;">
+                                        <a href="@Url.Action("Edit", "Price", new { id = price.Id })">
+                                            <button type="button" class="btn btn-primary">Sửa</button>
+                                        </a>
+                                        <a href="@Url.Action("Delete", "Price", new { id = price.Id })">
+                                            <button type="button" class="btn btn-danger">Xóa</button>
+                                        </a>
+                                    </td>
                                 </tr>
                             }
                         </tbody>

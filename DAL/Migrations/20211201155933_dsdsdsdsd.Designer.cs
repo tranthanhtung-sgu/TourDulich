@@ -4,14 +4,16 @@ using DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DAL.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20211201155933_dsdsdsdsd")]
+    partial class dsdsdsdsd
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -361,40 +363,40 @@ namespace DAL.Migrations
                         {
                             Id = 1,
                             Description = "Description",
-                            EndDate = new DateTime(2021, 12, 1, 23, 14, 21, 821, DateTimeKind.Local).AddTicks(7787),
+                            EndDate = new DateTime(2021, 12, 1, 22, 59, 32, 617, DateTimeKind.Local).AddTicks(9485),
                             Hotel = "Khách sạn",
                             Revenue = 10000000f,
-                            StartDate = new DateTime(2021, 12, 1, 23, 14, 21, 821, DateTimeKind.Local).AddTicks(7023),
+                            StartDate = new DateTime(2021, 12, 1, 22, 59, 32, 617, DateTimeKind.Local).AddTicks(8712),
                             TourId = 1
                         },
                         new
                         {
                             Id = 2,
                             Description = "Description",
-                            EndDate = new DateTime(2021, 12, 1, 23, 14, 21, 822, DateTimeKind.Local).AddTicks(3830),
+                            EndDate = new DateTime(2021, 12, 1, 22, 59, 32, 618, DateTimeKind.Local).AddTicks(2497),
                             Hotel = "Khách sạn",
                             Revenue = 10000000f,
-                            StartDate = new DateTime(2021, 12, 1, 23, 14, 21, 822, DateTimeKind.Local).AddTicks(3828),
+                            StartDate = new DateTime(2021, 12, 1, 22, 59, 32, 618, DateTimeKind.Local).AddTicks(2494),
                             TourId = 1
                         },
                         new
                         {
                             Id = 3,
                             Description = "Description",
-                            EndDate = new DateTime(2021, 12, 1, 23, 14, 21, 822, DateTimeKind.Local).AddTicks(3843),
+                            EndDate = new DateTime(2021, 12, 1, 22, 59, 32, 618, DateTimeKind.Local).AddTicks(2512),
                             Hotel = "Khách sạn",
                             Revenue = 10000000f,
-                            StartDate = new DateTime(2021, 12, 1, 23, 14, 21, 822, DateTimeKind.Local).AddTicks(3841),
+                            StartDate = new DateTime(2021, 12, 1, 22, 59, 32, 618, DateTimeKind.Local).AddTicks(2509),
                             TourId = 1
                         },
                         new
                         {
                             Id = 4,
                             Description = "Description",
-                            EndDate = new DateTime(2021, 12, 1, 23, 14, 21, 822, DateTimeKind.Local).AddTicks(3853),
+                            EndDate = new DateTime(2021, 12, 1, 22, 59, 32, 618, DateTimeKind.Local).AddTicks(2527),
                             Hotel = "Khách sạn",
                             Revenue = 10000000f,
-                            StartDate = new DateTime(2021, 12, 1, 23, 14, 21, 822, DateTimeKind.Local).AddTicks(3851),
+                            StartDate = new DateTime(2021, 12, 1, 22, 59, 32, 618, DateTimeKind.Local).AddTicks(2523),
                             TourId = 1
                         });
                 });

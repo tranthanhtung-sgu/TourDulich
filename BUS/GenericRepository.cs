@@ -25,7 +25,7 @@ namespace BUS
         {
             return table.ToList();
         }
-        public T GetById(int id)
+        public T GetById(int? id)
         {
             return table.Find(id);
         }

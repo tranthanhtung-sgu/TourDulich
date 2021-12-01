@@ -14,7 +14,6 @@ namespace DAL.Entities
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-
         public Tour Tour { get; set; }
 
         [DisplayName("Tên tour du lịch")]
