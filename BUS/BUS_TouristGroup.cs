@@ -66,6 +66,15 @@ namespace BUS
 
         }
 
+        public TouristGroup FindById(int? id)
+        {
+            return _context.TouristGroups
+                        .Include(x => x.TouristGroup_Staffs).ThenInclude(y => y.Staff)
+                        .Include(x => x.TouristGroup_Customers).ThenInclude(y => y.Customer)
+                        .FirstOrDefault(x => x.Id == id);
+                                           
+        }
+
         public void UpdateTouristGroup(TouristGroup currentTouristGroup)
         {
             var touristGroup_Staffs = currentTouristGroup.TouristGroup_Staffs;

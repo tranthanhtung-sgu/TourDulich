@@ -1,0 +1,172 @@
+﻿@model DAL.Entities.TouristGroup
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>TouristGroup</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Tour)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Tour.TourId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StartDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StartDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EndDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EndDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Revenue)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Revenue)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Hotel)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Hotel)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayName("Danh sách hành khách")
+        </dt>
+        <dd class="col-sm-10">
+            <!-- button toggle for popup -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#customers">
+                Hiển thị danh sách hành khách
+            </button>
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayName("Danh sách nhân viên")
+        </dt>
+        <dd class="col-sm-10">
+             <!-- button toggle for popup -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staffs">
+                Hiển thị danh sách nhân viên
+            </button>
+        </dd>
+    </dl>
+
+        <div class="modal fade" id="staffs" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" style="max-width: 750px !important;" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Giá tour</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    @{
+                        //add a new price
+                    }
+                    <a href="@Url.Action("Create", "TouristGroup_Staff", new { id = Model.Id })">
+                        <button type="button" class="btn btn-primary">Thêm nhân viên</button>
+                    </a>
+                    <table class="table table-striped nowrap">
+                        <thead>
+                            <tr>
+                                <th>Họ tên</th>
+                                <th>Chức vụ</th>
+                                <th style="white-space: nowrap;">Chức năng</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!--for each price-->
+                            @foreach(var item in Model.TouristGroup_Staffs)
+                            {
+                                <tr>
+                                    <td style="white-space: nowrap;">@item.Staff.Name</td>
+                                    <td style="white-space: nowrap;">@item.Duty</td>
+                                    <td style="white-space: nowrap;">
+                                        <a href="@Url.Action("Edit", "TouristGroup_Staff", new { id = item.Id })">
+                                            <button type="button" class="btn btn-primary">Sửa</button>
+                                        </a>
+                                        <a href="@Url.Action("Delete", "TouristGroup_Staff", new { id = item.Id })">
+                                            <button type="button" class="btn btn-danger">Xóa</button>
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--pop-up for locations showing -->
+    <div class="modal fade" id="customers" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" style="max-width: 450px !important;" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Danh sách các địa điểm</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <a href="@Url.Action("Create", "TouristGroup_Customer", new { id = Model.Id })">
+                        <button type="button" class="btn btn-primary">Thêm hành khách</button>
+                    </a>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Họ tên</th>
+                                <th>Số điện thoai</th>
+                                <th>Chức năng</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!--for each location-->
+                            @foreach(var item in Model.TouristGroup_Customers)
+                            {
+                                <tr>
+                                    <td>@item.Customer.FullName</td>
+                                    <td>@item.Customer.PhoneNumber</td>
+                                    <td style="white-space: nowrap;">
+                                        <a href="@Url.Action("Edit", "TouristGroup_Customer", new { id = @item.Id })">
+                                            <button type="button" class="btn btn-primary">Sửa</button>
+                                        </a>
+                                        <a href="@Url.Action("Delete", "TouristGroup_Customer", new { id = item.Id })">
+                                            <button type="button" class="btn btn-danger">Xóa</button>
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

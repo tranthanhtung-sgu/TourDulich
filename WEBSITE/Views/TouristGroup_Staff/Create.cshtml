@@ -1,0 +1,38 @@
+﻿@model DAL.Entities.TouristGroup_Staff
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>TouristGroup_Staff</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="TouristGroupId" value="@Model.TouristGroupId"/>
+            <div class="form-group">
+                <label asp-for="StaffId">Lựa chọn nhân viên</label>
+                <select asp-for="StaffId" class ="form-control" asp-items="ViewBag.StaffId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Duty" class="control-label"></label>
+                <input asp-for="Duty" class="form-control" />
+                <span asp-validation-for="Duty" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a href="@Url.Action("Index", "TouristGroup", new { id = Model.TouristGroupId })">Cancel</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
