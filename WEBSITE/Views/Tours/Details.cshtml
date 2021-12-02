@@ -103,7 +103,7 @@
 
     <!--pop-up for locations showing -->
     <div class="modal fade" id="locations" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog" style="max-width: 450px !important;" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Danh sách các địa điểm</h5>
@@ -112,20 +112,32 @@
                     </button>
                 </div>
                 <div class="modal-body">
+                    <a href="@Url.Action("Create", "TourDetail", new { id = Model.TourId })">
+                        <button type="button" class="btn btn-primary">Thêm địa điểm</button>
+                    </a>
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th>Tên địa điểm</th>
+                                <th>Thứ tự</th>
                                 <th>Địa chỉ</th>
+                                <th>Chức năng</th>
                             </tr>
                         </thead>
                         <tbody>
                             <!--for each location-->
-                            @foreach(var location in Model.TourDetails)
+                            @foreach(var detail in Model.TourDetails)
                             {
                                 <tr>
-                                    <td>@location.Serial</td>
-                                    <td>@location.Location.LocationName</td>
+                                    <td>@detail.Serial</td>
+                                    <td>@detail.Location.LocationName</td>
+                                    <td style="white-space: nowrap;">
+                                        <a href="@Url.Action("Edit", "TourDetail", new { id = detail.Id })">
+                                            <button type="button" class="btn btn-primary">Sửa</button>
+                                        </a>
+                                        <a href="@Url.Action("Delete", "TourDetail", new { id = detail.Id })">
+                                            <button type="button" class="btn btn-danger">Xóa</button>
+                                        </a>
+                                    </td>
                                 </tr>
                             }
                         </tbody>

@@ -43,8 +43,18 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Category.CategoryName)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Prices.FirstOrDefault(x=>x.StartDate <= DateTime.Now && x.EndDate >= DateTime.Now).Money)
+            <td class="text-nowrap">
+                @{
+                    var price = item.Prices.FirstOrDefault(x=>x.StartDate <= DateTime.Now && x.EndDate >= DateTime.Now);
+                    if (price == null)
+                    {
+                        <text> Not Found </text>
+                    } else
+                    {
+                        var priceStr = price.Money;
+                        <text> @priceStr </text>
+                    }
+                }
             </td>
             <td class="text-nowrap">
                 <a asp-action="Edit" asp-route-id="@item.TourId">Edit</a> |
