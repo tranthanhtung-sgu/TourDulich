@@ -4,6 +4,7 @@ using DAL;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace BUS
 {
@@ -52,6 +53,10 @@ namespace BUS
         public void Save()
         {
             _context.SaveChanges();
+        }
+        public Task SaveAsync()
+        {
+            return _context.SaveChangesAsync();
         }
     }
 }
