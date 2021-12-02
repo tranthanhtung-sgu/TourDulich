@@ -1,4 +1,5 @@
-﻿using DAL.Entities;
+﻿using DAL;
+using DAL.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -10,9 +11,10 @@ namespace BUS
 {
     public class BUS_Staff : GenericRepository<Staff>
     {
+        public Context context;
         public BUS_Staff()
         {
-
+            context = _context;
         }
 
         //get all staff
