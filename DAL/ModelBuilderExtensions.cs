@@ -171,6 +171,28 @@ namespace DAL
                     Name = "Nguyễn Thị D"
                 }
             );
+            modelBuilder.Entity<CostCategory>().HasData(
+                new CostCategory
+                {
+                    Id = 1,
+                    Name = "Ăn uống"
+                },
+                new CostCategory
+                {
+                    Id = 2,
+                    Name = "Khách sạn"
+                },
+                new CostCategory
+                {
+                    Id = 3,
+                    Name = "Đi lại"
+                },
+                new CostCategory
+                {
+                    Id = 4,
+                    Name = "Phát sinh"
+                }
+            );
         }
     }
 }

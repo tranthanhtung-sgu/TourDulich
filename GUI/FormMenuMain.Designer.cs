@@ -235,7 +235,7 @@ namespace GUI
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleBar.Location = new System.Drawing.Point(220, 0);
             this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(1044, 80);
+            this.panelTitleBar.Size = new System.Drawing.Size(1164, 80);
             this.panelTitleBar.TabIndex = 1;
             this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
             // 
@@ -245,7 +245,7 @@ namespace GUI
             this.panel1.Controls.Add(this.btnClose);
             this.panel1.Controls.Add(this.btnmax);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(924, 0);
+            this.panel1.Location = new System.Drawing.Point(1044, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(120, 80);
             this.panel1.TabIndex = 2;
@@ -324,7 +324,7 @@ namespace GUI
             this.panelShadow.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelShadow.Location = new System.Drawing.Point(220, 80);
             this.panelShadow.Name = "panelShadow";
-            this.panelShadow.Size = new System.Drawing.Size(1044, 9);
+            this.panelShadow.Size = new System.Drawing.Size(1164, 9);
             this.panelShadow.TabIndex = 2;
             // 
             // panelDesktop
@@ -334,14 +334,14 @@ namespace GUI
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktop.Location = new System.Drawing.Point(220, 89);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(1044, 480);
+            this.panelDesktop.Size = new System.Drawing.Size(1164, 480);
             this.panelDesktop.TabIndex = 3;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::GUI.Properties.Resources.logo2;
-            this.pictureBox1.Location = new System.Drawing.Point(433, 164);
+            this.pictureBox1.Location = new System.Drawing.Point(493, 164);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(183, 112);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -352,7 +352,7 @@ namespace GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1264, 569);
+            this.ClientSize = new System.Drawing.Size(1384, 569);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelShadow);
             this.Controls.Add(this.panelTitleBar);

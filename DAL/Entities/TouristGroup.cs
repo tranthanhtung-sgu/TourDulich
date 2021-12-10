@@ -25,6 +25,6 @@ namespace DAL.Entities
         public string Description { get; set; }
         public ICollection<TouristGroup_Customer> TouristGroup_Customers { get; set; } = new List<TouristGroup_Customer>();
         public ICollection<TouristGroup_Staff> TouristGroup_Staffs { get; set; } = new List<TouristGroup_Staff>();
-        public ICollection<Cost> Costs { get; set; } = new List<Cost>();
+        public ICollection<TouristGroup_Cost> TouristGroup_Costs { get; set; } = new List<TouristGroup_Cost>();
     }
 }

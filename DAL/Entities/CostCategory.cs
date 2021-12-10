@@ -12,7 +12,7 @@ namespace DAL.Entities
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public ICollection<Cost> Costs { get; set; }
+        public ICollection<TouristGroup_Cost> Costs { get; set; }
 
     }
 }

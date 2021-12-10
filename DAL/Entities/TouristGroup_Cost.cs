@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Entities
 {
-    public class Cost
+    public class TouristGroup_Cost
     {
         public int Id { get; set; }
         public int TouristGroupId { get; set; }

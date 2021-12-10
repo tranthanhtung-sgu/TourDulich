@@ -60,11 +60,21 @@ namespace GUI.Doan
             this.cbbStaff = new System.Windows.Forms.ComboBox();
             this.dtgvStaff = new System.Windows.Forms.DataGridView();
             this.btnSaveTouristGroup = new FontAwesome.Sharp.IconButton();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnDelCost = new FontAwesome.Sharp.IconButton();
+            this.txtMoney = new System.Windows.Forms.TextBox();
+            this.btnAddCost = new FontAwesome.Sharp.IconButton();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.cbbCost = new System.Windows.Forms.ComboBox();
+            this.dtgvCost = new System.Windows.Forms.DataGridView();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvCustomer)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvStaff)).BeginInit();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvCost)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -78,7 +88,7 @@ namespace GUI.Doan
             this.btnCancel.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCancel.IconSize = 33;
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancel.Location = new System.Drawing.Point(12, 474);
+            this.btnCancel.Location = new System.Drawing.Point(15, 474);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(90, 38);
             this.btnCancel.TabIndex = 60;
@@ -105,7 +115,7 @@ namespace GUI.Doan
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox2.Location = new System.Drawing.Point(12, 8);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(366, 460);
+            this.groupBox2.Size = new System.Drawing.Size(328, 460);
             this.groupBox2.TabIndex = 62;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin tour";
@@ -114,7 +124,7 @@ namespace GUI.Doan
             // 
             this.txtHotel.Location = new System.Drawing.Point(107, 224);
             this.txtHotel.Name = "txtHotel";
-            this.txtHotel.Size = new System.Drawing.Size(253, 25);
+            this.txtHotel.Size = new System.Drawing.Size(209, 25);
             this.txtHotel.TabIndex = 47;
             // 
             // label6
@@ -131,7 +141,7 @@ namespace GUI.Doan
             // 
             this.txtReveneu.Location = new System.Drawing.Point(107, 172);
             this.txtReveneu.Name = "txtReveneu";
-            this.txtReveneu.Size = new System.Drawing.Size(253, 25);
+            this.txtReveneu.Size = new System.Drawing.Size(209, 25);
             this.txtReveneu.TabIndex = 45;
             // 
             // label5
@@ -149,7 +159,7 @@ namespace GUI.Doan
             this.txtDescription.Location = new System.Drawing.Point(107, 278);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(253, 176);
+            this.txtDescription.Size = new System.Drawing.Size(209, 176);
             this.txtDescription.TabIndex = 43;
             // 
             // label4
@@ -166,14 +176,14 @@ namespace GUI.Doan
             // 
             this.TimePickerEndDate.Location = new System.Drawing.Point(107, 119);
             this.TimePickerEndDate.Name = "TimePickerEndDate";
-            this.TimePickerEndDate.Size = new System.Drawing.Size(253, 25);
+            this.TimePickerEndDate.Size = new System.Drawing.Size(209, 25);
             this.TimePickerEndDate.TabIndex = 41;
             // 
             // TimePickerStartDate
             // 
             this.TimePickerStartDate.Location = new System.Drawing.Point(107, 65);
             this.TimePickerStartDate.Name = "TimePickerStartDate";
-            this.TimePickerStartDate.Size = new System.Drawing.Size(253, 25);
+            this.TimePickerStartDate.Size = new System.Drawing.Size(209, 25);
             this.TimePickerStartDate.TabIndex = 40;
             // 
             // label3
@@ -201,7 +211,7 @@ namespace GUI.Doan
             this.cbbTourName.FormattingEnabled = true;
             this.cbbTourName.Location = new System.Drawing.Point(107, 19);
             this.cbbTourName.Name = "cbbTourName";
-            this.cbbTourName.Size = new System.Drawing.Size(253, 25);
+            this.cbbTourName.Size = new System.Drawing.Size(209, 25);
             this.cbbTourName.TabIndex = 37;
             this.cbbTourName.SelectedIndexChanged += new System.EventHandler(this.cbbTourName_SelectedIndexChanged);
             // 
@@ -225,9 +235,9 @@ namespace GUI.Doan
             this.groupBox1.Controls.Add(this.cbbCustomer);
             this.groupBox1.Controls.Add(this.dtgvCustomer);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox1.Location = new System.Drawing.Point(384, 8);
+            this.groupBox1.Location = new System.Drawing.Point(346, 8);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(324, 460);
+            this.groupBox1.Size = new System.Drawing.Size(262, 460);
             this.groupBox1.TabIndex = 63;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin hành khách";
@@ -238,7 +248,7 @@ namespace GUI.Doan
             this.btnDelCustomer.IconColor = System.Drawing.Color.Black;
             this.btnDelCustomer.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDelCustomer.IconSize = 20;
-            this.btnDelCustomer.Location = new System.Drawing.Point(96, 119);
+            this.btnDelCustomer.Location = new System.Drawing.Point(75, 121);
             this.btnDelCustomer.Name = "btnDelCustomer";
             this.btnDelCustomer.Size = new System.Drawing.Size(76, 25);
             this.btnDelCustomer.TabIndex = 49;
@@ -251,7 +261,7 @@ namespace GUI.Doan
             this.btnAddCustomer.IconColor = System.Drawing.Color.Black;
             this.btnAddCustomer.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAddCustomer.IconSize = 20;
-            this.btnAddCustomer.Location = new System.Drawing.Point(178, 119);
+            this.btnAddCustomer.Location = new System.Drawing.Point(157, 121);
             this.btnAddCustomer.Name = "btnAddCustomer";
             this.btnAddCustomer.Size = new System.Drawing.Size(76, 25);
             this.btnAddCustomer.TabIndex = 48;
@@ -262,7 +272,7 @@ namespace GUI.Doan
             // 
             this.txtCustomerPhone.Location = new System.Drawing.Point(73, 68);
             this.txtCustomerPhone.Name = "txtCustomerPhone";
-            this.txtCustomerPhone.Size = new System.Drawing.Size(245, 25);
+            this.txtCustomerPhone.Size = new System.Drawing.Size(181, 25);
             this.txtCustomerPhone.TabIndex = 47;
             // 
             // label9
@@ -289,7 +299,7 @@ namespace GUI.Doan
             this.cbbCustomer.FormattingEnabled = true;
             this.cbbCustomer.Location = new System.Drawing.Point(73, 19);
             this.cbbCustomer.Name = "cbbCustomer";
-            this.cbbCustomer.Size = new System.Drawing.Size(245, 25);
+            this.cbbCustomer.Size = new System.Drawing.Size(181, 25);
             this.cbbCustomer.TabIndex = 1;
             this.cbbCustomer.SelectedIndexChanged += new System.EventHandler(this.cbbCustomer_SelectedIndexChanged);
             // 
@@ -304,7 +314,7 @@ namespace GUI.Doan
             this.dtgvCustomer.RowHeadersVisible = false;
             this.dtgvCustomer.RowTemplate.Height = 25;
             this.dtgvCustomer.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvCustomer.Size = new System.Drawing.Size(312, 281);
+            this.dtgvCustomer.Size = new System.Drawing.Size(248, 281);
             this.dtgvCustomer.TabIndex = 0;
             // 
             // groupBox3
@@ -317,9 +327,9 @@ namespace GUI.Doan
             this.groupBox3.Controls.Add(this.cbbStaff);
             this.groupBox3.Controls.Add(this.dtgvStaff);
             this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox3.Location = new System.Drawing.Point(714, 8);
+            this.groupBox3.Location = new System.Drawing.Point(614, 8);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(318, 460);
+            this.groupBox3.Size = new System.Drawing.Size(248, 460);
             this.groupBox3.TabIndex = 64;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thông tin nhân viên";
@@ -330,7 +340,7 @@ namespace GUI.Doan
             this.btnDelStaff.IconColor = System.Drawing.Color.Black;
             this.btnDelStaff.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDelStaff.IconSize = 20;
-            this.btnDelStaff.Location = new System.Drawing.Point(84, 121);
+            this.btnDelStaff.Location = new System.Drawing.Point(65, 121);
             this.btnDelStaff.Name = "btnDelStaff";
             this.btnDelStaff.Size = new System.Drawing.Size(76, 25);
             this.btnDelStaff.TabIndex = 51;
@@ -341,7 +351,7 @@ namespace GUI.Doan
             // 
             this.txtDuty.Location = new System.Drawing.Point(73, 68);
             this.txtDuty.Name = "txtDuty";
-            this.txtDuty.Size = new System.Drawing.Size(239, 25);
+            this.txtDuty.Size = new System.Drawing.Size(169, 25);
             this.txtDuty.TabIndex = 49;
             // 
             // btnAddStaff
@@ -350,7 +360,7 @@ namespace GUI.Doan
             this.btnAddStaff.IconColor = System.Drawing.Color.Black;
             this.btnAddStaff.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAddStaff.IconSize = 20;
-            this.btnAddStaff.Location = new System.Drawing.Point(166, 121);
+            this.btnAddStaff.Location = new System.Drawing.Point(147, 121);
             this.btnAddStaff.Name = "btnAddStaff";
             this.btnAddStaff.Size = new System.Drawing.Size(76, 25);
             this.btnAddStaff.TabIndex = 50;
@@ -381,7 +391,7 @@ namespace GUI.Doan
             this.cbbStaff.FormattingEnabled = true;
             this.cbbStaff.Location = new System.Drawing.Point(73, 19);
             this.cbbStaff.Name = "cbbStaff";
-            this.cbbStaff.Size = new System.Drawing.Size(239, 25);
+            this.cbbStaff.Size = new System.Drawing.Size(169, 25);
             this.cbbStaff.TabIndex = 3;
             this.cbbStaff.SelectedIndexChanged += new System.EventHandler(this.cbbStaff_SelectedIndexChanged);
             // 
@@ -396,7 +406,7 @@ namespace GUI.Doan
             this.dtgvStaff.RowHeadersVisible = false;
             this.dtgvStaff.RowTemplate.Height = 25;
             this.dtgvStaff.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvStaff.Size = new System.Drawing.Size(306, 281);
+            this.dtgvStaff.Size = new System.Drawing.Size(236, 281);
             this.dtgvStaff.TabIndex = 1;
             // 
             // btnSaveTouristGroup
@@ -410,7 +420,7 @@ namespace GUI.Doan
             this.btnSaveTouristGroup.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSaveTouristGroup.IconSize = 19;
             this.btnSaveTouristGroup.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSaveTouristGroup.Location = new System.Drawing.Point(959, 476);
+            this.btnSaveTouristGroup.Location = new System.Drawing.Point(1049, 474);
             this.btnSaveTouristGroup.Name = "btnSaveTouristGroup";
             this.btnSaveTouristGroup.Size = new System.Drawing.Size(67, 34);
             this.btnSaveTouristGroup.TabIndex = 65;
@@ -420,11 +430,103 @@ namespace GUI.Doan
             this.btnSaveTouristGroup.UseVisualStyleBackColor = true;
             this.btnSaveTouristGroup.Click += new System.EventHandler(this.btnSaveTouristGroup_Click);
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.btnDelCost);
+            this.groupBox4.Controls.Add(this.txtMoney);
+            this.groupBox4.Controls.Add(this.btnAddCost);
+            this.groupBox4.Controls.Add(this.label11);
+            this.groupBox4.Controls.Add(this.label12);
+            this.groupBox4.Controls.Add(this.cbbCost);
+            this.groupBox4.Controls.Add(this.dtgvCost);
+            this.groupBox4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBox4.Location = new System.Drawing.Point(868, 8);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(248, 460);
+            this.groupBox4.TabIndex = 66;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Chi phí chuyến đi";
+            // 
+            // btnDelCost
+            // 
+            this.btnDelCost.IconChar = FontAwesome.Sharp.IconChar.ArrowUp;
+            this.btnDelCost.IconColor = System.Drawing.Color.Black;
+            this.btnDelCost.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnDelCost.IconSize = 20;
+            this.btnDelCost.Location = new System.Drawing.Point(65, 121);
+            this.btnDelCost.Name = "btnDelCost";
+            this.btnDelCost.Size = new System.Drawing.Size(76, 25);
+            this.btnDelCost.TabIndex = 51;
+            this.btnDelCost.UseVisualStyleBackColor = true;
+            this.btnDelCost.Click += new System.EventHandler(this.btnDelCost_Click);
+            // 
+            // txtMoney
+            // 
+            this.txtMoney.Location = new System.Drawing.Point(73, 68);
+            this.txtMoney.Name = "txtMoney";
+            this.txtMoney.Size = new System.Drawing.Size(169, 25);
+            this.txtMoney.TabIndex = 49;
+            // 
+            // btnAddCost
+            // 
+            this.btnAddCost.IconChar = FontAwesome.Sharp.IconChar.ArrowDown;
+            this.btnAddCost.IconColor = System.Drawing.Color.Black;
+            this.btnAddCost.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAddCost.IconSize = 20;
+            this.btnAddCost.Location = new System.Drawing.Point(147, 121);
+            this.btnAddCost.Name = "btnAddCost";
+            this.btnAddCost.Size = new System.Drawing.Size(76, 25);
+            this.btnAddCost.TabIndex = 50;
+            this.btnAddCost.UseVisualStyleBackColor = true;
+            this.btnAddCost.Click += new System.EventHandler(this.btnAddCost_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label11.Location = new System.Drawing.Point(7, 73);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(57, 15);
+            this.label11.TabIndex = 48;
+            this.label11.Text = "Mệnh giá";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(6, 22);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(32, 17);
+            this.label12.TabIndex = 4;
+            this.label12.Text = "Loại";
+            // 
+            // cbbCost
+            // 
+            this.cbbCost.FormattingEnabled = true;
+            this.cbbCost.Location = new System.Drawing.Point(73, 19);
+            this.cbbCost.Name = "cbbCost";
+            this.cbbCost.Size = new System.Drawing.Size(169, 25);
+            this.cbbCost.TabIndex = 3;
+            // 
+            // dtgvCost
+            // 
+            this.dtgvCost.AllowUserToAddRows = false;
+            this.dtgvCost.AllowUserToDeleteRows = false;
+            this.dtgvCost.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvCost.Location = new System.Drawing.Point(6, 172);
+            this.dtgvCost.Name = "dtgvCost";
+            this.dtgvCost.ReadOnly = true;
+            this.dtgvCost.RowHeadersVisible = false;
+            this.dtgvCost.RowTemplate.Height = 25;
+            this.dtgvCost.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgvCost.Size = new System.Drawing.Size(236, 281);
+            this.dtgvCost.TabIndex = 1;
+            // 
             // FormDoanDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1044, 524);
+            this.ClientSize = new System.Drawing.Size(1123, 524);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.btnSaveTouristGroup);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
@@ -440,6 +542,9 @@ namespace GUI.Doan
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvStaff)).EndInit();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvCost)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -476,5 +581,13 @@ namespace GUI.Doan
         private FontAwesome.Sharp.IconButton btnDelStaff;
         private FontAwesome.Sharp.IconButton btnAddStaff;
         private FontAwesome.Sharp.IconButton btnSaveTouristGroup;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private FontAwesome.Sharp.IconButton btnDelCost;
+        private System.Windows.Forms.TextBox txtMoney;
+        private FontAwesome.Sharp.IconButton btnAddCost;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ComboBox cbbCost;
+        private System.Windows.Forms.DataGridView dtgvCost;
     }
 }

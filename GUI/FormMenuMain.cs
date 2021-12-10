@@ -34,7 +34,7 @@ namespace GUI
             this.ControlBox = false;
             this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
-            this.Size = new Size(1280, 650);
+            this.Size = new Size(1355, 650);
         }
 
         //Structs

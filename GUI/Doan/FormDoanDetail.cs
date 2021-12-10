@@ -23,6 +23,8 @@ namespace GUI.Doan
         private BUS_Customer bCustomer = new BUS_Customer();
         private List<Staff> _staffs = new List<Staff>();
         private BUS_Staff bStaff = new BUS_Staff();
+        private BUS_CostCategory bConst = new BUS_CostCategory();
+        private List<CostCategory> _costCategory = new List<CostCategory>();
         private FrmMainMenu FrmMainMenu;
 
         private string status = "";
@@ -32,6 +34,7 @@ namespace GUI.Doan
             FrmMainMenu = frmMain;
             _tours = bTour.GetAll();
             _staffs = bStaff.GetAllStaff();
+            _costCategory = (List<CostCategory>) bConst.GetAll();
             _customers = (List<Customer>)bCustomer.GetAll();
             InitializeComponent();
             if (touristGroup == null)
@@ -82,6 +85,13 @@ namespace GUI.Doan
             dtgvStaff.Columns[0].Width = dtgvStaff.Width / 2;
             dtgvStaff.Columns[1].Width = dtgvStaff.Width / 2;
 
+            // set dtgvCost just show column Name, Money
+            dtgvCost.DataSource = _currentTouristGroup.TouristGroup_Costs.Select(x => new { x.CostCategory.Name, x.Money }).ToList();
+            dtgvCost.Columns[0].HeaderText = "Loại";
+            dtgvCost.Columns[1].HeaderText = "Mệnh giá";
+            dtgvCost.Columns[0].Width = dtgvStaff.Width / 2;
+            dtgvCost.Columns[1].Width = dtgvStaff.Width / 2;
+
             //set cbbCustomer to show all customer
             cbbCustomer.DataSource = _customers;
             cbbCustomer.DisplayMember = "FullName";
@@ -91,6 +101,11 @@ namespace GUI.Doan
             cbbStaff.DataSource = _staffs;
             cbbStaff.DisplayMember = "Name";
             cbbStaff.ValueMember = "Id";
+
+            //set cbbCost to show all cost
+            cbbCost.DataSource = _costCategory;
+            cbbCost.DisplayMember = "Name";
+            cbbCost.ValueMember = "Id";
         }
 
         private void cbbCustomer_SelectedIndexChanged(object sender, EventArgs e)
@@ -206,6 +221,67 @@ namespace GUI.Doan
             MessageBox.Show("Xóa nhân viên thành công");
         }
 
+        private void btnAddCost_Click(object sender, EventArgs e)
+        {
+            //check if cost is existed in tourist group
+            if (_currentTouristGroup.TouristGroup_Costs.Any(x => x.CostCategoryId == ((CostCategory)cbbCost.SelectedItem).Id))
+            {
+                MessageBox.Show("Chi phí đã tồn tại trong danh sách");
+                return;
+            }
+            // check if money is valid and is number
+            if (txtMoney.Text == "" && !double.TryParse(txtMoney.Text, out double money))
+            {
+                MessageBox.Show("Nhập số tiền hợp lệ");
+                return;
+            }
+            //add cost to tourist group
+            CostCategory costCategory = new CostCategory();
+            costCategory = ((CostCategory)cbbCost.SelectedItem);
+            TouristGroup_Cost cost = new TouristGroup_Cost();
+            cost.CostCategory = costCategory;
+            cost.CostCategoryId = costCategory.Id;
+            cost.TouristGroup = _currentTouristGroup;
+            cost.TouristGroupId = _currentTouristGroup.Id;
+            cost.Money = Convert.ToInt32(txtMoney.Text);
+
+            _currentTouristGroup.TouristGroup_Costs.Add(cost);
+            
+            //set revenue textbox depend on cost in tourist group
+            txtReveneu.Text = _currentTouristGroup.TouristGroup_Costs.Sum(x => x.Money).ToString();
+
+            // update dtgvCost
+            dtgvCost.DataSource = _currentTouristGroup.TouristGroup_Costs.Select(x => new { x.CostCategory.Name, x.Money }).ToList();
+
+            //messagebox
+            MessageBox.Show("Thêm chi phí thành công");
+        }
+
+        private void btnDelCost_Click(object sender, EventArgs e)
+        {
+            // delete cost from tourist group
+
+            int index = dtgvCost.CurrentCell.RowIndex;
+
+            //check if index is valid
+            if (index < 0)
+            {
+                MessageBox.Show("Chọn chi phí cần xóa");
+                return;
+            }
+            TouristGroup_Cost touristGroup_Cost = _currentTouristGroup.TouristGroup_Costs.ElementAt(index);
+            _currentTouristGroup.TouristGroup_Costs.Remove(touristGroup_Cost);
+
+            //set revenue textbox depend on cost in tourist group
+            txtReveneu.Text = _currentTouristGroup.TouristGroup_Costs.Sum(x => x.Money).ToString();
+
+            // update dtgvCost
+            dtgvCost.DataSource = _currentTouristGroup.TouristGroup_Costs.Select(x => new { x.CostCategory.Name, x.Money }).ToList();
+
+            // messagebox
+            MessageBox.Show("Xóa chi phí thành công");
+        }
+
         private void btnSaveTouristGroup_Click(object sender, EventArgs e)
         {
             //save tourisgroup to database
@@ -222,6 +298,8 @@ namespace GUI.Doan
             _currentTouristGroup.Description = txtDescription.Text;
             _currentTouristGroup.StartDate = TimePickerStartDate.Value;
             _currentTouristGroup.EndDate = TimePickerEndDate.Value;
+            _currentTouristGroup.Revenue = _currentTouristGroup.TouristGroup_Costs.Sum(x => x.Money);
+          
 
             //save to database
             if (status == "add")

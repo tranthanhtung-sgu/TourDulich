@@ -22,7 +22,7 @@ namespace BUS
                     .Include(t => t.Tour)
                     .Include(t => t.TouristGroup_Customers).ThenInclude(t => t.Customer)
                     .Include(t => t.TouristGroup_Staffs).ThenInclude(t => t.Staff)
-                    .Include(t => t.Costs)
+                    .Include(t => t.TouristGroup_Costs).ThenInclude(t=>t.CostCategory)
                     .ToList();
             return touristGroups;
         }
@@ -31,10 +31,10 @@ namespace BUS
         {
             var touristGroup_Staffs = currentTouristGroup.TouristGroup_Staffs;
             var touristGroup_Customers = currentTouristGroup.TouristGroup_Customers;
-            var costs = currentTouristGroup.Costs;
+            var costs = currentTouristGroup.TouristGroup_Costs;
             currentTouristGroup.TouristGroup_Staffs = null;
             currentTouristGroup.TouristGroup_Customers = null;
-            currentTouristGroup.Costs = null;
+            currentTouristGroup.TouristGroup_Costs = null;
             _context.TouristGroups.Add(currentTouristGroup);
             _context.SaveChanges();
 
@@ -62,6 +62,18 @@ namespace BUS
 
                 _context.TouristGroup_Customers.Add(touristGroup_Customer);
             }
+            // Add TouristGroup_Costs
+            foreach (var item in costs)
+            {
+                var touristGroup_Cost = new TouristGroup_Cost()
+                {
+                    TouristGroupId = currentTouristGroup.Id,
+                    CostCategoryId = item.CostCategoryId,
+                    Money = item.Money
+                };
+
+                _context.TouristGroup_Costs.Add(touristGroup_Cost);
+            }
             Save();
 
         }
@@ -79,19 +91,19 @@ namespace BUS
         {
             var touristGroup_Staffs = currentTouristGroup.TouristGroup_Staffs;
             var touristGroup_Customers = currentTouristGroup.TouristGroup_Customers;
-            var costs = currentTouristGroup.Costs;
+            var costs = currentTouristGroup.TouristGroup_Costs;
             // remove all touristGroup_Staffs and touristGroup_Customers of TouristGroup in database
             var touristGroup_StaffsInDatabase = _context.TouristGroup_Staffs.Where(t => t.TouristGroupId == currentTouristGroup.Id).ToList();
             var touristGroup_CustomersInDatabase = _context.TouristGroup_Customers.Where(t => t.TouristGroupId == currentTouristGroup.Id).ToList();
             _context.TouristGroup_Staffs.RemoveRange(touristGroup_StaffsInDatabase);
             _context.TouristGroup_Customers.RemoveRange(touristGroup_CustomersInDatabase);
             // remove all costs of TouristGroup in database
-            var costsInDatabase = _context.Costs.Where(t => t.TouristGroupId == currentTouristGroup.Id).ToList();
-            _context.Costs.RemoveRange(costsInDatabase);
+            var costsInDatabase = _context.TouristGroup_Costs.Where(t => t.TouristGroupId == currentTouristGroup.Id).ToList();
+            _context.TouristGroup_Costs.RemoveRange(costsInDatabase);
             // update TouristGroup
             currentTouristGroup.TouristGroup_Staffs = null;
             currentTouristGroup.TouristGroup_Customers = null;
-            currentTouristGroup.Costs = null;
+            currentTouristGroup.TouristGroup_Costs = null;
             _context.Entry(currentTouristGroup).State = EntityState.Modified;
             Save();
             foreach (var item in touristGroup_Staffs)
@@ -116,6 +128,18 @@ namespace BUS
                 };
 
                 _context.TouristGroup_Customers.Add(touristGroup_Customer);
+            }
+            // Add TouristGroup_Costs
+            foreach (var item in costs)
+            {
+                var touristGroup_Cost = new TouristGroup_Cost()
+                {
+                    TouristGroupId = currentTouristGroup.Id,
+                    CostCategoryId = item.CostCategoryId,
+                    Money = item.Money
+                };
+
+                _context.TouristGroup_Costs.Add(touristGroup_Cost);
             }
             Save();
         }

@@ -11,7 +11,7 @@ namespace DAL
 {
     public class Context : DbContext
     {
-        public static string DataSource = "Tungpc\\DATABASETUNG";
+        public static string DataSource = "DESKTOP-910QFGL\\MAYCHU";
         public static string con = "Data Source="+ DataSource + ";Initial Catalog=tourdulich;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;";
 
         public Context()
@@ -42,7 +42,7 @@ namespace DAL
         public DbSet<Price> Prices { get; set; }
         public DbSet<Category> Cateogries { get; set; }
         public DbSet<Location> Locations { get; set; }
-        public DbSet<Cost> Costs { get; set; }
+        public DbSet<TouristGroup_Cost> TouristGroup_Costs { get; set; }
         public DbSet<TouristGroup_Customer> TouristGroup_Customers { get; set; }
         public DbSet<TourDetail> TourDetails { get; set; }
         public DbSet<Customer> Customers { get; set; }
