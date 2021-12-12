@@ -41,11 +41,15 @@ namespace GUI.Doan
             {
                 _currentTouristGroup = new TouristGroup();
                 status = "add";
+                TimePickerStartDate.Value = DateTime.Today;
+                TimePickerEndDate.Value = DateTime.Today.AddDays(1);
             }
             else
             {
                 _currentTouristGroup = touristGroup;
                 status = "edit";
+                TimePickerStartDate.Value = _currentTouristGroup.StartDate;
+                TimePickerEndDate.Value = _currentTouristGroup.EndDate;
             }
             this.Load += Form_Load;
         }
@@ -66,10 +70,7 @@ namespace GUI.Doan
             txtReveneu.ReadOnly = true;
             
             //set Revenue for tourist group 
-            txtReveneu.Text = _currentTouristGroup.Revenue.ToString();
-
-            TimePickerStartDate.Value = _currentTouristGroup.StartDate;
-            TimePickerEndDate.Value = _currentTouristGroup.EndDate;
+            UpdateRevenue();
 
             // set dtgvCustomer just show column CustomerId, CustomerName, CustomerPhone
             dtgvCustomer.DataSource = _currentTouristGroup.TouristGroup_Customers.Select(x => new { x.Customer.FullName, x.Customer.PhoneNumber }).ToList();
@@ -143,6 +144,8 @@ namespace GUI.Doan
             
             _currentTouristGroup.TouristGroup_Customers.Add(touristGroup_Customer);
 
+            UpdateRevenue();
+
 
             // update dtgvCustomer
             dtgvCustomer.DataSource = _currentTouristGroup.TouristGroup_Customers.Select(x => new { x.Customer.FullName, x.Customer.PhoneNumber }).ToList();
@@ -165,6 +168,8 @@ namespace GUI.Doan
             }
             TouristGroup_Customer touristGroup_Customer = _currentTouristGroup.TouristGroup_Customers.ElementAt(index);
             _currentTouristGroup.TouristGroup_Customers.Remove(touristGroup_Customer);
+
+            UpdateRevenue();
            
             // update dtgvCustomer
             dtgvCustomer.DataSource = _currentTouristGroup.TouristGroup_Customers.Select(x => new { x.Customer.FullName, x.Customer.PhoneNumber }).ToList();
@@ -230,7 +235,7 @@ namespace GUI.Doan
                 return;
             }
             // check if money is valid and is number
-            if (txtMoney.Text == "" && !double.TryParse(txtMoney.Text, out double money))
+            if (txtMoney.Text == "" || !double.TryParse(txtMoney.Text, out double money))
             {
                 MessageBox.Show("Nhập số tiền hợp lệ");
                 return;
@@ -247,14 +252,32 @@ namespace GUI.Doan
 
             _currentTouristGroup.TouristGroup_Costs.Add(cost);
             
-            //set revenue textbox depend on cost in tourist group
-            txtReveneu.Text = _currentTouristGroup.TouristGroup_Costs.Sum(x => x.Money).ToString();
+            //set revenue textbox 
+            UpdateRevenue();
 
             // update dtgvCost
             dtgvCost.DataSource = _currentTouristGroup.TouristGroup_Costs.Select(x => new { x.CostCategory.Name, x.Money }).ToList();
 
             //messagebox
             MessageBox.Show("Thêm chi phí thành công");
+        }
+
+        private void UpdateRevenue()
+        {
+            int numberCustomer = _currentTouristGroup.TouristGroup_Customers.Count;
+            float TienBanVe = 0;
+            // get price in prices of tour depend on the time of tourist group
+            if(_currentTouristGroup.Tour != null)
+            {
+                foreach (var item in _currentTouristGroup.Tour.Prices)
+                {
+                    if (item.StartDate.Date <= _currentTouristGroup.StartDate.Date && item.EndDate.Date >= _currentTouristGroup.EndDate.Date)
+                    {
+                        TienBanVe = item.Money * numberCustomer;
+                    }
+                }
+            }
+            txtReveneu.Text = TienBanVe - _currentTouristGroup.TouristGroup_Costs.Sum(x => x.Money) + "";
         }
 
         private void btnDelCost_Click(object sender, EventArgs e)
@@ -272,8 +295,8 @@ namespace GUI.Doan
             TouristGroup_Cost touristGroup_Cost = _currentTouristGroup.TouristGroup_Costs.ElementAt(index);
             _currentTouristGroup.TouristGroup_Costs.Remove(touristGroup_Cost);
 
-            //set revenue textbox depend on cost in tourist group
-            txtReveneu.Text = _currentTouristGroup.TouristGroup_Costs.Sum(x => x.Money).ToString();
+            //set revenue textbox 
+            UpdateRevenue();
 
             // update dtgvCost
             dtgvCost.DataSource = _currentTouristGroup.TouristGroup_Costs.Select(x => new { x.CostCategory.Name, x.Money }).ToList();
@@ -327,6 +350,16 @@ namespace GUI.Doan
         {
             FormListDoan frmListDoan = new FormListDoan(FrmMainMenu);
             FrmMainMenu.OpenChildForm(frmListDoan);
+        }
+
+        private void TimePickerStartDate_ValueChanged(object sender, EventArgs e)
+        {
+            TimePickerEndDate.MinDate = TimePickerStartDate.Value.AddDays(1);
+        }
+
+        private void TimePickerEndDate_ValueChanged(object sender, EventArgs e)
+        {
+            TimePickerStartDate.MaxDate = TimePickerEndDate.Value.AddDays(-1);
         }
     }
 }

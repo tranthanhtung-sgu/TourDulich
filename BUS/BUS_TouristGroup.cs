@@ -19,7 +19,7 @@ namespace BUS
         public new List<TouristGroup> GetAll()
         {
             List<TouristGroup> touristGroups = _context.TouristGroups
-                    .Include(t => t.Tour)
+                    .Include(t => t.Tour).ThenInclude(p => p.Prices)
                     .Include(t => t.TouristGroup_Customers).ThenInclude(t => t.Customer)
                     .Include(t => t.TouristGroup_Staffs).ThenInclude(t => t.Staff)
                     .Include(t => t.TouristGroup_Costs).ThenInclude(t=>t.CostCategory)

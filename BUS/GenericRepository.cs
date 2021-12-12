@@ -2,6 +2,7 @@
 using BUS.Maps;
 using DAL;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -57,6 +58,12 @@ namespace BUS
         public Task SaveAsync()
         {
             return _context.SaveChangesAsync();
+        }
+        public void DetachAll()
+        {
+            foreach (EntityEntry dbEntityEntry in _context.ChangeTracker.Entries().ToArray())
+                if (dbEntityEntry.Entity != null)
+                    dbEntityEntry.State = EntityState.Detached;
         }
     }
 }

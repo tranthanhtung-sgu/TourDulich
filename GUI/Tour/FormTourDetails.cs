@@ -71,6 +71,8 @@ namespace GUI
             //invisible btnUpdate if dtgv is empty
             btnUpdateLocation.Visible = dtgvLocation.Rows.Count > 0 ? true : false;
             btnUpdatePrice.Visible = dtgvPrice.Rows.Count > 0 ? true : false;
+
+            dtpickerEnd.MinDate = dtpickerStart.Value.AddDays(1);
         }
 
         // convert string to float

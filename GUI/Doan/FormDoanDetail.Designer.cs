@@ -178,6 +178,7 @@ namespace GUI.Doan
             this.TimePickerEndDate.Name = "TimePickerEndDate";
             this.TimePickerEndDate.Size = new System.Drawing.Size(209, 25);
             this.TimePickerEndDate.TabIndex = 41;
+            this.TimePickerEndDate.ValueChanged += new System.EventHandler(this.TimePickerEndDate_ValueChanged);
             // 
             // TimePickerStartDate
             // 
@@ -185,6 +186,7 @@ namespace GUI.Doan
             this.TimePickerStartDate.Name = "TimePickerStartDate";
             this.TimePickerStartDate.Size = new System.Drawing.Size(209, 25);
             this.TimePickerStartDate.TabIndex = 40;
+            this.TimePickerStartDate.ValueChanged += new System.EventHandler(this.TimePickerStartDate_ValueChanged);
             // 
             // label3
             // 

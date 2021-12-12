@@ -23,9 +23,9 @@ namespace DAL.Entities
         public float Money { get; set; }
 
         [DisplayName("Ngày bắt đầu")]
-        public DateTime StartDate { get; set; }
+        public DateTime StartDate { get; set; } = DateTime.Now;
 
         [DisplayName("Ngày kết thúc")]
-        public DateTime EndDate { get; set; }
+        public DateTime EndDate { get; set; } = DateTime.Now;
     }
 }
