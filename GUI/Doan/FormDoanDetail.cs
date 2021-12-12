@@ -26,6 +26,7 @@ namespace GUI.Doan
         private BUS_CostCategory bConst = new BUS_CostCategory();
         private List<CostCategory> _costCategory = new List<CostCategory>();
         private FrmMainMenu FrmMainMenu;
+        private DAL.Entities.Tour tour = null;
 
         private string status = "";
 
@@ -43,6 +44,10 @@ namespace GUI.Doan
                 status = "add";
                 TimePickerStartDate.Value = DateTime.Today;
                 TimePickerEndDate.Value = DateTime.Today.AddDays(1);
+                // load tours to combobox 
+                cbbTourName.DataSource = _tours;
+                cbbTourName.DisplayMember = "TenGoi";
+                cbbTourName.ValueMember = "TourId";
             }
             else
             {
@@ -50,6 +55,10 @@ namespace GUI.Doan
                 status = "edit";
                 TimePickerStartDate.Value = _currentTouristGroup.StartDate;
                 TimePickerEndDate.Value = _currentTouristGroup.EndDate;
+                // load tours to combobox 
+                cbbTourName.DataSource = _tours.Where(x => x.TourId == _currentTouristGroup.TourId).ToList();
+                cbbTourName.DisplayMember = "TenGoi";
+                cbbTourName.ValueMember = "TourId";
             }
             this.Load += Form_Load;
         }
@@ -57,13 +66,10 @@ namespace GUI.Doan
         // form load
         private void Form_Load(object sender, EventArgs e)
         {
-            // load tours to combobox 
-            cbbTourName.DataSource = _tours;
-            cbbTourName.DisplayMember = "TenGoi";
-            cbbTourName.ValueMember = "TourId";
-
             txtHotel.SelectedText = _currentTouristGroup.Hotel;
             txtDescription.SelectedText = _currentTouristGroup.Description;
+
+            // set time picker has many range max and min
 
             //set txt cannot edit
             txtCustomerPhone.ReadOnly = true;
@@ -157,15 +163,12 @@ namespace GUI.Doan
         private void btnDelCustomer_Click(object sender, EventArgs e)
         {
             //delete customer from tourist group
-
-            int index = dtgvCustomer.CurrentCell.RowIndex;
-
-            //check if index is valid
-            if (index < 0)
+            if(dtgvCustomer.CurrentRow == null)
             {
-                MessageBox.Show("Chọn khách hàng cần xóa");
+                MessageBox.Show("Chưa chọn nhân viên");
                 return;
             }
+            int index = dtgvCustomer.CurrentRow.Index;
             TouristGroup_Customer touristGroup_Customer = _currentTouristGroup.TouristGroup_Customers.ElementAt(index);
             _currentTouristGroup.TouristGroup_Customers.Remove(touristGroup_Customer);
 
@@ -208,14 +211,12 @@ namespace GUI.Doan
         {
             //delete staff from tourist group
 
-            int index = dtgvStaff.CurrentCell.RowIndex;
-
-            //check if index is valid
-            if (index < 0)
+            if(dtgvStaff.CurrentRow == null)
             {
-                MessageBox.Show("Chọn nhân viên cần xóa");
+                MessageBox.Show("Chưa chọn nhân viên");
                 return;
             }
+            int index = dtgvStaff.CurrentRow.Index;
             TouristGroup_Staff touristGroup_Staff = _currentTouristGroup.TouristGroup_Staffs.ElementAt(index);
             _currentTouristGroup.TouristGroup_Staffs.Remove(touristGroup_Staff);
 
@@ -284,14 +285,15 @@ namespace GUI.Doan
         {
             // delete cost from tourist group
 
-            int index = dtgvCost.CurrentCell.RowIndex;
+            
 
             //check if index is valid
-            if (index < 0)
+            if (dtgvCost.CurrentRow == null)
             {
                 MessageBox.Show("Chọn chi phí cần xóa");
                 return;
             }
+            int index = dtgvCost.CurrentCell.RowIndex;
             TouristGroup_Cost touristGroup_Cost = _currentTouristGroup.TouristGroup_Costs.ElementAt(index);
             _currentTouristGroup.TouristGroup_Costs.Remove(touristGroup_Cost);
 
@@ -321,7 +323,7 @@ namespace GUI.Doan
             _currentTouristGroup.Description = txtDescription.Text;
             _currentTouristGroup.StartDate = TimePickerStartDate.Value;
             _currentTouristGroup.EndDate = TimePickerEndDate.Value;
-            _currentTouristGroup.Revenue = _currentTouristGroup.TouristGroup_Costs.Sum(x => x.Money);
+            _currentTouristGroup.Revenue = float.Parse(txtReveneu.Text);
           
 
             //save to database
@@ -342,8 +344,25 @@ namespace GUI.Doan
         private void cbbTourName_SelectedIndexChanged(object sender, EventArgs e)
         {
             // get tour selected
-            DAL.Entities.Tour tour = (DAL.Entities.Tour)cbbTourName.SelectedItem;
+            tour = (DAL.Entities.Tour)cbbTourName.SelectedItem;
             _currentTouristGroup.TourId = tour.TourId;
+
+            // set time picker start date and end date depend on price of tour with many min and max date
+            if (tour.Prices.Count > 0)
+            {
+                TimePickerStartDate.MinDate = tour.Prices.Min(x => x.StartDate);
+                TimePickerStartDate.MaxDate = tour.Prices.Max(x => x.EndDate);
+                TimePickerEndDate.MinDate = tour.Prices.Min(x => x.StartDate);
+                TimePickerEndDate.MaxDate = tour.Prices.Max(x => x.EndDate);
+            }
+            else
+            {
+                TimePickerStartDate.MinDate = DateTime.Now;
+                TimePickerStartDate.MaxDate = DateTime.Now.AddDays(1);
+                TimePickerEndDate.MinDate = DateTime.Now;
+                TimePickerEndDate.MaxDate = DateTime.Now.AddDays(1);
+            }
+
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -354,12 +373,12 @@ namespace GUI.Doan
 
         private void TimePickerStartDate_ValueChanged(object sender, EventArgs e)
         {
-            TimePickerEndDate.MinDate = TimePickerStartDate.Value.AddDays(1);
+            TimePickerEndDate.MinDate = TimePickerStartDate.Value;
         }
 
         private void TimePickerEndDate_ValueChanged(object sender, EventArgs e)
         {
-            TimePickerStartDate.MaxDate = TimePickerEndDate.Value.AddDays(-1);
+            TimePickerStartDate.MaxDate = TimePickerEndDate.Value;
         }
     }
 }

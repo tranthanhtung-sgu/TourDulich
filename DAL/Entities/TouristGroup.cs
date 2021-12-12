@@ -20,7 +20,7 @@ namespace DAL.Entities
 
         public DateTime EndDate { get; set; } = DateTime.Now;
 
-        public float Revenue { get; set; }
+        public float Revenue { get; set; } = 0;
         public string Hotel { get; set; }
         public string Description { get; set; }
         public ICollection<TouristGroup_Customer> TouristGroup_Customers { get; set; } = new List<TouristGroup_Customer>();

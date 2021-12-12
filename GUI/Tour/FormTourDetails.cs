@@ -103,6 +103,23 @@ namespace GUI
                 MessageBox.Show("Price must be numberic");
                 return;
             }
+            // check if start date and end date in range of any price in tour
+            if (dtpickerStart.Value < dtpickerEnd.Value)
+            {
+                foreach (var item in _currentTour.Prices)
+                {
+                    if (dtpickerStart.Value >= item.StartDate && dtpickerStart.Value <= item.EndDate)
+                    {
+                        MessageBox.Show("Start date is in range of a price in tour");
+                        return;
+                    }
+                    if (dtpickerEnd.Value >= item.StartDate && dtpickerEnd.Value <= item.EndDate)
+                    {
+                        MessageBox.Show("End date is in range of a price in tour");
+                        return;
+                    }
+                }
+            }
             Price giaTour = new Price();
             giaTour.Money = ConvertStringToFloat(txtPrice.Text);
             giaTour.TourId = _currentTour.TourId;
@@ -222,6 +239,23 @@ namespace GUI
             {
                 MessageBox.Show("Price must be numberic");
                 return;
+            }
+            // check if start date and end date in range of any price in tour
+            if (dtpickerStart.Value < dtpickerEnd.Value)
+            {
+                foreach (var item in _currentTour.Prices)
+                {
+                    if (dtpickerStart.Value >= item.StartDate && dtpickerStart.Value <= item.EndDate)
+                    {
+                        MessageBox.Show("Start date is in range of a price in tour");
+                        return;
+                    }
+                    if (dtpickerEnd.Value >= item.StartDate && dtpickerEnd.Value <= item.EndDate)
+                    {
+                        MessageBox.Show("End date is in range of a price in tour");
+                        return;
+                    }
+                }
             }
             int index = dtgvPrice.CurrentCell.RowIndex;
             Price price = _currentTour.Prices.ElementAt(index);
