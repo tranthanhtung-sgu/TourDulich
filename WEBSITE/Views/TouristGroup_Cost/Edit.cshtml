@@ -1,4 +1,4 @@
-﻿@model DAL.Entities.TouristGroup_Staff
+﻿@model DAL.Entities.TouristGroup_Cost
 
 @{
     ViewData["Title"] = "Edit";
@@ -6,7 +6,7 @@
 
 <h1>Edit</h1>
 
-<h4>TouristGroup_Staff</h4>
+<h4>TouristGroup_Cost</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -15,14 +15,14 @@
             <input type="hidden" asp-for="Id" />
             <input type="hidden" asp-for="TouristGroupId" value="@Model.TouristGroupId" />
             <div class="form-group">
-                <label asp-for="StaffId" class="control-label"></label>
-                <select asp-for="StaffId" class="form-control" asp-items="ViewBag.StaffId"></select>
-                <span asp-validation-for="StaffId" class="text-danger"></span>
+                <label asp-for="CostCategoryId" class="control-label"></label>
+                <select asp-for="CostCategoryId" class="form-control" asp-items="ViewBag.CostCategoryId"></select>
+                <span asp-validation-for="CostCategoryId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Duty" class="control-label"></label>
-                <input asp-for="Duty" class="form-control" />
-                <span asp-validation-for="Duty" class="text-danger"></span>
+                <label asp-for="Money" class="control-label"></label>
+                <input asp-for="Money" class="form-control" />
+                <span asp-validation-for="Money" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />

@@ -83,6 +83,7 @@ namespace BUS
             return _context.TouristGroups
                         .Include(x => x.TouristGroup_Staffs).ThenInclude(y => y.Staff)
                         .Include(x => x.TouristGroup_Customers).ThenInclude(y => y.Customer)
+                        .Include(x => x.TouristGroup_Costs).ThenInclude(y => y.CostCategory)
                         .FirstOrDefault(x => x.Id == id);
                                            
         }

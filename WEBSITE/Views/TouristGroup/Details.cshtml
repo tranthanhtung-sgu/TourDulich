@@ -1,4 +1,5 @@
-﻿@model DAL.Entities.TouristGroup
+﻿@using System.Globalization
+@model DAL.Entities.TouristGroup
 
 @{
     ViewData["Title"] = "Details";
@@ -32,7 +33,25 @@
             @Html.DisplayNameFor(model => model.Revenue)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Revenue)
+             @{
+                    int numberCustomer = Model.TouristGroup_Customers.Count;
+                    float TienBanVe = 0;
+                    float TienChiPhi = 0;
+                    // get price in prices of tour depend on the time of tourist group
+                    if(Model.Tour != null)
+                    {
+                        foreach (var item in Model.Tour.Prices)
+                        {
+                            if (item.StartDate.Date <= Model.StartDate.Date && item.EndDate.Date >= Model.EndDate.Date)
+                            {
+                                TienBanVe = item.Money * numberCustomer;
+                            }
+                        }
+
+                    }
+                    TienChiPhi = TienBanVe - Model.TouristGroup_Costs.Sum(x => x.Money); 
+                }   
+                @TienChiPhi.ToString("C", CultureInfo.CreateSpecificCulture("vi-VN"))
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Hotel)
@@ -62,6 +81,15 @@
              <!-- button toggle for popup -->
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staffs">
                 Hiển thị danh sách nhân viên
+            </button>
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayName("Danh sách chi phí")
+        </dt>
+        <dd class="col-sm-10">
+             <!-- button toggle for popup -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#revenues">
+                Hiển thị danh sách chi phí
             </button>
         </dd>
     </dl>
@@ -102,6 +130,54 @@
                                             <button type="button" class="btn btn-primary">Sửa</button>
                                         </a>
                                         <a href="@Url.Action("Delete", "TouristGroup_Staff", new { id = item.Id })">
+                                            <button type="button" class="btn btn-danger">Xóa</button>
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="revenues" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" style="max-width: 750px !important;" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Chi phí</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <a href="@Url.Action("Create", "TouristGroup_Cost", new { id = Model.Id })">
+                        <button type="button" class="btn btn-primary">Thêm chi phí</button>
+                    </a>
+                    <table class="table table-striped nowrap">
+                        <thead>
+                            <tr>
+                                <th>Loại</th>
+                                <th>Mệnh giá</th>
+                                <th style="white-space: nowrap;">Chức năng</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!--for each price-->
+                            @foreach(var item in Model.TouristGroup_Costs)
+                            {
+                                <tr>
+                                    <td style="white-space: nowrap;">@item.CostCategory.Name</td>
+                                    <td style="white-space: nowrap;">@item.Money</td>
+                                    <td style="white-space: nowrap;">
+                                        <a href="@Url.Action("Edit", "TouristGroup_Cost", new { id = item.Id })">
+                                            <button type="button" class="btn btn-primary">Sửa</button>
+                                        </a>
+                                        <a href="@Url.Action("Delete", "TouristGroup_Cost", new { id = item.Id })">
                                             <button type="button" class="btn btn-danger">Xóa</button>
                                         </a>
                                     </td>

@@ -1,4 +1,5 @@
-﻿@model IEnumerable<DAL.Entities.TouristGroup>
+﻿@using System.Globalization
+@model IEnumerable<DAL.Entities.TouristGroup>
 
 @{
     ViewData["Title"] = "Index";
@@ -36,30 +37,48 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+@foreach (var touristGroup in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Tour.TenGoi)
+                @Html.DisplayFor(modelItem => touristGroup.Tour.TenGoi)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.StartDate)
+                @Html.DisplayFor(modelItem => touristGroup.StartDate)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.EndDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Revenue)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Hotel)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
+                @Html.DisplayFor(modelItem => touristGroup.EndDate)
             </td>
             <td class="text-nowrap">
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                @{
+                    int numberCustomer = touristGroup.TouristGroup_Customers.Count;
+                    float TienBanVe = 0;
+                    float TienChiPhi = 0;
+                    // get price in prices of tour depend on the time of tourist group
+                    if(touristGroup.Tour != null)
+                    {
+                        foreach (var item in touristGroup.Tour.Prices)
+                        {
+                            if (item.StartDate.Date <= touristGroup.StartDate.Date && item.EndDate.Date >= touristGroup.EndDate.Date)
+                            {
+                                TienBanVe = item.Money * numberCustomer;
+                            }
+                        }
+
+                    }
+                    TienChiPhi = TienBanVe - touristGroup.TouristGroup_Costs.Sum(x => x.Money); 
+                }   
+                @TienChiPhi.ToString("C", CultureInfo.CreateSpecificCulture("vi-VN"))
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => touristGroup.Hotel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => touristGroup.Description)
+            </td>
+            <td class="text-nowrap">
+                <a asp-action="Edit" asp-route-id="@touristGroup.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@touristGroup.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@touristGroup.Id">Delete</a>
             </td>
         </tr>
 }

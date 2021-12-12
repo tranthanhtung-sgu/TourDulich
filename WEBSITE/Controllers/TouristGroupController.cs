@@ -23,8 +23,8 @@ namespace WEBSITE.Controllers
         // GET: TouristGroup
         public IActionResult Index()
         {
-            var touristGroup = bTouristGroup.GetAll();
-            return View(touristGroup);
+            var touristGroups = bTouristGroup.GetAll();
+            return View(touristGroups);
         }
 
         // GET: TouristGroup/Details/5
@@ -34,8 +34,8 @@ namespace WEBSITE.Controllers
             {
                 return NotFound();
             }
-
-            var touristGroup = bTouristGroup.FindById(id);
+            var touristGroups = bTouristGroup.GetAll();
+            var touristGroup = touristGroups.FirstOrDefault(m => m.Id == id);
             if (touristGroup == null)
             {
                 return NotFound();
