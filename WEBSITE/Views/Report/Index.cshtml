@@ -2,23 +2,33 @@
     @using DAL.Entities
     @model ReportViewModel
 }
-<script>
-    function myFunction() {
-        any x = document.getElementById("TourId").value;
-        alert(123);
+<style>
+    /*make controls in container-controls class in one line*/
+    .container-controls {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
     }
-</script>
+    .container-controls > * {
+        margin-right: 10px;
+    }
+</style>
 <h1>Thống kê</h1>
 <!-- a select list to choose the tourist group -->
 <div>
     <label>Tour :</label>
-    @Html.DropDownList("TourId", 
-                    new SelectList(Model.Tours, "TourId", "TenGoi", Model.Tours[0].TourId),
-                    new { 
-                            @onchange="callChangefunc(this.value)", 
-                            @class = "form-control",
-                            @style = "width: 200px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; padding: 0 30px 0 10px !important; -webkit-padding-end: 30px !important; -webkit-padding-start: 10px !important;" 
-                        })
+    <div class="container-controls">
+        @Html.DropDownList("TourId", 
+                        new SelectList(Model.Tours, "TourId", "TenGoi", Model.Tours[0].TourId),
+                        new { 
+                                @onchange="callChangefunc(this.value, document.getElementById('year').value)", 
+                                @class = "form-control",
+                                @style = "width: 500px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; padding: 0 30px 0 10px !important; -webkit-padding-end: 30px !important; -webkit-padding-start: 10px !important;" 
+                            })
+        <input type="number" max="2100" min="1900" id="year" value="2021" style="width: 100px; margin-left: 10px;" required>
+        <button type="button" class="btn btn-primary" onclick="callChangefunc(document.getElementById('TourId').value, document.getElementById('year').value)">Thống kê</button>
+    </div>
 </div>
 
 @Html.Partial("_DrawChart", Model.TouristGroups.Where(x => x.TourId == Model.Tours[0].TourId).ToList())
@@ -26,10 +36,14 @@
 
 @section Scripts {
     <script>
-        function callChangefunc(val){
+        function callChangefunc(val, year) {
             // ajax to call the controller DrawChart method
             $.ajax({
                 url: "/Report/DrawChart/"+val,
+                data: {
+                    tourId: val,
+                    year: year
+                },
                 type: "GET",
                 success: function (data) {
                     $("#chartContainer").html(data);

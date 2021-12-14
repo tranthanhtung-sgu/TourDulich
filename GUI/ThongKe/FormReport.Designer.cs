@@ -37,6 +37,7 @@ namespace GUI.ThongKe
             this.cboxDoan = new System.Windows.Forms.CheckBox();
             this.cboxKhach = new System.Windows.Forms.CheckBox();
             this.cboxLoiNhuan = new System.Windows.Forms.CheckBox();
+            this.timepickerYear = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // cartesianChart1
@@ -98,11 +99,23 @@ namespace GUI.ThongKe
             this.cboxLoiNhuan.UseVisualStyleBackColor = true;
             this.cboxLoiNhuan.CheckedChanged += new System.EventHandler(this.cboxLoiNhuan_CheckedChanged);
             // 
+            // timepickerYear
+            // 
+            this.timepickerYear.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.timepickerYear.Location = new System.Drawing.Point(664, 24);
+            this.timepickerYear.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
+            this.timepickerYear.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
+            this.timepickerYear.Name = "timepickerYear";
+            this.timepickerYear.Size = new System.Drawing.Size(95, 23);
+            this.timepickerYear.TabIndex = 9;
+            this.timepickerYear.ValueChanged += new System.EventHandler(this.timepickerYear_ValueChanged);
+            // 
             // FormReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1044, 524);
+            this.Controls.Add(this.timepickerYear);
             this.Controls.Add(this.cboxLoiNhuan);
             this.Controls.Add(this.cboxKhach);
             this.Controls.Add(this.cboxDoan);
@@ -124,5 +137,6 @@ namespace GUI.ThongKe
         private System.Windows.Forms.CheckBox cboxDoan;
         private System.Windows.Forms.CheckBox cboxKhach;
         private System.Windows.Forms.CheckBox cboxLoiNhuan;
+        private System.Windows.Forms.DateTimePicker timepickerYear;
     }
 }

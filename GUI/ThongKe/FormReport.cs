@@ -34,6 +34,11 @@ namespace GUI.ThongKe
 
         private void FormReport_Load(object sender, EventArgs e)
         {
+            //timepickerYear format just show year, and cannot type
+            timepickerYear.CustomFormat = "yyyy";
+            timepickerYear.Format = DateTimePickerFormat.Custom;
+            timepickerYear.ShowUpDown = true;
+
             cbbTour.DataSource = tours;
             cbbTour.DisplayMember = "TenGoi";
             cbbTour.ValueMember = "TourId";
@@ -107,7 +112,7 @@ namespace GUI.ThongKe
                 float revenueMonth = 0;
                 foreach (var item in touristGroup)
                 {
-                    if (item.TourId == tour.TourId && item.StartDate.Month == i)
+                    if (item.TourId == tour.TourId && item.StartDate.Year == timepickerYear.Value.Year && item.StartDate.Month == i)
                     {
                         countDoan++;
                         countCustomer += item.TouristGroup_Customers.Count;
@@ -252,5 +257,117 @@ namespace GUI.ThongKe
         public Axis TouristGroupAxis { get; set; }
         public Axis CustomerAxis { get; set; }
         public Axis RevenueAxis { get; set; }
+
+        private void timepickerYear_ValueChanged(object sender, EventArgs e)
+        {
+            cartesianChart1.Series.Clear();
+            cartesianChart1.AxisY.Clear();
+
+            List<int> doan = new List<int>();
+            List<int> customers = new List<int>();
+            List<float> revenue = new List<float>();
+
+            for (int i = 1; i <= 12; i++)
+            {
+                int countDoan = 0;
+                int countCustomer = 0;
+                float revenueMonth = 0;
+                foreach (var item in touristGroup)
+                {
+                    if (item.TourId == tour.TourId && item.StartDate.Year == timepickerYear.Value.Year && item.StartDate.Month == i)
+                    {
+                        countDoan++;
+                        countCustomer += item.TouristGroup_Customers.Count;
+                        revenueMonth += item.Revenue;
+                    }
+                }
+                doan.Add(countDoan);
+                customers.Add(countCustomer);
+                revenue.Add(revenueMonth);
+            }
+
+            TouristGroupLine = new LineSeries
+            {
+                Title = "Đoàn tham gia",
+                Foreground = System.Windows.Media.Brushes.DodgerBlue,
+                Values = new ChartValues<int>(doan),
+                ScalesYAt = 0
+            };
+
+            CustomerLine = new LineSeries
+            {
+                Title = "Khách hàng",
+                Foreground = System.Windows.Media.Brushes.Red,
+                Values = new ChartValues<int>(customers),
+                ScalesYAt = 1
+            };
+
+            RevenueLine = new LineSeries
+            {
+                Title = "Doanh thu",
+                Foreground = System.Windows.Media.Brushes.Green,
+                Values = new ChartValues<float>(revenue),
+                ScalesYAt = 2
+            };
+
+            cartesianChart1.Series = new SeriesCollection
+            {
+                TouristGroupLine,
+                CustomerLine,
+                RevenueLine
+            };
+
+            TouristGroupAxis = new Axis
+            {
+                Foreground = System.Windows.Media.Brushes.DodgerBlue,
+                Separator = new Separator
+                {
+                    Step = 1,
+                },
+                Position = AxisPosition.RightTop
+
+            };
+
+            CustomerAxis = new Axis
+            {
+                Foreground = System.Windows.Media.Brushes.Red,
+                Separator = new Separator
+                {
+                    Step = 1,
+                },
+                Position = AxisPosition.RightTop
+            };
+
+            CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");   // try with "en-US"
+
+            RevenueAxis = new Axis
+            {
+                Foreground = System.Windows.Media.Brushes.Green,
+                Separator = new Separator
+                {
+                    Step = 5000000,
+                },
+                LabelFormatter = val => val.ToString("C0", cul.NumberFormat)
+            };
+
+            cartesianChart1.AxisY = new AxesCollection
+            {
+                TouristGroupAxis,
+                CustomerAxis,
+                RevenueAxis
+            };
+
+            cboxKhach.Checked = false;
+            cboxDoan.Checked = false;
+            cboxLoiNhuan.Checked = false;
+
+            // hide all series and show only one TouristGroupLine
+            TouristGroupLine.Visibility = Visibility.Hidden;
+            CustomerLine.Visibility = Visibility.Hidden;
+            RevenueLine.Visibility = Visibility.Hidden;
+            TouristGroupAxis.Visibility = Visibility.Hidden;
+            CustomerAxis.Visibility = Visibility.Hidden;
+            RevenueAxis.Visibility = Visibility.Hidden;
+        }
     }
 }

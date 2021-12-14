@@ -23,15 +23,20 @@ namespace WEBSITE.Controllers
         }
         
         [HttpGet]
-        public ActionResult DrawChart(int id)
+        public ActionResult DrawChart(Filter data)
         {
-            //get list touristGroup has Tourid equals with id
-            var listTouristGroup = bTouristGroup.GetAll().Where(x => x.TourId == id).ToList();
-            if (listTouristGroup == null)
+            if (data.TourId == 0)
+            {
+                return Json(new { success = false, message = "Vui lòng chọn tour" });
+            }
+            //get list touristGroup has Tourid equals with id and has start date in data.Year
+            var listTouristGroup = bTouristGroup.GetAll();
+            var listTouristGroupHasTourId = listTouristGroup.Where(x => x.TourId == data.TourId && x.StartDate.Year == data.Year).ToList();
+            if (listTouristGroupHasTourId == null)
             {
                 return NotFound();
             }
-            return PartialView("_DrawChart", listTouristGroup);
+            return PartialView("_DrawChart", listTouristGroupHasTourId);
         }
     }
 }
