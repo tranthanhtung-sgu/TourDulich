@@ -1,0 +1,203 @@
+﻿@{
+    @using DAL.Entities
+    @using Newtonsoft.Json
+    @model List<TouristGroup>
+}
+
+@{
+    List<int> doan = new List<int>();
+    List<int> customers = new List<int>();
+    List<float> revenues = new List<float>();
+    for (int i = 1; i <= 12; i++)
+    {
+        int countDoan = 0;
+        int countCustomer = 0;
+        float revenue = 0;
+        foreach (var item in Model)
+        {
+            if (item.StartDate.Month == i)
+            {
+                countDoan++;
+                countCustomer += item.TouristGroup_Customers.Count;
+                revenue += item.Revenue;
+            }
+        }
+        doan.Add(countDoan);
+        customers.Add(countCustomer);
+        revenues.Add(revenue);
+    }
+}
+
+<div id="chartContainer">
+    <canvas id="myChart"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    var dataTouristGroup = JSON.parse('@Html.Raw(JsonConvert.SerializeObject(doan))');
+    var dataCustomer = JSON.parse('@Html.Raw(JsonConvert.SerializeObject(customers))');
+    var dataRevenue = JSON.parse('@Html.Raw(JsonConvert.SerializeObject(revenues))');
+
+// <block:actions:2>
+@* const actions = [
+    {
+      name: 'Randomize',
+      handler(chart) {
+        chart.data.datasets.forEach(dataset => {
+          dataset.data = Utils.numbers({count: chart.data.labels.length, min: -100, max: 100});
+        });
+        chart.update();
+      }
+    },
+    {
+      name: 'Add Dataset',
+      handler(chart) {
+        const data = chart.data;
+        const dsColor = Utils.namedColor(chart.data.datasets.length);
+        const newDataset = {
+          label: 'Dataset ' + (data.datasets.length + 1),
+          backgroundColor: Utils.transparentize(dsColor, 0.5),
+          borderColor: dsColor,
+          data: Utils.numbers({count: data.labels.length, min: -100, max: 100}),
+        };
+        chart.data.datasets.push(newDataset);
+        chart.update();
+      }
+    },
+    {
+      name: 'Add Data',
+      handler(chart) {
+        const data = chart.data;
+        if (data.datasets.length > 0) {
+          data.labels = Utils.months({count: data.labels.length + 1});
+  
+          for (let index = 0; index < data.datasets.length; ++index) {
+            data.datasets[index].data.push(Utils.rand(-100, 100));
+          }
+  
+          chart.update();
+        }
+      }
+    },
+    {
+      name: 'Remove Dataset',
+      handler(chart) {
+        chart.data.datasets.pop();
+        chart.update();
+      }
+    },
+    {
+      name: 'Remove Data',
+      handler(chart) {
+        chart.data.labels.splice(-1, 1); // remove the label first
+  
+        chart.data.datasets.forEach(dataset => {
+          dataset.data.pop();
+        });
+  
+        chart.update();
+      }
+    }
+  ]; *@
+  // </block:actions>
+  
+  // <block:setup:1>
+  
+  var labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  var data = {
+    labels: labels,
+    datasets: [
+        {
+            label: 'Đoàn',
+            data: dataTouristGroup,
+            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+            borderColor: 'rgba(255,99,132,1)',
+            borderWidth: 2,
+            yAxisID: 'y',
+            lineTension: 0.2,
+        },
+        {
+            label: 'Khách hàng',
+            data: dataCustomer,
+            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+            borderColor: 'rgba(54, 162, 235, 1)',
+            borderWidth: 2,
+            yAxisID: 'y1',
+            lineTension: 0.2,
+        },
+        {
+            label: 'Doanh thu',
+            data: dataRevenue,
+            backgroundColor: 'rgba(255, 206, 86, 0.2)',
+            borderColor: 'rgba(255, 206, 86, 1)',
+            borderWidth: 2,
+            yAxisID: 'y2',
+            lineTension: 0.2,
+        }
+    ]
+  };
+  // </block:setup>
+  
+  // <block:config:0>
+  var config = {
+  type: 'line',
+  data: data,
+  options: {
+    responsive: true,
+    interaction: {
+      mode: 'index',
+      intersect: false,
+    },
+    stacked: false,
+    plugins: {
+      title: {
+        display: true,
+        text: 'Chart.js Line Chart - Multi Axis'
+      }
+    },
+    scales: {
+      y: {
+        type: 'linear',
+        display: true,
+        position: 'right',
+        grid: {
+          drawOnChartArea: false, // only want the grid lines for one axis to show up
+          color: 'rgba(255,99,132,1)',
+          borderColor: 'rgba(255,99,132,1)',
+        },
+      },
+      y1: {
+        type: 'linear',
+        display: true,
+        position: 'right',
+        // grid line settings
+        grid: {
+          drawOnChartArea: false, // only want the grid lines for one axis to show up
+          color: 'rgba(54, 162, 235, 1)',
+            borderColor: 'rgba(54, 162, 235, 1)',
+        },
+      },
+        y2: {
+            type: 'linear',
+            display: true,
+            position: 'left',
+    
+            // grid line settings
+            grid: {
+                drawOnChartArea: false, // only want the grid lines for one axis to show up
+                color: 'rgba(255, 206, 86, 1)',
+                borderColor: 'rgba(255, 206, 86, 1)',
+            },
+        }
+    }
+  },
+};
+  // </block:config>
+
+  //on select change send tourid to controller and get data
+    var myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+    );
+    myChart.update();
+</script>

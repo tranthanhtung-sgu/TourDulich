@@ -1,0 +1,41 @@
+﻿@{
+    @using DAL.Entities
+    @model ReportViewModel
+}
+<script>
+    function myFunction() {
+        any x = document.getElementById("TourId").value;
+        alert(123);
+    }
+</script>
+<h1>Thống kê</h1>
+<!-- a select list to choose the tourist group -->
+<div>
+    <label>Tour :</label>
+    @Html.DropDownList("TourId", 
+                    new SelectList(Model.Tours, "TourId", "TenGoi", Model.Tours[0].TourId),
+                    new { 
+                            @onchange="callChangefunc(this.value)", 
+                            @class = "form-control",
+                            @style = "width: 200px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; padding: 0 30px 0 10px !important; -webkit-padding-end: 30px !important; -webkit-padding-start: 10px !important;" 
+                        })
+</div>
+
+@Html.Partial("_DrawChart", Model.TouristGroups.Where(x => x.TourId == Model.Tours[0].TourId).ToList())
+
+
+@section Scripts {
+    <script>
+        function callChangefunc(val){
+            // ajax to call the controller DrawChart method
+            $.ajax({
+                url: "/Report/DrawChart/"+val,
+                type: "GET",
+                success: function (data) {
+                    $("#chartContainer").html(data);
+                }
+            });
+        }
+    </script>
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
